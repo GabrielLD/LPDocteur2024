@@ -1,0 +1,89 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 25:Oscillateurs; portraits de phase et non linéarités}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}} 
+\begin{itemize}
+    \item Deuxième année CPGE
+\end{itemize}
+
+\noindent\underline{\textbf{Pré-requis:}}
+\begin{itemize}
+    \item Oscillateurs harmoniques
+    \item mécanique
+    \item Pendule simple
+    \item régime sinusoïdale forcé
+\end{itemize}
+
+\noindent\underline{\textbf{Références:}}
+
+\begin{itemize}
+    \item Poly de Philippe sur les résonances
+    \item BFR Mécanique 1 
+    \item Faroux, Renault, Matray Rosso, mécanique 1 Dunod Chap 15
+\end{itemize}
+
+\hrulefill
+
+
+\section*{Introduction}
+
+On commence par définir ce qu'est un oscillateur. Système physique qui réalise de petits mouvements autour d'une position d'équilibre stable (horloge, coeur qui bat, bille dans une gouttière). Un système non-linéaire est un système pour lequel lequel le principe de superposition ne s'applique pas. Une des propriétés est que la fréquence de sortie est différente de celle de l'entrée.
+
+\section*{1. Oscillateurs non amortis}
+
+On présente le système déjà connu rapidement. On peut prendre l'exemple du pendule simple non amorti. On fait rapidement le bilan des forces, application de la deuxième loi de Newton sur transparents. On peut tracer en python le protrait de phase qui va bien. 
+
+\subsection*{1.1. Comportement aux grands angles}
+
+On fait le calcul. On montre le portrait de phase aavec le programme python pour un angle initial plus grand que ceux pour lesquels on respecte les angles petits. Aspect énergétique. Utiliser le programme python et montrer la différence sur le portrait de phase
+
+\section*{2. Aspect fréquentiel des non linéarités}
+
+On reprend le calcul toujour dans le Faroux Renault. On parvient à la formule de Borda.
+
+\textbf{Manipulation:} Pendule pesant (on l'assimile à un pendule simple en prenant une masse suffisamment grande) On réalise l'acquisition pour de grands angles initiaux. On utilise ensuite le programme python pour obtenir le lien entre la période et l'angle de l'oscillation.
+
+\subsection*{2.1. Oscillateur amorti, oscillateur entretenu}
+
+\subsection*{2.2. Cas général}
+
+On reprend le pendule pesant en lui ajoutant un coefficient de frottement fluie, puis on généralise pour obtenir une équation avec le terme d'amortissement en $A(x)$. Si A est négatif l'oscillateur est amorti. Si A est positif il est entretenu voir amplifié.
+
+\subsection*{2.3. Cas de l'oscillateur amorti}
+
+On reprend le code python et on ajoute le terme de l'oscillateur amorti.
+
+\section*{3. Oscillateur entretenu: modèle de Van der Pol (Dans le Faroux Renault toujours)}
+
+On donne l'équation générale $\ddot{x}+\epsilon(x^2-1)\dot{x}+x=0$ puis le schéma du circuit sur slide. Intuiter le comportement de l'oscillateur pour x grand ou petit.
+
+\textbf{Manipulation} Suivant le temps, surtout que c'est un montage chaud ! . Poly Oscillateur autoentretenus. On peut commencer par voir que si $x$ est petit les oscillations croissent, si x grand elles décroissent. On peut faire apparaître en lissajous un cycle attracteur de rayon $x=1$. Les oscillations semblent quasi-sinusoidales si $\epsilon\ll 1$. Pour le vérifier il faut regarder le portrait de phase qui doit être un cercle. Tracer le portrait de phase  et constater le cycle limite. Bien faire remarquer que le cycle limite ne dépend que de l'oscillateur et pas des conditions initiales.
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

@@ -1,0 +1,178 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 23: Mécanisme de la conduction électrique dans les solides}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}} 
+\begin{itemize}
+    \item Deuxième année CPGE
+\end{itemize}
+
+\noindent\underline{\textbf{Pré-requis:}}
+\begin{itemize}
+    \item Électrocinétique
+    \item Électromagnétisme
+    \item équations de Maxwell
+    \item Théorie cinétique des gaz
+\end{itemize}
+
+\noindent\underline{\textbf{Références:}}
+
+\begin{itemize}
+\item Dunod de PC
+\item Aschcroft
+\item Kittel chap 7
+\item Cours de Mendesl chap: 1,2,3.
+\item BUP \url{https://bupdoc.udppc.asso.fr/consultation/une_fiche.php?ID_fiche=15244}
+\end{itemize}
+
+\hrulefill
+
+\section*{Introduction}
+
+Dans notre quotidien nous sommes entourés d'appareils qui conduisent le courant. L'objet de cette leçon est de comprendre quels types de matériaux conduisent le courant et quels en sont les mécanismes. Dans un premier temps, nous allons étudier la théorie de la conduction avancée par Drude en 1900.On va voir dans cette leçon que cette notion naturelle n’est en réalité explicable que par
+la mécanique quantique et que les modèles classiques échouent à rendre compte expérimentalement ce qui se passe.
+
+\section*{1. Modèle de Drude une approche microscopique (Dunod de PC)}
+
+En 1900 paul Drude développe une théorie de la conduction électrique dans le but d'expliquer la conductivité mesurée dans les métaux. Il fonde sa théorie sur des éléments de théorie cinétique des gaz.
+
+\subsection*{1.1. Hypothèse du modèle}
+
+\begin{itemize}
+    \item les électrons sont traités de façon indépendante, le comportement du milieu résulte de la somme des comportements individuels des électrons;
+    \item les électrons subissent des collisions: elles sont instantanées, après chaque collision la vitesse d'un électron donné est aléatoire;
+    \item les électrons sont en équilibre thermodynamique avec le milieu environnant par le biais des collisions (processus de thermalisation qui répartit en moyenne l'énergie parmi les différents électrons).
+\end{itemize}
+
+\subsection*{1.2. Loi d'Ohm locale}
+On considère un conducteur dans lequel règne un champ électrostatique $\vec{E}$ susceptible de drainer les électrons. Considérons un électrons donné qui a subi une collision à l'instant $t=0$, sa vitesse après collision $\vec{v}_0$. On applique la deuxième loi de Newton : 
+
+\begin{equation}
+    \vec{j}(M)=\gamma_0\vec{E}(M)~\text{avec } \gamma_0=\dfrac{n_0e^2\tau}{m}
+\end{equation}
+
+\subsection*{1.3. Résistance électrique}
+
+Quel est le lien entre la loi d'Ohm locale que l'on vient de voir et la loi d'Ohm à laquelle on est habitué ($U=RI$)? On considère le conducteur filiforme cylindrique de longueur $l$, de section $S$, parcouru par la densité volumique de courant $\vec{j}$ uniforme. On duit le Dunod pour montrer qu'en intégrant l'équation locale on retrouve $U=RI$.
+
+\textbf{Manipulation:} Mesure de la résistance avec le fil de cuivre long de la prepa de Rennes pour obtenir la proportionnalité entre $R$ et $l$.
+
+\subsection*{1.4. Critique du modèle}
+
+Les mécanismes de conduction électrique dans ce type de matériau sont assez complexes mais si la dépendance en température de la résistivité d’un métal est due à la variation de la mobilité d’un nombre constant de porteurs de charge, c’est surtout la concentration en porteurs qui est modifiée ici. L’agitation thermique agit de manière similaire au cas des semi-conducteurs classiques en faisant apparaitre des porteurs de charges supplémentaires qui participent à la conduction électrique:  la résistivité de l’élément diminue lorsque T augmente.\medskip
+
+On regarde la dépendance de la conductivité avec la température et on regarde si la prévision du modèle de Drude est cohérente avec l'expérience.\medskip
+
+Chaque degré de liberté fournit $\dfrac{1}{2}k_BT$ à l'énergie cinétique (Ashcroft 1.5p27). On a donc : 
+
+\begin{equation}
+    \dfrac{1}{2}mv_0^2=\dfrac{3}{2}k_BT~\text{ et } v_0=\dfrac{l}{\tau}
+\end{equation}
+
+On en déduit une expression de $\tau$ en fonction de la température: $\tau\propto T^{-1/2}$. 
+
+\textbf{Manipulation: } On vérifie l'équation de conductivité du cuivre en fonction de la température avec un long fil (pas le même que celui de la loi d'Ohm) plongé dans un bain marie. On voit que l'on a pas du tout une évolution en $T^{-1/2}$ mais plutôt en $T^{-1}$. On corrige le modèle pour trouver quelque chose de correct. (Lire dans le Ashcroft la loi de Wiedemann 0Franz p23 en cas de questions)
+
+\section*{2. Vision quantique de la conduction électrique le modèle des électrons libres}
+
+\subsection*{2.1. Distribution de Fermi Dirac (Ashcroft chp 2 et 13, Kittel chap 2 ou cours de Mendels)}
+
+On prend en compte l'aspect quantique des électrons: ce sont des fermions (redonner le principe de Pauli) sans considérer l'interaction des électrons avec le réseau cristallin du conducteur (mer d'électrons libres). On met cette partie sur transparent. On décrit le gaz d'électrons libres par une fonction d'onde, avec des conditions aux bords périodique. On peut donner l'énergie $\epsilon$ ainsi que la quantification du vecteur d'onde. On remarque que $k$ est un état propre de la quantité de mouvement.\medskip
+
+
+On donne la densité d'état dans l'espace des $k$. Les électrons sont des fermions, ils ne peuvent pas occuper les mêmes états (principe de Paulio). L'état fondamental est l'état du système à N électrons au zéro absolu. Si la température augmente le taux d'occupation de états d'énergie est donné par la fonction de distribution de Fermi Dirac. La fonction de fermi Dirac varie dans la bande $\pm kT$ autour du potentiel chimique. Tracer la fonction en python ! $\mu$ est fixé par le nombre d'électrons par unité de volume du solide.
+
+\subsection*{2.2. Niveaux de Fermi}
+
+D'après l'étude de Fermi Dirac à $T=0$ tous les états sont occupés avec certitude jusqu'à une énergie appelée énergie de Fermi $\epsilon_F$ qui est en fait le potentiel à $T=0$. Cette énergie correspond à un vecteur d'onde $k_F$. Les états occupés occupés occupent une sphère appelée sphère de Fermi de rayon $k_F$.
+\begin{equation}
+    \epsilon_F = \dfrac{\hbar^2k_F^2}{2m}    
+\end{equation}
+
+
+On peut exprimer l'énergie de fermi en fonction du nombre de particules. On calcul le nombre de particulesa vec l'intégrale puis l'énergie totale 3D. 
+\begin{equation}
+    N = \int_{-\infty}^{+\infty}{g(\epsilon)f_{FD}(\epsilon,T)d\epsilon}=\int_{0}^{\epsilon_F}  g(\epsilon)d\epsilon = \dfrac{V}{2\pi^2}\left(\dfrac{2m}{\hbar^2}\right)^{3/2}\int_{0}^{\epsilon_F}\epsilon^{1/2} =\dfrac{V}{2\pi^2}\left(\dfrac{2m}{\hbar^2}\right)^{3/2}\epsilon^{3/2}.
+\end{equation}
+
+Avec le probramme Python constater qu'à basse Température on se rapproche de la marche. À température T, cette distribtion s'étale sur une largeur d'ordre $k_BT$ autour de l'énergie de fermi. Les électrons responsables de toutes les propriétés conductrices sont ceux situés au voisinage du niveau de Fermi. Ce sont les seuls qui peuvent prendre une énergie supplémentaire sans que l'état final soit occupé avec certitude. Ce sont les électrons qui nagent dans la mer de Fermi. La différence majeure dans la répartition des électron sur les états qui leur sont offerts se situe sur une tranche $kT$ au voisinage du niveau de Fermi.
+
+\subsection*{2.3. Comment relier ce modèle à la conductivité électrique ? (Kittel)}
+
+Dans un champ électrique la force qui s'exerce sur un électron s'écrit en suivant la deuxième loi de Newton. On suppose les collisions négligeables (entre électrons mais aussi avec le réseau cristallin). La sphère de Fermi est déplacée à vitesse constante sous l'effet du champ électrique. On peut alors donner l'expression du déplacement de la sphère de Fermi $\delta k$.
+
+\begin{equation}
+    \begin{array}{ll}
+    \vec{F} & =m\dfrac{d\vec{v}}{dt}=\hbar\dfrac{dk}{dt}\\
+        -e\vec{E} & = \hbar\dfrac{dk}{dt}
+    \end{array}
+\end{equation}
+
+Finalement : 
+\begin{equation}
+    \delta \vec{k} = -\dfrac{e\tau\vec{E}}{\hbar}. 
+\end{equation}
+
+Effet global, l'ensemble des électrons se déplacenet dans le sens opposé au champ électrique ce qui induit un courant macroscopique: Loi d'Ohm.\medskip
+
+Donner la resistivité électrique liée à la collision des électrons de conduction avec les phonons  et à température très faible aux collisions avec les impuretés, les défauts du réseau.\medskip
+
+Ici on a montré comment est décrite la conduction d'un point de vu quantique.  Mais nous n'avons pas parlé de résistivité  qui permet de différencier des isolants des conducteurs.
+
+\section*{3. Matériaux Isolants/conducteurs/semi-conducteurs BUP et Kittel}
+
+On a identifié le comportement des électrons dans un cristal ainsi que l'origine de la conduction. Comment peut-on différencier les isolants des conducteurs ? 
+(BUP p388 Kittel p 156)Il faut prendre en compte les interactions électrostatiques : électrons-ions qui sont faibles mais peuvent être résonantes. 
+
+\subsection*{3.1. Notions de Bandes d'énergie permises et interdit}
+Les électrons sont soumis au potentiel coulombien du réseau cristallin. $k = n_x2\pi/L$ et $\psi(x+a)=\exp{ika}\psi(x)$ une modulation de la fonction d'onde apparaît qui tient compte de la périodicité du réseau.
+
+\begin{equation}
+    \epsilon_k =\epsilon_0-2t\cos(ka)
+\end{equation}
+
+Une bande d'énergie apparaît de largeur 4t centrée sur $\epsilon_0$, plus la bande est large plus le recouvrement entre atomes est grand plus les électrons peuvent sauter de l'un à l'autre
+
+\subsection*{3.2. Remplissage des bandes}
+
+Au niveau de Fermi, le degré de remplissage dépend du nombre d'électrons. S'il y a deux électrons par atome, pour une OA considérée, la bande est remplie. On observe deux types de bandes, celles de conduction qui contient les états dont l'énergie $\epsilon < \epsilon_F$ et des bandes de valences dont les états $\epsilon > \epsilon_F$. Le remplissage fixe les propriétés du matériau.
+
+\subsection*{3.3. Schéma des structures de bandes pour conducteur, semi-conducteur et isolant}
+
+
+\section*{Conclusion}
+
+La conduction est une manifestation macroscopique de la mécanique quantique. La statistique de fermi-dirac explique la conduction dans les solides conducteurs. Il existe différents tupes de matériaux qui ont des conductivités différentes et que celles-ci peuvent être expliquées grâce à la structure de bandes.\medskip
+
+Ouverture sur l’ingénierie des semi-conducteurs : micro-électronique, jonctions
+pn, transistors. Prix Nobel 2014 pour l’invention de la diode bleue (en 1992).
+Ouverture sur la supraconductivité (slide supra mercure).
+Ouverture possible sur la conduction thermique, loi de Wiedemann-Franz.
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

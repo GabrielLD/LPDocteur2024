@@ -1,0 +1,200 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 24: Phénomènes de résonance dans différents domaines de la physique}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}} 
+\begin{itemize}
+    \item Deuxième année CPGE
+\end{itemize}
+
+\noindent\underline{\textbf{Pré-requis:}}
+\begin{itemize}
+    \item Oscillateurs harmoniques
+    \item mécanique
+    \item Électromagnétisme
+    \item élctricité, RLC
+    \item Induction, mutuelle
+    \item Différence de marche de la lame d'air
+\end{itemize}
+
+\noindent\underline{\textbf{Références:}}
+
+\begin{itemize}
+    \item Poly de Philippe sur les résonances
+    \item Faroux Renault 
+    \item Perez d'optique
+    \item TD SAyrin 
+    \item Sujet 2004 Mines
+\end{itemize}
+
+\hrulefill
+
+\section*{Introduction}
+
+Pour introduire la leçon on commence par définir une résonance. C'est un phénomène qui apparaît dans les systèmes faiblement amortis dotés de modes propres lorsqu'on les excite en régime permanent sinusoïdal. Il se manisfeste par une augmentation notable de la réponse lorsque la fréquence d'excitation est proche de celle d'un des modes propres car il y a alors un transfert important d'énergie de l'excitateur vers le système.\medskip
+ 
+Un mode propre est une solution d’oscillation harmonique (sinusoïde non amortie) du système lorsqu’il
+est soumis à une perturbation et il y a autant de modes propres que de degrés de liberté dans le
+système. On commencera par étudier la résonance d'un dispositif à un degré de liberté puis on s'intéressera à des systèmes à plusieurs degrés de liberté. Le sujet est vaste donc on fera des choix.
+
+
+% %On peut commencer par étudier la résonance dans un dispositif à un degré de liberté (on
+% propose deux expériences possibles), puis s’intéresser à un système à plusieurs degrés de liberté
+% (oscillateurs couplés), aux phénomènes de résonance pouvant apparaitre avec des ondes ou à la
+% résonance paramétrique. Le sujet est donc vaste et il faut faire des choix
+
+\section*{1. Résonance d'un oscillateur à 1 degré de liberté: Quartz d'horlogerie}
+
+On prend la modélisation du sujet des mines de 2004 pour les calculs avec le poly de Philippe.
+
+\subsection*{1.1. Présentation du dispositif expérimental}
+
+
+\subsection*{1.2. Caractéristique de l'oscillateur }
+
+
+Les quartz d'horlogerie sont conçus pour réaliser des oscillateurs fonctionnant à une fréquence de $f=32768$ Hz qui permettent l'obtention d'un signal à $1$ Hz après $15$ divisions par $2$ de la fréquence. Le composant se présente sous la forme d'un diapason avec des électrodes mécaniques déposées sur chaque bras permettant de sélectionner un mode vibration en flexion par effet piezoelectrique. La rigidité du quartz permet un confinement très efficace de l’énergie acoustique dans les bras et
+l’encapsulage sous vide du diapason dans un cylindre métallique renforce cet effet en évitant la
+dissipation visqueuse dans l’air. Cela permet de construire des cellules résonnantes avec un facteur
+de qualité ($Q\approx 50 000$) énorme, donc des oscillateurs qui battent la seconde avec une très grande stabilité. Schéma sur transparents.
+
+\subsection*{1.3. Équations mécaniques et équivalent électrique}
+
+D'un point de vue mécanique, lorsqu'on soumet le disque piézo-électrique à une tension sinusoïdale $v(t) = V\cos{\omega t}$, il va être dans le cadre d'une approximation linéaire, le siège d'une vibration mécanique sinusoïdale sous l'effet d'une force extérieur proportionnelle à cette tension.
+
+\subsubsection*{1.3.1. Modélisation mécanique}
+
+\begin{itemize}
+    \item force de rappel (ressort) $-kx$ (origine : rigidité du matériau)
+    \item forttement fluides $-hv$
+    \item force due à l'effet piezo $\beta U$
+    \item on négligera la pesanteur
+\end{itemize}
+
+On applique la relation fondamentale de la dynamique: 
+
+\begin{equation}
+    m\ddot{x}=-kx-h\dot{x}+\beta U(t)
+\end{equation}
+
+\subsubsection*{1.3.2. équivalent électrique}
+
+Dessiner le schéma au tableau
+D'un point de vue électrique la charge totale $q$ qui apparaît sur les électrodes planes a deux origines: 
+\begin{itemize}
+    \item les deux facs planes du disque forment un condensateur de capacité $C$ d'où une charge $q_1$.
+    \item l'effet piezoelectrique provoque l'apparition d'une charge $q_2$ proportionnelle à $x$: $q_2(t)=\gamma x(t)$
+\end{itemize}
+\begin{equation}
+    Cp = \dfrac{\epsilon_0\epsilon_rS}{e} = 8~\rm pF    
+\end{equation}
+
+$$q_1=C_pU(t)$$
+
+On chrche l'équation différentielle pour la charge $q_2$. On multiplie l'équation différentielle obtenue pour l'aspect mécanique par $\gamma$ il vient alors : 
+
+\begin{equation}
+    \begin{array}{lll}
+    \left(m\ddot{x}+kx+h\dot{x}=\beta U(t)\right)\times \gamma&\text{, soit :}& \dfrac{m}{\beta\gamma}\ddot{q_2}+\dfrac{h}{\beta\gamma}\dot{q_2}+\dfrac{k}{\beta\gamma}q_2=U(t)
+\end{array}
+\end{equation}
+
+Dessiner le schéma au tableau et écrire la loi des mailles donne :
+
+\begin{equation}
+    L\dfrac{di}{dt}+RI+\dfrac{q_2}{C_s}=U(t)
+\end{equation}
+
+ce qui donne 
+
+\begin{equation}
+    L\ddot{q_2}+R\dot{q_2}+\dfrac{q_2}{C_s}=U(t)
+\end{equation}
+
+On identifie entre les deux Équations
+
+\begin{equation}
+    \begin{array}{lll}
+        
+    L = \dfrac{m}{\beta\gamma}&~~ R=\dfrac{h}{\beta\gamma}&~~C_s=\dfrac{\beta\gamma}{k} 
+    \end{array}
+\end{equation}
+On en déduit les valeurs de, R, L et C équivalents.
+
+
+On peut ici réecrire l'équation différentielle en faisant apparaître les pulsations prores et le facteur de qualité : $\ddot{q_2}+\dfrac{\omega_0}{Q}\dot{q_2}+\omega_0q_2=U(t)$.  On donne la signification physique du facteur de qualité (mesure du taux d'amortissement de l'oscillateur, plus il est élevé plus les oscillations vont perdurer, revenir sur la valeur du facteur de qualité du quartz)
+\subsection*{1.4. Étude de l'impédance équivalente du Quartz}
+
+Charge totale égale à la somme des charges, intensité totale donc somme des intensités. La partie $p$ et la partie $s$ sont soumises à la même tension, c'est donc un circuit avec deux branches parallèles. On écrit le schéma électrique équivalent (condensateur parallèle à RLC série) et on calcule l'admittance équivalente.\medskip
+
+On trace son évolution via un programme python pour faire apparaître la résonance une première fois.
+
+\begin{equation}
+    \underline{Y}_Q(\omega) = \dfrac{R}{R^2+\left(L\omega-\frac{1}{C\omega}\right)}+j\left[C_0\omega-\dfrac{L\omega-\frac{1}{C\omega}}{R^2+\left(L\omega-\frac{1}{C\omega}\right)^2}\right]
+\end{equation}
+
+\subsection*{1.5. Étude expérimentale d'un quartz d'horloger}
+
+On prend le poly de Philippe sur les résonance.  On trouve la résonance de l'oscillateur. On calcule le facteur de qualité que l'on aura défini précédemment. On a regardé dans cette expérience la résonance en tension.
+
+\section*{2. Oscillateurs couplés}
+\subsection*{2.1. Couplages d'oscillateurs harmoniques}
+
+Dans le Faroux Renault de mécanique des fluides p133. Deux systèmes masses ressort reliés par un ressort. je pense qu'on peut le présenter sur une slide en donnant directement l'équation. Système d'équations couplées, deux fréquences propres pour $x_1-x_2$ et $x_1+x_2$. (Symétrique et antisymétrique).\medskip
+
+Autre possibilité faire l'étude deux circuits RLC couplés (Poly de Philippe Oscillateurs couplés)
+
+\subsection*{Application à la molécule de dioxyde de carbone}
+Mêmes équations que pour deux oscillateurs couplés.\medskip
+
+On peut faire l'expérience en prenant deux circuits RLC et montrer les deux modes symétriques et antisymétriques.
+
+\section*{Résonance pour un système avec un très grand nombre de degrés de liberté : cavité résonante de Fabry Pérot (Laser)}
+
+Exercice 5 du TD de Sayrin et Perez d'optique
+
+\subsection*{2.2. Différence de marche}
+
+Aller vite préparer des transparents pour aller plus vite ou le mettre en pré-requis
+Et exprimer les vibrations lumineuses des différents rayons en fonction des coefficient de réflexion.
+
+\subsection*{2.3. Intensité de l'onde}
+
+Tracer le résultat avec python. 
+
+\subsection*{2.4. Finesse et pouvoir de résolution}
+
+Calcul de la largeur des pics, lien avec le facteur de qualité des résonances. 
+Liens avec d'autres cavités résonantes (tuyaux sonores, corde de Melde)
+
+\section*{Conclusion}
+
+Il reste des résonances que l'on a pas vu les résonances paramétriques (balancoire, pont).  Phénomène non linéaires
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

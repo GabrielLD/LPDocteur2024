@@ -1,0 +1,374 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 26: Cinématique relativiste: Expérience de Michelson et Morley}
+\hrulefill\\
+	\underline{Niveau:}
+	\begin{itemize}
+		\item Licence 3
+	\end{itemize}
+	\underline{Pré-requis:} 
+	\begin{itemize}
+		\item Mécanique
+		\item électromagnétisme
+		\item Optique
+	\end{itemize}
+	\underline{Bibliographie:}
+	\begin{itemize}
+		\item BFR \textit{Mécanique 1}
+		\item Pérez \textit{Relativité}
+		\item Purcell and Morin \textit{Electricity and magnetism}
+		\item \url{https://fr.wikipedia.org/wiki/Exp%C3%A9rience_de_Michelson_et_Morley}
+	\end{itemize}
+\hrulefill
+
+\section*{1. Introduction: les problèmes de la cinématique galiléenne (classique)}
+
+\subsection*{1.1. Relativité galiléenne}
+
+Il s'agit d'un premier cours d'introduction à la relativité restreinte. Il s'agit d'une théorie élaborée par Albert Einstein en 1905 dont l'objectif est de tiré toutes les conséquences de la relativité galiléenne et du principe selon lequel la vitesse de la lumière est un invariant dans tous les référentiels. Il fait connaître cette théorie à travers un article intitulé : "\textit{On the electrodynamics of moving objects}".\\[.5cm]
+
+Dans le cours de mécanique classique, on décrit des référentiels privilégiés: les référentiels \textbf{galiléens}. Ce sont des référentiels en translation rectiligne uniforme par rapport aux autres. 
+
+
+% \begin{figure}[ht!]
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{refgalileen.png}
+% 	\caption{Référentiels en translation l'un par rapport à l'autre}
+% \end{figure}
+
+Dans ce contexte on définit une transformée pour passer des coordonnées d'un référentiel $\mathcal{R}$ à un autre $\mathcal{R}'$. On prend ces deux référentiels tels que à $t=0$, ils sont confondus, les horloges sont synchronisées. $t>0$ $\vec{v}(O') = v_e\vec{e_x}$. On peut alors décrire la position d'un point M par rapport au référentiel $\mathcal{R}$ grâce à \textbf{la transformée de Galilée}:
+
+
+\begin{equation}
+	\left\{\begin{array}{rcl}
+		x(t) &=& x'+v_e t\\
+		y(t) &=& y'\\
+		z(t) &=& z'\\
+		t &=& t'
+	\end{array}\right.
+\end{equation}
+
+\textbf{Resultat:Loi de composition des vitesses}
+	\begin{equation}
+		v = v'+v_e
+	\end{equation}
+
+
+\subsection*{1.2. Qu'en est-il de l'électromagnétisme ?}
+Les équations de Maxwell prédisent l'existence d'ondes se propageant à la vitesse $c$ a priori dans un référentiel privilégié (celui où sont définies les équations de Maxwell).
+
+\begin{equation}
+	\Delta E = \dfrac{1}{c^2}\dfrac{\partial^2 E}{\partial t^2} \text{ avec } c=\dfrac{1}{\sqrt{\epsilon_0\mu_0}}.
+\end{equation}
+
+On peut se demander quel est ce référentiel où des ondes peuvent se propager à une vitesse constante $c=3.0\cdot10^8~\rm m\cdot s^{-1}$. Si la vitesse de la lumière est définie dans un référentiel particulier et si elle obéit à la loi de composition des vitesses, on doit pouvoir mesurer une variation de la vitesse dans un autre référentiel. C'est ce que Michelson et Morley ont essayé de faire. 
+
+\section*{2. Expérience de Michelson et Morley}
+
+\textbf{Objectif:} Mesurer la variatio de la célérité de la lumière et vérifier que a lumière suit la loi de composition des vitesses.
+
+\subsection*{2.1. Dispositif}
+
+L'idée de Michelson et Morley est de se placer dans un référentiel qui se déplace par rapport au référentiel absolu dans lequel $c$ est définie. La planète Terre est en orbite quasi-circulaire de rayon $r=1.5\cdot 10^{11}~\rm m$ autour du soleil avec une période de $T = 365~\text{jours} = 3.15\cdot 10^{7}~ \rm s$. Ce qui donne une vitesse de la Terre autour du soleil de $v=3.0\cdot 10^4~\rm m\cdot s^{-1}$.
+
+S'il existe un référentiel absolu pour la lumière on devrait pouvoir mesurer la variation de vitesse grâce à un dispositif suffisamment précis. Michelson construit un interféromètre dont l'idée est de faire interférer deux rayons lumineux ayant parcourus deux chemins différents .
+
+\begin{center}
+	\textbf{Bien décrire le dispositif expérimental sur transparents} (parcours des rayons, lame séparatrice, miroirs, détecteur)
+\end{center}
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width = .5\textwidth]{Michelson.png}
+% 	\caption{Schéma de l'interféromètre de Michelson (\textit{Pérez, Relativité})}
+% \end{figure}
+
+L'éclairement sur le détecteur \textbf{P} dépend de $\Delta t$ le décalage temporel entre les rayons pour arriver sur le détecteur depuis la source. Les interférences dépendent de la phase : 
+
+\begin{equation}
+	\phi = 2\pi\nu\Delta t.
+\end{equation}
+
+\subsection*{2.2. Expression de la différence de phase}
+
+On souhaite exprimer le retard d'un rayon par rapport à l'autre:
+
+\begin{equation}
+	\Delta t = T_{\parallel}-T_{\perp}
+\end{equation}
+
+On se place dans le référentiel lié au soleil et on suppose la Terre en translation rectiligne uniforme autour du soleil. L'interféromètre est placé sur Terre et se déplace à la vitesse $v_e = 3\cdot 10^4 ~\rm m\cdot s^{-1}$ par rapport au soleil. 
+
+\subsubsection*{2.2.1. Chemin perpendiculaire:}
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{schematrajetperp.png}
+% 	\caption{Schéma chemin n$^\circ 1$}
+% 	% \label{fig:chemin1}
+% \end{figure}
+
+On applique le théorême de Pythagore au triangle rectangle (ABC) de la figure 3:
+\begin{equation}
+	(ct)^2=L^2+(v_et)^2 \nonumber
+\end{equation}
+
+On factorise par le temps, le rayon issu de la lame séparatrice met un temps $t$ pour aller jusqu'au miroir $M_2$: 
+\begin{equation}
+	t=\dfrac{L}{c}\dfrac{1}{\sqrt{1-\left(\dfrac{v_e}{c}\right)^2}}. \nonumber
+\end{equation}
+
+En comptant le retour on en déduit $T_\perp$:
+\begin{equation}
+	T_\perp=2t=\dfrac{2L}{c}\dfrac{1}{\sqrt{1-\left(\dfrac{v_e}{c}\right)^2}}
+\end{equation}
+
+\subsubsection*{2.2.2. Chemin longitudinal:}
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=.4\textwidth]{schematrajetlongitudinal.png}
+% 	\caption{Schéma chemin n$^\circ 1$}
+% 	% \label{fig:chemin2}
+% \end{figure}
+
+Dans ce cas le dispositif se déplace parallèlement au rayon lumineux dont le rayon doit rattraper le miroir qui s'éloigne en même temps que le rayon avance tandis que le retour sera plus rapide car la lame semi-réfléchissante se rapproche du rayon réfléchi.
+
+\begin{equation}
+	\text{À l'aller : } t_{1} = \dfrac{L}{c+v_e}~\text{ au retour } t_2=\dfrac{L}{c-v_e}.\nonumber
+\end{equation}
+
+On en déduit $T_\parallel$:
+\begin{equation}
+	T_\parallel=\dfrac{2L}{c}\dfrac{1}{1-\left(\dfrac{v_e}{c}\right)^2}.
+\end{equation}
+
+Enfin, on peut exprimer le décalage temporel entre les rayons passant dans chaque bras de l'interféromètre: 
+
+\begin{equation}
+	\Delta t = T_\parallel - T_\perp = \dfrac{2L}{c}\left[\dfrac{1}{1-\left(\dfrac{v_e}{c}\right)^2}-\dfrac{1}{\sqrt{1-\left(\dfrac{v_e}{c}\right)^2}}\right]
+\end{equation}
+
+On fait le développement au premier ordre des fractions avec $v_e/c <<1$, en simplifiant les expressions il vient: 
+
+\begin{equation}
+	\Delta t = \dfrac{L}{c}\left(\dfrac{v_e}{c}\right)^2
+\end{equation}
+
+\subsection*{2.3. Résultats}
+
+Par conséquent on peut prévoir le déphasage qu'engendre un tel décalage temporel: 
+\begin{equation}
+	\phi = 2\pi\dfrac{L\nu}{c}\left(\dfrac{v_e}{c}\right)^2 = 2\pi\dfrac{L}{\lambda}\left(\dfrac{v_e}{c}\right)^2.
+\end{equation}
+
+En prenant en compte les améliorations apportées par Morley à l'interféromètre de Michelson. Les bras du Michelson mesurent en comptant les réflexions $L=11~\rm m$, la longueur d'onde du Laser est de $\lambda=550~\rm m$. On trouc un déphasage 
+\begin{equation}
+	\dfrac{\phi}{2\pi} = 0.2
+\end{equation}
+
+Cela devrait être suffisant pour détecter un déplacement des franges de la figure d'interférence. Cependant le déplacement observé en pratique est nettement plus faible. Michelson et Morley observent un déplacement maximum de l'ordre de 0.02, en moyenne de 0.01.
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{resultsMichelsonMorley.png}            \caption{Résultats obtenus par Michelson et Morley (\textit{Wikipedia})}
+% 	% \label{fig:resMM}
+% \end{figure}
+
+\begin{definition}{Conclusion}
+	On en conclut que l'on ne peut pas vérifier l'hypothèse suivant laquelle $c$ suit la loi de composition des vitesses. La mesure de la vitesse de la lumière semble indépendante du mouvement de la Terre par rapport au soleil. On peut alors prendre deux positions: 
+	\begin{enumerate}
+		\item Essayer de réparer la théorie du référentiel dans lequel sont définies les équations de Maxwell. 
+		\item Plus courageux, admettre que $c$ est un invariant qui n'obéit pas aux lois de la cinématique galiléenne. Cela implique une nouvelle cinématique, c'est ce qu'a proposé Einstein en 1805 et que nous allons voir dans la partie suivante.
+	\end{enumerate}
+\end{definition}
+
+\section*{3. Fondements de la relativité restreinte}
+
+\subsection*{3.1. Postulats}
+
+\begin{enumerate}
+	\item Invariance des lois de la Physique
+	
+Toutes les lois de la physique sont invariantes par changement de référentiel galiléen. C'est à dire que les même lois se traduisent par des relations qui gardent la même structure au passage à un autre référentiel.
+	\item Invariance de la vitesse de la lumière
+	
+Les équations de Maxwell sont invariantes par changement de référentiel. La célérité de la lumière est un invariant relativiste par changement de référentiel.
+
+\begin{definition}{Définition - Célérité de la lumière}
+	\begin{equation}
+		c = \dfrac{1}{\sqrt{\epsilon_0\mu_0}}=3.0\cdot 10^8~\rm m\dot s^{-1}.
+	\end{equation}
+\end{definition}
+
+À ce stade on peut revenir sur l'expérience de Michelson et Morley, car si $c=\rm constante$ alors il $\Delta t = 0$.
+
+	\item Transformation de Lorentz poincaré
+\begin{definition}{Définition - Transformée de Lorenz}
+	\begin{equation}
+		\left\{\begin{array}{rcl}
+			ct &=& \gamma\left(ct'+\beta x'\right)\\
+			x &=& \gamma\left(x'+\beta ct'\right)\\
+			y &=& y'\\
+			z &=& z'
+		\end{array}\right.
+	\end{equation}
+\end{definition}	
+\end{enumerate}
+
+\subsection*{3.2. L'espace et le temps}
+
+
+\subsubsection*{3.2.1. Notions d'évènements}
+
+Le temps n'est plus un invariant, on ne peut plus le séparer des coordonnées spatiales. Il faut décrire les expériences en termes d'évènements : "Il s'est passé quelque chose quelque part" comme par exemple allumage d'une lampe sur l'ISS. Les évènements sont indépendants du référentiel.
+
+\subsubsection*{3.2.2. Représentation spatiale}
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{Minkowski.png}
+% 	\caption{Diagramme espace-temps (diagramme de Minkowski)}
+% \end{figure}
+
+Deux évènements sont séparés par ce que l'on appelle l'intervalle, notée $\Delta s$. 
+
+\begin{equation}
+	\Delta s = c^2t^2-x^2-y^2-z^2
+\end{equation}
+
+L'intervalle est un invariant par changement de référentiel: $\Delta s = \Delta s'$. (commenter les valeurs de $\Delta s$ sur le graphique)
+
+\subsection*{3.3. Conséquences de la relativité restreinte. Application au paradoxe du train et du tunnel (exercice)}
+
+\textbf{Énoncé:} On a un train de longueur $L'$ mesuré dans $\mathcal{R}'$ (référentiel lié au train) animé d'une vitesse $\vec{v}=0.54c\vec{e}_x$ par rapport au référentiel $\mathcal{R}$ lié au tunnel (de longueur $L$ dans $\mathcal{R}'$). Le train rentre dans le tunnel rectiligne lors de l'évènement $A_1$. On prendra cet évènement comme origine spatiale et temporelle pour cet exercice où les deux référentiels sont confondus. On définit les évènements suivants:
+
+\begin{itemize}
+	\item $A_1$: l'avant du train rentre dans le tunnel : $\begin{pmatrix}
+		x_{A_1}\\
+		ct_{A_1}
+	\end{pmatrix}_{\mathcal{R}} = \begin{pmatrix}
+		0\\
+		0
+	\end{pmatrix}=\begin{pmatrix}
+		x'_{A_1}\\
+		ct'_{A_1}
+	\end{pmatrix}_{\mathcal{R}'} $
+
+	\item $A_2$: l'arrière du train entre dans le tunnel : $\begin{pmatrix}
+		x_{A_2}\\
+		ct_{A_2}
+	\end{pmatrix}_{\mathcal{R}}$
+
+	\item $B_1$: l'avant du train sort du tunnel : $\begin{pmatrix}
+		x_{B_1}\\
+		ct_{B_1}
+	\end{pmatrix}_{\mathcal{R}}$
+
+	\item $B_2$: l'arrière du train sort du tunnel : $\begin{pmatrix}
+		x_{B_2}\\
+		ct_{B_2}
+	\end{pmatrix}_{\mathcal{R}} $
+\end{itemize}
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width = .5\textwidth]{TrainEinstein.png}
+% 	\caption{Simulation du paradoxe du train à discuter avec les calculs suivants}
+% \end{figure}
+
+\subsubsection*{3.3.1. Relativitié simultanéité}
+
+Si nous disons que le train à 7h précise du matin sera complètement dans le tunnel, \textit{i.e.} $ct_{A_2}=ct_{B_1}$ dans le référentiel de l'observateur lié au tunnel. Dans le cadre de la relativité galiléenne où le temps est un invariant, dans le référentiel $\mathcal{R}'$ du train on aura aussi $t = t'$.
+
+En cinématique relativiste ce n'est pas vrai: 
+
+\begin{equation}
+	\begin{array}{rcl}
+	ct'_{A_2}-ct'_{B1} &= \gamma\left(ct_{A_2}-\beta x_{A_2}\right)-\gamma\left(ct_{B_1}-\beta x_{B_1}\right)\\
+	&= \gamma\left(ct_{A_2}-ct_{B_1}\right)-\gamma\beta\left(x_{A_2}-x_{B_1}\right)\\
+	&= \gamma\beta L
+	\end{array}
+\end{equation}
+
+Les deux évènements simultanés dans $\mathcal{R}$ ne le sont pas dans $\mathcal{R}'$. (Le montrer à l'aide de la simulation).
+
+\subsubsection*{3.3.2. Relativitié simultanéité}
+
+Dans $\mathcal{R}'$ le trains mesure une longueur $L'$ c'est la longueur propre du train dans son référentiel propre. On peut mesurer sa taille dans le référentiel du tunnel. 
+
+\begin{equation}
+	\begin{array}{rcl}
+		L'  &= x'_{A_2}-x'_{B_1}\\
+            &= \gamma(x_{A_2}-\beta ct_{A_2})-\gamma(x_{B_1}-\beta ct_{B_1})\\
+		    &= \gamma(x_{A_2}-x_{A_1})-\beta\gamma(ct_{A_2}-ct_{B_1})\\
+		L'&= \gamma L
+	\end{array}
+\end{equation}
+
+On en déduit que la longueur du train dans $\mathcal{R}$ est plus petite que dans $\mathcal{R}'$ (Le montrer à l'aide de la simulation).
+
+\subsubsection*{3.3.3. Dilatation du temps}
+
+Pour deux évènements, on peut établir la relation entre le temps propre et le temps mesuré dans un autre référentiel à condition que $x'2=x'1$ comme par exmpe pour les évènements $A_1$ et $B_1$.
+
+On calcule : 
+
+\begin{equation}
+	\begin{array}{rcl}
+		ct_{B_1}-ct_{A_1} &=& \gamma(ct'_{B_1}-ct'_{A_1})\\
+		T_{\rm impropre} &=& \gamma T_{\rm propre}.
+	\end{array}
+\end{equation}
+
+\subsection*{3.4. Loi de composition des vitesses}
+
+\begin{equation}
+	\left\{\begin{array}{rcl}
+		ct &=& \gamma\left(ct'+\beta x'\right)\\
+		x &=& \gamma\left(x'+\beta ct'\right)\\
+		y &=& y'
+	\end{array}\right.\leftrightarrow \left\{\begin{array}{rcl}
+		dt &=& \gamma\left(dt'+\dfrac{v_e}{c^2} dx'\right)\\
+		dx &=& \gamma\left(dx'+v_e dt'\right)\\
+		dy &=& dy'
+	\end{array}\right. \nonumber
+\end{equation}
+
+On obtient les vitesses en dérivant les coordonnées spatiales par rapport au temps : 
+\begin{equation}
+	\left\{\begin{array}{rcl}
+		v_x = \dfrac{dx}{dt} &=& \dfrac{v_x'+v_e}{1+v_e\dfrac{v_x'}{c^2}}\\
+		v_y = \dfrac{dy}{dt} &=& \dfrac{v_y'}{\gamma(1+v_e\dfrac{v_x'}{c^2})}
+	\end{array}\right.
+\end{equation}
+
+\section*{Conclusion}
+
+Pour ce premier cours de relativité restreinte, nous avons établi les bases d'une nouvelle cinématique. Il faut maintenant établir une nouvelle dynamique. Ainsi dans un prochain cours nous mettrons en équation la dynamique relativiste, en particulier nous écrirons les quadrivecteurs énergie et impulsion pour une particule en mouvement.
+
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

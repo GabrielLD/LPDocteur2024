@@ -1,0 +1,129 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 21: Absorption et émission de la lumière}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}} 
+\begin{itemize}
+    \item Licence 3
+\end{itemize}
+
+\textbf{Pré-requis:}
+\begin{itemize}
+    \item  Rayonnement du corps noir
+    \item notion de photon
+    \item optique géométrique
+    \item modèle scalaire des ondes lumineuses
+\end{itemize}
+
+\textbf{Références:}\medskip
+
+\begin{itemize}
+\item Dunod de PC 2014
+\item Cagnac Physique atomique
+\item Taillet Optique physique
+\end{itemize}
+
+\hrulefill
+
+
+\section*{Introduction}
+
+On peut distinguer deux types de sources : sources thermiques et sources spectrales. Le spectre du corps noir a déjà été étudié. On a vu qu'il s'agit d'un spectre continu où le $\lambda_{\rm max}$ dépend de la température. Son énergie est répartie de manière continue en fonction de la fréquence des ondes EM. Dans cette leçon on montre que les échanges d'énergie entre matière et rayonnement sont quantifiés.
+
+\section*{1. Spectre d'une lumière émise}
+
+\subsection*{1.1. Loi de Planck}
+
+On fait des rappels sur la loi de Planck (p173 Dunod PC)
+\textbf{On peut montrer le spectre obtenu en lumière blanche par déviation d'un prisme}. On a un spectre continu. Faire le rapport avec la courbe de la densité spectrale d'émission`.
+
+\subsection*{1.2. Émission par une lampe à Mercure BP}
+
+\textbf{Manipulation:} On montre que cette fois le spectre obtenu est discontinu. On a juste des raies !Montrer plusieurs spectres d'atomes différents.  Utilité : on a un spectre d'émission bien précis suivant les atomes utilisées. Application à la composition de l'atmosphère : \url{https://planet-terre.ens-lyon.fr/ressource/atmospheres-systeme-solaire.xml#analyse}. 
+
+\section*{2. Intéraction lumière matière (Dunod chap 30 Oscillateur optique)}
+
+\subsection*{2.1. Hypothèse de Planck et approche d'Einstein Dunod p1116}
+
+On introduit historiquement les différentes approcches. Inroduction du modèle de l'électron élastiquement lié. Interaction classique de l'électron ave le champ électromagnétique de l'onde lumineuse. Problèmes majeurs: structure discontinue du spectre, rayonnement thermique. On introduit le modèle de Planck $E = h\nu$ le quantum d'énergie. Modèle d'Einstein et notion de Photon.
+
+
+\subsection*{2.2. Retour sur le spectre de la lampe de Mercure}
+
+On donne l'expression de $\Delta E$ en fonction de la longueur d'onde. 
+\textbf{idée de manipulation:} On calcule l'énergie de transition pour les raies observées pour la lampe d'hydrogene
+\url{http://e.m.c.2.free.fr/niveaux-energie-hydrogene-emission-absorption.htm} \url{https://fr.wikipedia.org/wiki/Spectre_de_l%27atome_d%27hydrog%C3%A8ne}. Pour retrouver les transitions observées.
+
+\subsection*{2.3. Probabilité d'absorption et d'émission.}
+
+On suit le Dunod, on présente les probabilités de transition pour l'absorption et l'émission spontanée. On définit les coefficients d'Einstein.
+
+\subsection*{2.4. Largeur de la raie spectrale}
+
+Toujours le Dunod. On donne les causes de l'élargissement spectrale. Inégalité d'Heisenberg. $E=\hbar\omega\leftrightarrow \Delta t\Delta E\approx \hbar$. Effet Doppler, élargissement par chocs (raison pour laquelle on utilise une basse pression). On peut faire une analogie avec les phénomènes ondulatoireaccompagné d'un petit graphe en transparent pour illustrer les propos.\medskip
+
+\textcolor{gray!40}{En effet les phénomènes ondulatoires concernent tout aussi bien un rayonnement que des corpuscules matériels selon L.de Broglie. Or, une onde représentant un rayonnement et utilisée dans sa version idéale d'onde plane, possède une extension infinie aussi bien spatiale que temporelle. Pour une telle onde, la transformée de Fourrier qui donne le spectre en vecteurs d'onde ou pulsation consiste en une distribution de Dirac. Ceci correspond à une absence de dispersion sur la valeur de la pulsation $\Delta \omega = 0$. Si on utilise une onde tronquée dont la durée temporelle  est finie, le spectre en pulsation présente une dispersion de largeur finie. Ainsi, la durée temporelle de l'onde et la dispersion de sa pulsation varient en sens inverse et le traitement mathématique de la transformée de Fourier établit une relation du type : $\Delta t\Delta\omega\approx 1$.}
+
+\textbf{Manipulation} Au lieu de tracer au tableau un graphique on peut montrer avec un spectro fibrer la largeur spectrale d'une desraies de la lampe à l'aide du spectro fibré.
+
+\section*{3. Émission induite}
+
+\subsection*{3.1. Émission stimulée et bilan de population}
+
+On reprend le Dunod sur les coefficients d'Einstein.
+Bilan de population et relation entre les coefficients.
+
+\subsection*{3.2. Équilibre avec le rayonnement }
+Condition d'amplification 
+
+
+\section*{4. Le Laser}
+
+\subsection*{4.1. Fonctionnement}
+Comparaison avec une lampe spectrale: le Laser est monochromatique, directif, cohérent. Expliquer le principe en dégageant le rôle de la cavité. Nécessité d'une inversion de la population et du pompage. On peut l'illustrer via l'animation \url{https://phet.colorado.edu/sims/cheerpj/lasers/latest/lasers.html?simulation=lasers&locale=fr}.
+
+\subsection*{4.2. Amplification de l'onde lumineuse}
+
+On reprend le bilan de puissance dans le Dunod PC.
+
+\subsection*{4.3. Pompage}
+
+Population à l'équilibre thermiqu, nécessité d'une inversion de population. Sysème à 3 niveaux. Mener le calcul dans le Cagnac p 116.
+
+\subsection*{4.4. Cavité résonante: Fabry Pérot}
+
+Fabry Pérot, fréquences propres de la cavité, affinement des raies, aller-retours plus nombreux donc plus grande amplification.
+
+Cette partie devra être réalisée succintement en pratique car temps limité. On peut peut être mettre les calculs sur transparents pour aller plus vite. 
+
+\section*{Conclusion}
+
+Recap de la leçon, fonctionnement du Laser, ouvrir sur les applications du LASER. Ouverture manipulation de l'absorption d'une onde : Faire le spectre d'absorption/transmission de la rhodamine. On prend une lampe quartz-iode, et on éclaire la rhodamine avec un condenseur. On regarde avec une fibre optique connectée à spectra-suite sur l'ordi. On fait le blanc et le noir. On regarde le spectre d'absortion. Youhou.
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
