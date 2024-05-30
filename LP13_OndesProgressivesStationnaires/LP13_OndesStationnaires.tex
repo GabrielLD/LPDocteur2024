@@ -1,0 +1,147 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 13: Ondes progressives, ondes stationnaires}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+\item Mécanique de première année
+\item résolution d'équation différentielles
+\item Phénomènes ondulatoire, voc longueur d'onde ...
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Dunod PC
+  \item Dunod PSI
+  \item H prepa Ondes 2 eme année pour les calculs
+  \item Garing ondes mécaniques.
+  \item BUP Ondes \url{https://bupdoc.udppc.asso.fr/consultation/resultats.php}
+\end{itemize}
+\hrulefill
+
+\section*{Introduction}
+
+On peut introduire en parlant de la diversité d'ondes que l'on peut trouver.
+Ondes électromagnétiques (lumière), ondes mécanique (vagues, acoustiques, corde vibrante). 
+On peut montrer la cuve à onde, la corde de melde. Montrer que l'on peut observe une déformation qui se propage de proche en proche dans le milieu continu dans les deux cas. 
+
+\section*{Propagation des ondes}
+
+\subsection*{Définition de phénomènes ondulatoires}
+
+Définition floue à cause de la diversité des phénomènes concernés. On donne la définition sur slide. On met les points importants au tableau: Une onde correspnd à la modification des propriétés physiques d'un milieu matériel ou immatériel engendrée par une action locale qui se répercute/ se propage d'un point à un autre du milieu avec une vitesse finie déterminée par les caractéristiques du milieu. Au passage de l'onde, chaque point du milieu reproduit, avec un décalage temporel et une éventuelle atténuation, la perturbation originelle engendrée par une source fournissant de l'énergie au milieu. La propagation résulte généralement du couplage entre deux champs appelés grandeurs couplées.
+
+\subsection*{Corde vibrante (Dunod, Garing)}
+
+\subsubsection*{Modèle et hypothèses}
+On considère une corde de longueur $L$, homogène sans raideur, de masse $m$ donc de masse linéique $\mu_l = m/l$. La corde est tendue par une tension $\vec{T_0}$. On suppose la corde horizontale, ce qui revient à négliger l'effet de pesanteur devant la tension. Faire un schéma montrant ce que l'on observe.\medskip
+
+On s'intéresse aux petits mouvements transversaux, orthogonaux à la direction de propagation. On suppose les perturbations engendrées par le mouvement de la corde, par rapport à son état de repos au premier ordre. 
+
+\subsection*{Mise en équations}
+
+On écrit le bilan des forces sur un élément $dx$ de la corde. On projette selon $x$ et $y$  puis on prend le premier ordre pour la projection suivant $y$. On arrive alors à l'équation de d'Alembert:
+
+\begin{equation}
+    \dfrac{\partial^2 y}{\partial t^2} = c^2\dfrac{\partial ^2 y}{\partial x^2}.
+\end{equation}
+
+avec $c = \sqrt{\dfrac{T}{\mu}}$. On remarque que nous avons propagation d'une onde, car il y a deux grandeurs couplées. Ici les deux grandeurs couplées sont la composante $\vec{T}$ selon $O_y$ et la vitesse de la corde $v_y = \partial y/\partial t$. En effet si on pose $\vec{F}=-T\sin{\alpha}\approx -T\partial y/\partial x$ on a alors: 
+\begin{equation}
+    \left\{\begin{array}{ll}
+        \dfrac{\partial v_y}{\partial t} &= -\dfrac{1}{\mu}\dfrac{\partial F}{\partial x}\\
+        \dfrac{\partial F}{\partial t} &= -T\dfrac{\partial v_y}{\partial x}        
+    \end{array}\right.
+\end{equation} 
+
+(H-prepa p 32) Une déformation de la corde entraîne l’apparition d’une force qui
+peut elle-même entraîner une vitesse de déplacement, etc. Nous retrouvons ici
+un couplage semblable à celui qui entraîne la propagation d’une déformation
+dans la chaîne de masses couplées par des ressorts.
+
+\subsection*{Généralisation}
+
+On peut insister ici sur la généralité de l'équations de d'Alembert qui régit la propagation des ondes. On démontre l'équation de D'alembert rapidement sur transparents pour l'électromagnétisme. On peut évoquer que dans l'année de PC on pverra d'autres types d'équations de propagation (diélectriques, plasmas, etc).  Noter que la célérité de l'onde dépend des paramètres/ caractéristiques du milieu et de l'onde qui se propage. On peut peut être présenter un tableau qui récapitule les différents cas.
+
+\section*{Solutions générales de l'équation de d'Alembert: ondes progressives}
+
+On reprend le Dunod de PC p 892. 
+
+\subsection*{Ondes progressives}
+
+Onde se propageant avec une vitesse $c$ dans la direction de l'axe $Ox$ et dans le sens positif de cet axe. On montre sur transparents la forme de l'onde qui se propage dans une direction, amplitude. Rapidement (programme de première année). Démonstration que c'est une solution générale (On la trouve dans le PSI p870).
+
+\subsection*{Ondes progressives harmoniques}
+
+(Dunod PSI, PC, Hprepa) Faire appel à la lécon sur le traitement d'un signal. On peut décomposer les solutions de l'équation de d'Alembert en une somme de sinusoïdes (c'est permis par la linéarité de l'équation de d'Alembert). On cherche donc des solutions de la forme:
+\begin{equation}
+    s(x,t) = s_0 \cos{\omega t-kx+\phi}.
+\end{equation}
+
+On peut rappeler la signification des différentes grandeurs associées à l'onde: pulsation $\omega$, vecteur d'onde $\vec{k}=\omega/c$ dans le vide, $\phi$ phase à l'origine, période $T=2\pi/\omega$, fréquence, longueur d'onde. 
+
+\subsection*{Relation de dispersion}
+
+Il faut alors déterminer les caractéristiques propagatives de chaque OPPH. Pour ça il faut établir le lien entre $k$ et $\omega$ appelée relation de dispersion. La déterminer pour d'Alembert, déterminer et déphinir la vitesse de phase (pour une opph la vitesse de phase ne dépend pas de $\omega$ donc non dispersive). On peut évoquer un exemple d'ondes non dispesives, le cas des ondes de surfaces dans la cuve à ondes mais que l'on ne va pas s'intéresser à ce cas. On peut toutefois montre un graphique python pour montrer comment serait modifiée la relation de dispersion dans le cas des ondes de surface ?
+
+\section*{Une autre famille de solutions : ondes stationnaires}
+
+\textbf{Manipulation introductive} La corde de Melde.
+
+Montrer un schéma de la corde de Melde, dire que ça correspond au cas étudié déjà en début de leçon. Faire vibrer la corde à une fréquence permettant de bien voir l'aspect stationnaire sans stroboscope. On rappelle ce qu'est une onde stationnaire. 
+
+Rappeller ce qu'est une onde stationnaire: solution de l'équation de D'Alembert. Elle s'écrit:
+\begin{equation}
+    s(x,t) = s_0\cos(\omega t-kx)+s_0\cos(\omega t+kx)=2s_0\cos(\omega t)\cos(k x).
+\end{equation}
+
+\subsection*{Solution de l'équation de d'Alembert}
+
+On a vu expérimentalement un régime stationnaire, les deux variables (x et t) ne semblent plus couplées, on cherche une solution de la forme: $s(x,t) = f(x)g(t)$. Méthode des variables séparées que l'on obtient deux équations différentielles. On résout le système (Hprepa ou Dunod PSI/PC). On représente graphiquement la solution. On rappelle la notion de mode propre, de ventre et de noeuds à l'aide d'un schéma (Dunod PSI).
+
+\subsection*{Corde de Melde}
+
+On mène le calcul du régime harmonique forcé (si le temps le permet sinon on donne le résultat ou on s'aide de transparents). Évoquer la divergence et donc le fait qu'il faudrait prendre en compte la dissipation énergétique.
+
+\textbf{Manipulation} Poly de Philippe. Mesure de fréquences. On se met à une fréquence proche de la résonance sur l'excitateur et on mesure la fréquence à l'aide du stroboscope. On compte les noeuds, on vérifie que le premier noeud n'est pas trop loin du bout, sinon, on corrige en cohérence avec que l'on observe. On note la fréquence, on connaît la masse, donc la tension, on peut donc calculer $c$, on en déduit $\lambda$. À partir du nombre de noeuds et de la longueur de l'expérience, on remonte au fait qu'entre deux noeuds on trouve $\lambda/2$. En préparation on le fait pour différentes masses. Pour avoir une jeu de donné assez grand.
+
+\subsection*{Ondes stationnaire ou onde propagative}
+
+Faire le lien avec la partie précédente: On avait affirmé que les ondes progressives constituent une base des solutions. Les ondes stationnaires doivent pouvoir s'exprimer en somme d'ondes progressives. Le faire et interpréter l'onde stationnaire comme superposition d'une onde progressive et de son image réfléchie à une extrémité.
+
+\section*{Conclusion}
+
+Conclure sur les deux bases de solutions que l'on a trouvé. La question est laquelle choisir face à un problème ? La réponse : Ça dépend. SI on cherche des modes de résonance on cherche des ondes stationnaires, sinon on cherche des ondes progressives. On peut ouvrir sur les paquets d'onde transmission de l'information, enjeu capital dans notre société.
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

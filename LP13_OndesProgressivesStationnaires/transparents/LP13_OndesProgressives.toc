@@ -1,0 +1,14 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Propagation des ondes}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Definition}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Corde vibrante}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{Mise en équations}{3}{0}{1}
+\beamer@subsectionintoc {1}{4}{Généralisation}{3}{0}{1}
+\beamer@sectionintoc {2}{Solution générale de l'équation de d'Alembert: ondes progressives}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Ondes progressives}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Ondes progressives harmoniques}{4}{0}{2}
+\beamer@subsectionintoc {2}{3}{Relation de dispersion}{4}{0}{2}
+\beamer@sectionintoc {3}{Une autre famille d'ondes: ondes stationnaires}{4}{0}{3}
+\beamer@subsectionintoc {3}{1}{Solution de l'équation de d'Alembert}{4}{0}{3}
+\beamer@subsectionintoc {3}{2}{Corde de Melde}{4}{0}{3}
+\beamer@subsectionintoc {3}{3}{Onde stationnaire ou onde propagative}{4}{0}{3}

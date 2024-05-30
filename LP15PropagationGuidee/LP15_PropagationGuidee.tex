@@ -1,0 +1,477 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 15: Propagation guidée des ondes}
+
+\hrulefill\\
+\noindent\textbf{\large Niveau:}\medskip
+
+L1/L2\medskip
+
+\noindent\textbf{\large Prérequis:} \medskip 
+
+\begin{itemize}
+	\item Propagation des ondes électromagnétiques dans le vide et les milieux conducteurs
+	\item Réflexion sur un conducteur parfait
+	\item Ondes acoustiques
+	\item Fibre optique à saut d’indice
+\end{itemize}
+
+
+\noindent\textbf{\large Références:} \medskip
+\begin{itemize}
+	\item Cours d’Etienne Thibierge sur les ondes pour la prépa Agreg de Lyon.
+	\item BUP 742
+	\item Dunod PC
+	\item Sujet Agreg 2009/2004
+\end{itemize}
+
+\hrulefill\\
+
+\section*{Introduction}
+
+Pour transmettre une onde sphérique (sonore ou électromagnétique) à partir d'une source, on voit qu'il y a un problème car l'amplitude de l'onde varie en $1/r$ et la densité locale d'énergie de l'onde varie en $1/r^2$ par conservation de l'énergie. Si on veut transmettre une information, il faut donc soit une très grande puissance à l'entrée (dangereux et pas spécialement possible techniquement), soit être plus malin et guider l'onde jusqu'au récepteur. On va cependant voir qu'il existe quelques contraintes.
+\textcolor{blue}{Expérience qualitative : deux émetteurs piézo avec ou sans tube.}
+
+\section*{1. Propagation guidée d'ondes acoustiques}
+\subsection*{1.1. Intérêt du guide d'onde}
+
+\textit{On règle le générateur de salves pour produire 5 à 10 pulses et on observe l'amplitude du signal
+transmis Y avec et sans le tube. On doit récupérer un signal plus fort avec le tube (intérêt du guidage)
+et constater la présence d’au moins deux trains d’ondes si on augmente la sensibilité de la voie Y}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{guidageTPRennes.png}
+% 	\caption{Manipulation-gudiage d'une onde acoustique}
+% \end{figure}
+
+\textbf{Observations:}
+\begin{itemize}
+	\item On observe à l'oscilloscope le signal émis par l'émetteur et le signal reçu par le récepteur;
+	\item On note l'amplitude du signal émis par rapport au signal reçu par l'émetteur. Signal reçu nettement plus faible que le signal reçu.
+	\item On peut vérifier que $c=340~\rm m\cdot s$
+	\item Mesurer l'amplitude à deux distances différents (\textit{ex:} $L = 15~\rm cm$ et $L=41~\rm cm$)
+	\item Comparer avec la prédiction donnée par la conservation de l'énergie.
+	\item Mettre le guide d'onde. Mesurer l'amplitude du signal. Et montrer que l'amplitude est beaucoup plus grande. 
+	\item Remarquons l'apparition de signaux supplémentaires derrière le fondamental.
+\end{itemize} 
+
+Transition : Le signal de l'onde sonore est transmis avec moins de pertes d'amplitudes grâce au guide d'onde. En revanche pour faire cela, nous avons dû imposer des conditions strictes sur l'onde. Il en résulte un signal plus fort certes mais dispersé.
+
+\subsection*{1.2. Mise en équations}
+
+On se propose de faire l'étude analytique de la propagation d'une onde sonore dans un guide rectangulaire.
+
+\subsubsection*{1.2.1. Approximation des ondes sonores}
+Pour réaliser cette étude, nous allons considérer que l'onde acoustique est une petite perturbation par rapport à l'état d'équilibre:
+\begin{itemize}
+	\item Fluide considéré comme parfait;
+	\item La pesanteur est négligée;
+	\item $\frac{p_1}{p_0}\ll 1$;
+
+\noindent On peut comparer l'état d'équilibre $P_0= 1~\rm bar = 10^5~\rm Pa$ au seuil de douleur qui est de l'ordre de $20$ Pa, et l'autre limite le seuil minimum de l'audible $2\cdot 10^{-5}$ Pa.
+	\item  $\frac{v_1}{c}\ll 1$ avec $c=340~\rm m\cdot s$;
+	\item $\frac{\mu_1}{\mu_0}\ll 0$.
+\end{itemize}
+
+\subsubsection*{1.2..2 Mise en équation}
+
+\begin{definition}{Définition - Équation de d'Alembert}
+	\begin{equation}
+		\Delta p_1 -\frac{1}{c^2}\frac{\partial^2 p_1}{\partial t^2}.
+	\end{equation}
+\end{definition}
+La démonstration sera dans les pré-requis. La noter quand même pendant la préparation pour se préparer aux questions éventuelles. Notamment pour les hypothèses que l'on met en jeu pour parvenir au résultat ! 
+
+\subsubsection*{1.2.3. Position du problème}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=.3\textwidth]{guideOndeAcoustique.png}
+% 	\caption{Schéma du guide Onde acoustique (Agreg 2009)}
+% \end{figure}
+
+\begin{itemize}
+	\item $a\ll\lambda$ et $b\ll \lambda$.
+	\item Les paroies imposent la condition aux limtes tel que $\vec{v}\cdot \vec{n}$
+\end{itemize}
+
+\subsection*{1.3. Recherche de l'onde sonore : l'équation de d'Alembert}
+On cherche une solution stationnaire à l'équation de propagation des ondes acoustiques appliquée à ce guide d'onde. Pour ce faire on cherche une solution du type:
+
+\begin{equation}
+	p_1(x,y,z,t) = F(x)G(y)H(z){\rm e}^{j\omega t}
+\end{equation}
+
+On remplace cette expression dans l'équation de d'Alembert et il vient : 
+
+\begin{dmath}
+F''(x)G(y)H(z){\rm e}^{j\omega t}+ F(x)G''(y)H(z){\rm e}^{j\omega t} + F(x)G(y)H''(z){\rm e}^{j\omega t}=-\frac{\omega^2}{c^2}F(x)G(y)H(z){\rm e}^{j\omega t}.
+\end{dmath}
+On divise par $p_1$: 
+
+\[\frac{F''}{F} + \frac{G''}{G} +\frac{H''}{H}=-\frac{\omega^2}{c^2}\]
+
+Étant donné que les variables $x,y$ et $z$ sont indépendantes les unes des autres, alors $\dfrac{F''}{F}$,$\dfrac{G''}{G}$,$\dfrac{H''}{H}$ sont égales à des constantes. Dans ce cas on obtient le système d'équations suivant: 
+
+\begin{equation}
+    \left\{
+    \begin{array}{ll}
+        
+	\frac{1}{F(x)}\frac{d^2 F}{dx^2} &=-k_x^2 \\
+	\frac{1}{G(y)}\frac{d^2 G}{dy^2} &=-k_y^2 \\
+	\frac{1}{H(z)}\frac{d^2 H}{dz^2} &=-k_z^2
+
+\end{array}
+    \right.
+\end{equation}
+
+avec  $$\dfrac{\omega^2}{c^2}= k_x^2+k_y^2+k_z^2$$
+1111
+Pour résoudre ces équations nous avons besoin des conditions aux limites qui imposent que $\vec{v}\cdot \vec{n} = 0$. La vitesse est tangente à la paroie, par conséquent $v_x$ et $v_y$ sont nuls et $\partial p/\partial n = 0$  ($\mu_0 c \vec{v_1} = p_1$) soit:
+
+$$F'(x=0)=F'(x=a)= 0~\text{et}~ G'(y=0)=G'(y=a)=0$$
+
+
+\begin{itemize}
+    \item Si $k_x^2<0$ le discriminant est positif et les solutions sont de la forme d'une somme d'exponentielles réelles. Cette solution ne peut pas s'annuler deux fois donc la solution est nulle.
+    \item Si $k_x^2$ est positif le discriminant est négatif et donc les solutions de l'équations sont des solutions sous la forme d'une somme de cosinus et de sinus ou d'exponentielles complexes.
+\end{itemize}
+
+\begin{equation}
+	F(x) = Acos(k_x x) + Bsin(k_x x)
+\end{equation}
+En vue des conditions aux limites il vient:
+
+\begin{equation}
+	F(x) = cos\left(\frac{n\pi}{a}\right) \textrm{ avec } n\in\mathbb{N}
+\end{equation}
+
+En suivant le même raisonnement il vient pour G(y):
+
+\begin{equation}
+	G(y) = cos\left(\frac{m\pi}{b}\right) \textrm{ avec } m\in\mathbb{N}
+\end{equation}
+
+Enfin on écrira $H(z)$ sous la forme : 
+
+\begin{equation}
+	H(z) A_{m,n}{\rm e}^{jk_z z}+ B_{m,n}{\rm e}^{-jk_z z}
+\end{equation}
+
+avec \[k_z^2 = \frac{\omega^2}{c^2}-k_x^2 - k_y^2\]
+
+On en déduit $p_{m,n}$ tel que : 
+
+
+\begin{equation}
+	p_{m,n} = cos\left(\frac{n\pi}{a}\right)cos\left(\frac{m\pi}{b}\right)\left[A_{m,n}{\rm e}^{j\left(\omega t+ k_z z\right)}+ B_{m,n}{\rm e}^{j\left(\omega t- k_z z\right)}\right]
+\end{equation}
+
+Et la solution $p_1$ : 
+
+\begin{equation}
+	p_1(x,y,z,t) = \sum_n\sum_m p_{m,n}.
+\end{equation}
+
+\subsection*{1.4. Structure des ondes dans les guides d'onde}
+\subsubsection*{1.4.1. Relation de dispersion}
+
+À une fréquence donnée $\omega = 2\pi f$ nous trouvons donc plusieurs modes de propagation, caractérisés par $n$. La relation entre $omega, k$ et $n$ est donnée par \textbf{la relation de dispersion}.
+
+\begin{Resultat}{Relation de dispersion}
+	\[k_z^2 = \frac{\omega^2}{c^2}-\left(\frac{n\pi}{a}\right)^2-\left(\frac{m\pi}{b}\right)^2\]
+	\begin{equation}
+		k_z^2 = \frac{\omega^2-\omega_c}{c^2}
+	\end{equation}
+	ou encore : 
+	\begin{equation}
+		\frac{1}{\lambda_g^2} = \frac{1}{\lambda^2}-\frac{1}{\lambda_c^2}
+	\end{equation}
+	Chacun des termes de la relation de dispersion est positif, ce qui contraint les valeurs permises de $n$ pour un $\omega$ donné. Donc une onde de fréquence donnée ne peut se propager que dans un nombre fini de modes.
+\end{Resultat}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width = .5\textwidth]{Relation_dispersion.png}
+% 	\caption{Relation de dispersion}
+% \end{figure}
+
+Il faut commenter le fait que cette relation de dispersion est très générale. Valable pour les ondes électromagnétiques, notamment cas du guide d'onde rectangulaire. Étudions le cas tel que $m=0$. Exprimer la relation de coupure et la calculer. Place les différentes pulstions de coupure sur le graphique au fur et à mesure.
+
+\subsection*{1.5. Vitesse de phase et de groupe}
+
+\begin{definition}{Définition - Vitesse de phase et de groupe}
+	\begin{equation}
+		v_{\phi} = \dfrac{\omega}{k_z} = c\dfrac{\omega}{\sqrt{\omega^2-\omega_{n}}}=\dfrac{c}{\sqrt{1-\left(\dfrac{\omega_n}{\omega}\right)^2}}>c
+	\end{equation}
+	L'information n'est pas contenue dans la pahse c'est l'enveloppe qui code l'information.
+
+	\begin{equation}
+		v_{\phi} = \frac{d\omega}{dk_z} = c\frac{\lambda}{\lambda_g}<c
+	\end{equation}
+\end{definition}
+
+	$k_{z}^2 < \dfrac{\omega^2}{c^2} $ donc $ \lambda_g > \lambda $
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{vitesse_de_groupe.png}
+% 	\caption{Vitesse de groupe en fonction de l'espacement entre les deux plans conducteurs.}
+% \end{figure}
+
+\subsubsection*{Cas du guide d'onde circulaire}
+
+Voir poly de Philippe ou BUP 742
+\begin{equation}
+	k_z^2 = \frac{\omega^2}{c^2}-\left(\frac{\mu_{nm}}{2\pi a}\right)^2
+\end{equation}
+
+Pour que l'onde se propage dans ce guide d'onde il faut que $\omega>\omega_c$ soit $\lambda_c>\lambda$:
+\[\frac{\pi d}{\mu_{m,n}}>\lambda\]
+Ce qui donne \[d>\frac{\mu_{n,m}}{\pi}\lambda\]
+
+Dans le tube le mode supérieur au mode fondamentale est le mode $\mu_{1,1}=1.84$. Ce qui nous donne:
+\begin{equation}
+	d>0.59\lambda = 5mm
+\end{equation} 
+
+
+\begin{itemize}
+	\item tube de diametre 4.5 mm : monomode
+	\item tune de 17 mm plusieurs modes sont visibles.
+	\item On mesure les différentes vitesses observées et on essaye de les relier aux vitesses calculées pour le guide d'onde circulaire à l'aide du BUP 742
+\end{itemize}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=.3\textwidth]{munm.png}
+% 	\caption{tableau des $\mu_{m,n}$}
+% \end{figure}
+
+du coefficient $mu_{n,m}$ on en déduit $\lambda_c$ qui nous permet de calculer $\lambda_g$ et enfin la vitesse correspondante. Pour le tuyau de diamètre $17~\rm mm$ on peut trouver 6 modes différents:
+\begin{enumerate}
+	\item 02: v= 270 m/s
+	\item 11: v= 324.7 m/s
+	\item 12: v= 179/5 m/s
+	\item 21: v= 297.3 m/s
+	\item 31: v= 253.5 m/s
+	\item 41: v= 180.5 m/s
+\end{enumerate}
+
+
+\section*{2. Propagation guidée d'une onde électromagnétique}
+
+S'il nous reste du temps on peut parler de la fibre optique à gradient d'indice. Application majeure dans notre société, télécommunications... On explique au moins le principe de guidage de la lumière à l'aide d'un schéma. Si plus de temps disponible j'en doute. On peut parler des modes de porpagation de l'onde électromagnétique.
+
+\subsection*{2.1. Fibre optique à saut d'indice}
+
+
+On parlera de la fibre à saut d'indice. Pour que le guidage dans le coeur de la fibre soit efficace il ne faut pas que l'amplitude de l'onde soit diminuée par la partie réfractée : on doit se placer dans les conditions de \textbf{réflexion totale} : $n_2>n_1$ et l'angle $\theta$ tel que: $\cos\theta > \frac{n_2}{n_1}$.
+
+\textcolor{green}{Schéma de la fibre optique à saut d'indice à placer ici}
+
+Les angles d'incidence permettant la propagation dans la fibre prennent des valeurs discrètes. Chaque valeur de l'indice $n$ définit \textbf{un mode de propagation} dans la fibre optique.
+
+\subsection*{2.2. Guidge d'une onde électromagnétique}
+
+On pourrait étudier directement le problème précédent à l'aide de l'électromagnétisme mais calculs compliqués.
+
+\subsubsection*{2.2.1. Position du problème}
+
+\begin{enumerate}
+	\item On considère que les deux plans conducteurs sont parfaits. Il n'y a pas de perte d'énergie lorsque l'onde se réfléchi sur la paroie (=absence d'onde évansescente).
+	\item On suppose que le milieu où se propage l'onde est vide $n=1$.
+\end{enumerate}
+
+\begin{definition}{}
+	On étudie la propagation d'une onde électromagnétique dans le vide limité par deux plans conducteurs parfaits.
+\end{definition}
+
+
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\draw[-latex] (0,0) -- (0,2);
+% 		\draw (-.5, 2.0) node{$x$};
+% 		\draw (-.2,1) -- (0,1);
+% 		\draw (-.3,1) node{$a$};
+% 		\draw (-.2,0)--(0,0);
+% 		\draw (-.3,0) node{$0$};
+% 		\draw[fill = gray!40] (0,0)--(5,0)--(5,-.2)--(0,-.2)--cycle;
+% 		\draw[fill = gray!40] (0,1)--(5,1)--(5,1.2)--(0,1.2)--cycle;
+% 		\draw[-latex] (0,0)--(5.5,0);
+% 		\draw (6,-.5) node{$z$};
+% 		\croix{1}{.5};
+% 		\draw (1,.5) circle(.15);
+% 		\draw[-latex, red] (1,.5) -- (2,.5);
+% 		\draw (2.5,.25) node{$\vec{e}_z$};
+% 		\draw (4,2) node{\textcolor{gray}{Conducteurs}};
+% 	\end{tikzpicture}
+% 	\caption{Schéma du guide d'onde électromagnétique}
+% 	\label{fig1}
+% \end{figure}
+
+\begin{definition}{Définition - Équation de propagation}
+	\begin{equation}
+		\Delta\vec{E} - \frac{1}{c^2}\frac{\partial^2E}{\partial t^2} = 0.
+	\end{equation}
+
+	valable aussi pour le champ $\vec{B}$
+\end{definition}
+
+% \begin{remarque}
+	\textbf{Remarque: } Ce démontre à partir des équations de Maxwell en prenant le rotationnel du rotationnel de E. On intervertit les symboles opératoires.
+% \end{remarque}
+
+
+\subsubsection*{2.2.2. Conditions aux limites}
+
+
+Ces ondes, pour se propager dans le guide, doivent être compatibes avec les conditions aux limites imposées par les relations de passage entre le vide et les conducteurs parfaits.
+
+	\textbf{Relation de passage:}\medskip
+
+	\begin{itemize}
+		\item Continuité de la composante normale de $\vec{B}$ (en $x=0$ et en $x=a$)
+		\[\vec{B}(x=a)\cdot(-\vec{e_x}) = 0 = \vec{B}(x=0)\cdot(+\vec{e_x})\]
+		\item Continuité de la compoasnte tangentielle de $\vec{E}$ (en $x=0$ et en $x=a$)
+		\[\vec{E}(x=a)\wedge(-\vec{e_x}) = 0 = \vec{E}(x=0)\wedge(+\vec{e_x})\]
+	\end{itemize}
+
+On suppose que l'on a invariance par translation suivant ($Oy$), et donc les champs ne dépendent pas de la variable $y$.
+
+\subsubsection*{2.2.3. Modes Transverses Électriques et Magnétiques}
+
+On peut mettre en évidence deux groupes d'ondes les ondes Transverses Électriques et Magnétiques.
+
+\[\vec{\nabla}\wedge \vec{E} = ...\]
+
+\[\vec{\nabla}\wedge \vec{B} = ...\]
+
+On voit apparaître deux groupes (E_y, Bx, Bz) que l'on appellera le mode transverse électrique TE. Et le groupe (B_y, Ex, E_z) le groupe transverse magnétique. On dit que le champ électrique du groupe TE est transverse à la direction de propagation. 
+
+\subsection*{2.3. Étude d'un mode transverse électrique}
+
+La linérarité des des équations de d'Alembert et les conditions aux limites permettent d'étudier séparément les ondes TE et TM. 
+On cherche une solution de l'équation de propagation sous la forme d'une onde progressive qui se propage dans la direction $\vec{e_z}$ sous la forme:
+
+\begin{equation}
+	\vec{E}_y = E(x){\rm e}^{j\left(\omega t-k x\right)}\vec{e_y}
+\end{equation}
+
+Pour trouver la forme de $E(x)$, on remplace la forme de la solution dans l'équation de propagation. Il vient:
+
+\[\frac{\partial^2 E(x)}{\partial t^2} + \left(\frac{\omega^2}{c^2}-k^2\right)E(x) = 0.\]
+
+On remarque que la nature des solutions de cette équation dépend du signe de $K^2= \frac{\omega^2}{c^2}-k^2$.
+
+
+\begin{enumerate}
+	\item si $K<0$, dans ce cas la solution est de la forme: 
+	\[E(z) = \alpha{\rm e}^{Kx}+\beta{\rm e}^{-Kx}\]
+	Cette solution ne peut pas s'annuler en $x=0$ et en $x=a$, donc cette solution est nulle.
+	\item si $K= 0$, alors la solution est affine:
+	\[E(z)=\alpha x + \beta\]
+	Même conclusion
+	\item si $K>0$, Dans ce cas la solution s'écrit comme suit:
+	\[E(z) = \alpha\cos(Kx)+\beta\sin(Kx).\]
+\end{enumerate}
+	
+\noindent Les condition aux limites : $E(x=0)=E(x=a) = 0$, imposent des solutions telles que $A = 0 $ et $Ka=n\pi~n\in \mathbb{N}$. Par conséquent, une solution de l'équation de d'Alembert est: 
+
+\begin{equation}
+	\vec{E} = E_{0,n}\sin{\left(\frac{n\pi}{a}x\right)}{\rm e}^{j\left(\omega t-kx\right)}\vec{ey}
+\end{equation}
+
+On peut déterminer le champ $\vec{B}$ en calculant: 
+
+\[\vec{\nabla}\wedge \vec{E} = -\frac{\partial B}{\partial t}.\]
+
+On trouve : 
+\begin{dmath}
+\vec{B} = jE_{0,n}\frac{n\pi}{a}\cos(Kx){\rm e}^{j(\omega t -k x)}\vec{e_x} + \frac{k}{\omega}E_{0,n}\sin(Kx){\rm e}^{j(\omega t-kx)}\vec{e_z} 
+\end{dmath}
+
+Les conditions aux limites nous donnent la structure de l'onde. Il n'y a pas que le milieu de propagation qui influe mais aussi les conditions aux bords. 
+
+\subsection*{2.4. Relation de dispersion}
+
+On retrouve la même relation de dispersion que précédemment.
+
+	\textbf{Relation de dispersion:}\medskip
+
+	\begin{equation}
+		k^2  = \frac{\omega^2}{c^2}-K^2 = \frac{\omega^2}{c^2} - \left(\frac{n\pi}{a}\right)^2.
+	\end{equation}
+
+
+	TE$_n$ ne peuvent se propager que si \[\omega \geq n \frac{n\pi c}{a}\]
+
+	\noindent Aucune onde de $\omega < \frac{\pi c}{a}$ ne peut se propager.
+
+\textbf{Remarque:}
+	le cas où $k^2<0$ correspond au cas des ondes évanescentes.
+
+\subsection*{2.5. Vitessexs de groupe et de phase}
+
+Un paquet d'ondes est constitué du produit d'une onde \textbf{porteuse} modulée par une \textbf{enveloppe}. L'onde porteuse se propage à la \textbf{vitesse de phase}, tandis que l'enveloppe se propage à la \textbf{vitesse de groupe}.\medskip
+
+\textcolor{green}{Schéma porteuse / enveloppe}\medskip
+
+
+\noindent On peut réecrire la relation de dispersion tel que: 
+\[\frac{\omega^2}{c^2}-k^2=\frac{\omega_n}{c^2}\]
+De sorte que: 
+\begin{equation}
+	k^2 = \frac{\omega^2-\omega_n^2}{c^2}
+\end{equation}
+
+
+	\noindent\textbf{Vitesse de phase $v_{\phi}$:}\medskip
+
+	Par définition La vitesse de phase s'écrit : 
+	\begin{equation}
+	v_{\phi, n} = \frac{\omega}{k} =\frac{c}{\sqrt{1-\left(\dfrac{\omega_n}{\omega}\right)^2}}
+	\end{equation}
+
+	\noindent\textbf{Vitesse de groupe $v_g$:}\medskip 
+
+Par définition la vitessse de groupe s'écrit:
+\begin{equation}
+	v_{g,n}=\frac{d\omega}{dk} = c\sqrt{1-\left(\frac{\omega_n}{\omega}\right)^2}.
+\end{equation}
+
+\section*{Conclusion}
+
+On a vu comment guider une onde, quelles étaient les caractéristiques de la propagation : différents modes, et que le confinement provoquait une dispersion. On a ici considéré des conducteurs parfaits mais en réalité, il y a tjrs un phénomène de transmission de l’onde.
+
+\clearpage 
+
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

@@ -1,0 +1,152 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 14: Ondes acoustiques}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+\item Thermodynamique
+\item Écoulement parfait, diffusion thermique
+\item Ondes électromagnétiques dans le vide
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Dunod PC/PSI
+  \item H-prepa
+  \item TD Pass
+\end{itemize}
+\hrulefill
+
+
+\section*{Introduction}
+
+Les ondes acoustiques font partie des domaines de la physique que les savants ont étudiés pour expliquer les sens humains. D'abord pour l'aspect musical, puis pour l'aspect ondulatoire. Dans cette leçon nous allons nous attarder à comprendre ce que sont physiquement les ondes acoustiques, et s'attacher à expliquer comment le son se propage et comment on peut le détecter. (On peut differencier ondes acoustique et sonore (20Hz- 20kHz))
+
+Deux points sont importants dans cette description :
+  \begin{itemize}
+      \item La propagation nécessite un milieu matériel pour avoir lieu : expérience de la cloche sous vide (expérience de Otto von Guericke seconde moitié du XVIIème ou Robert Boyle plus performant) \url{https://www.youtube.com/watch?v=BC9Pod4cnpk},
+      \item La propagation est issue d'un couplage entre les variations de pression du fluide et les variations de vitesse des particules.
+  \end{itemize}
+
+\section*{1. Équation de propagation d'une onde de pression}
+
+\subsection*{1.1. Approximation acoustique}
+On considère un milieu de propagation qui est un fluide parfait où on néglige l'effet de la pesanteur. 
+\begin{itemize}
+  \item Au repos pression uniforme $P0$;
+  \item masse volumique $\mu_0$;
+  \item vitesse particulaire nulle
+\end{itemize}
+L'onde sonore est une perturbation par rapport à cet état d'équilibre. Lorsque l'onde sonore est émise, l'état du fluide est décrit par : 
+
+\begin{itemize}
+  \item $P(M,t) = P_0+p_1$ avec $p_1$ est une perturbation infinitésimal de $P_0\gg p_1$
+  \item $\mu(M,t) = \mu_0 +\mu_1$
+  \item $\vec{v}(M,t) = \vec{v_1}$
+\end{itemize}
+
+Les grandeurs $p_1/P_0$, $\mu_1/\mu_0$ seront traités comme des infiniments petits du premier ordre,comme toutes les autres perturbations que pourra engendrer l'onde sonore dans le milieu.
+
+\subsection*{1.2. équations locales}
+
+On écrit comme dans H-prepa p.95 l'équation locale de conservation de la masse, l'équation de Navier-Stokes que l'on simplifie avec les hypothèse énoncées plus haut (fluide parfait,...) on arrive à l'équation d'Euler. On linéarise et on explicite le coefficient de compressibilité. On arrive aux trois équations suivantes:
+
+\begin{equation}
+  \left\{\begin{array}{ll}
+    \dfrac{\partial \mu}{\partial t}+\rho_0\vec{\nabla}\cdot \vec{v} &= 0\\
+    \rho_0\dfrac{\partial \vec{v}}{\partial t} &=-\vec{\nabla}p\\
+    \mu &= \rho_0\chi_s p.
+  \end{array}\right.
+\end{equation}
+
+En éliminant $\mu$ on parvient à deux équations couplées pour la vitesse et la pression. On arrive à l'équation de d'Alembert en dérivant par rapport au temps l'équation sur la pression. Expliciter la célérité du son dans l'air. Faire l'analogie à l'équation de D'Alembert en électromagnétisme, mais attention relevé les différences entre les deux !!
+
+Pour la célérité du son on peut donner des ordres de grandeur (H-prepa) pour les différents types de fluides. 
+
+\textbf{Manipulation : } Mesure de la vitesse du son dans l'air et dans l'eau.
+
+\subsection*{1.3. Effet Doppler (application à la médecine effet doppler carotidien)}
+
+Mesure de vitesse d'un mobile par effet Doppler. On utilise le principe que l'onde sonore se déplace dans l'air à une vitesse constante (cf d'Alembert) Le déplacement de l'objet par rapport à l'onde entraîne un décalage en fréquence entre l'onde émise et l'onde reçue par le récepteur:
+
+\begin{equation}
+  \nu^\prime = \nu \dfrac{c-v_{obs}}{c-v_{source}}
+\end{equation}
+
+Si on utilise des ultrasons, la différence de fréquence est donnée dans les deux cas par la relation approchée: 
+
+\begin{equation}
+  \Delta\nu = |\nu_R-\nu_E|\approx \dfrac{2\nu_E V}{c}
+\end{equation}
+
+\section*{2. OPPH}
+
+\subsection*{2.1. Notations complexes}
+
+On repart directement de l'équation de d'Alembert, on montre la relation de dispersion.
+Montrer que la vitesse de phase est indépendante de la pulsation. Propagation non dispersive. C'est cool, car on peut donc les utiliser pour les télécommunications. Ondes longitudinales. 
+
+\subsection*{2.2. Notion d'impédance acoustique}
+
+Du système couplé on en déduit la relation $p=\rho_0 c v_1$. On définit l'impédance $Z$ qui quantifie le couplage entre les deux grandeurs.  Donner des ordres de grandeurs. On peut insister sur l'importance de l'impédance, ne dépend que du milieu et permet de connaître la perturbation en $\mu$ en fonction de celle $v$. Elle va nous permettre de traduire le comportement des ondes aux interfaces entre différents milieux. Ce qui nous intéresse ce n'est pas la perturbation en soit mais l'énergie transportée par l'onde acoustique. On peut proposer un exercice d'adaptation d'impédance dans les échographie.  
+
+\subsection*{2.3. Aspect énergétique}
+
+\subsubsection*{2.3.1 Puissance transférée à travers une surface }
+
+On admet les expression de densité d'énergie volumique, on démontre l'équation de continuité :
+
+\begin{equation}
+  \dfrac{\partial e}{\partial t}+\vec{\nabla}\cdot\vec{\Pi}=0.
+\end{equation}
+
+\subsection*{2.4. Intensité sonore}
+
+Une fois le vecteur de Poynting explicité, on donne la signification de l'intensité sonore à partir du vecteur de Poynting ainsi qu'en décibels.
+
+\section*{3. Production, transmission et détection d'une onde sonore}
+
+\subsection*{3.1. Ondes sphériques}
+
+Ondes sonores à symétrie sphérique produite par une sphère dont le rayon varie. On aprt de l'équation de D'Alembert en sphérique. On montre que l'amplitude de l'onde décroît en $1/r$ et l'intensité en $1/r^2$. On suit le Dunod de PC, jusqu'à trouver l'intensité sonore en décibels en fonction des grandeurs $I=\log\left(\dfrac{a^2\omega^4r_0^4}{2cr^2I_0}\right)$ On peut changer $a$ et $\omega$. hautes fréuences $a grand$. Pour les hautes fréquences $a$ varie beaucoup. mais on peut changer le rayon de la sphère pulsante pour obtenir une cariation d'amplitde $a$ plus faible : Application aux Hauts parleurs présents sur les chaîne Hifi. 
+
+\subsection*{3.2. Réflexion, transmission application à l'échographie médicale: adaptation d'impédance} 
+
+On résoud l'exercice du TD de PASS, on complète avec l'étude documentaire du TOUT en Un de PSI. 2020. 
+
+\section*{Conclusion}
+
+Les ondes acoustiques sont des solutions de l'équation de d'Alembert comme EM. Mais différentes ce sont des ondes longitudinales qui nécessitent d'un milieu pour se propager. Elles sont très importantes pour notre société lié à la palette d'application : télécom, imagerie médicale etc.
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

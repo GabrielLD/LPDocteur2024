@@ -1,0 +1,201 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 12: Traitement d'un signal. Étude spectrale}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+\item Diagrammes de Bodes
+\item Électronique, RC, RLC
+\item Fonctions de transf ert
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Dunod PC, MP, PTSI;
+  \item Jeremie Neveu \textit{Télécommunications};
+  \item Tailler \textit{Dictionnaire de physique}
+\end{itemize}
+\hrulefill
+
+
+\section*{Introduction}
+
+\textcolor{red}{Accroche : (cf cours Jérémy Neveu) }L'enjeu des communications est de pouvoir envoyer un signal (\textit{i.e.} une information) depuis un émetteur jusqu'à un récepteur afin que celui-ci puisse être d'une part reçu et d'autre part compris.
+
+\begin{definition}{Définition 1 - Signal}
+  (ref Taillet p674) Variation temporelle ou spatiale d'une quantité physique mesurable (tension, force, lumière, ...) portant une information.
+\end{definition}
+
+\begin{definition}{Définition 2 - Traitement du signal}
+  Transformation d'un signal reçu par un récepteur pour en retirer l'information transmise initialement par un émetteur. Ex : si un observateur cherche à analyser les nuages émis par le feu (\textcolor{green}{signal}), il doit se séparer de celle émise par l'environnement (\textcolor{green}{bruit}) par différents moyen (se couvrir les yeux pour se protéger du soleil). \og Se couvrir les yeux \fg~ = filtrage.
+\end{definition}
+
+
+\section*{1. Contenu spectral d'un signal périodique}
+
+\subsection*{1.1. Signal périodique non sinusoïdal}
+
+On suit le dunod de MP. On donne la définition d'un signal périodique et sa décomposition en série de Fourier (sur tranparets). On donne la formule de la somme et le calcul de chacun des termes.\medskip
+
+Un signal $s(t)$ est périodique s'il reprend identiquement la même valeur à intervales de temps égaux: $s(t+T)=s(t)$ où $T$ est la période du signal. Tout signal périodique de fréquence $fs$ de forme quelconque est constitué de la superposition de signaux sinusoïdaux de fréquences multiples de $fs$. Ainsi toute fonction réelle peut s'écrire sous la forme d'une somme infinie de fonctions sinusoïdales: 
+
+\begin{equation}
+  s(t)=s_0+\sum \left[a_n\cos{2\pi nf_st} + b_n\sin{2\i n f_st}\right]
+\end{equation}
+Les coefficients complexes $c_n$ sont sous la forme de :
+
+$$  a_n = \dfrac{2}{T}\int_{0}^T{s(t)cos(2\pi nf_s t)dt}$$
+
+$$  b_n = \dfrac{2}{T}\int_{0}^T{s(t)cos(2\pi nf_s t)dt}$$
+
+Remarques: il faut toutjours étudier la parité de la fonction:
+\begin{itemize}
+  \item si s est paire, la décomposition ne comporte que des fonctions cosinus $b_n=0$
+  \item si s est impaire elle ne comporte que des fonctions sinus $a_n =0$
+\end{itemize}
+On peut réecrire cette somme en regroupant les termes de même fréquence: 
+
+\begin{equation}
+  s(t)=s_0+\sum a_n\cos{2\pi nf_st+\phi_n}
+\end{equation}
+
+Cette écriture est très pratique, car elle fait apparaItre l'amplitude et la phase du signal. Le terme constant $a_0$ est la valeur moyenne du signal notée $\langle s(t) \rangle$. Les termes en $n$ sont les harmoniques. $n=1$ correspond au fondamental. On décrit la composante continue, i.e. la moyenne du signal. La composante sinusoïdale du fondamental et les harmoniques.
+
+\subsection*{1.2. Exemple avec un signal créneau}
+On donne un exemple à l'aide d'un code python. On prend un signal créneau de période $T=2~\rm ms$, d'amplitude crête à crête $s_{cc}=2~\rm V$. Donc de valeur moyenne $\langle s\rangle = 1$. Ce signal admet un développement en série de Fourier. Avec $f=1/T$ la fréquence du signal. Pour un signal créneau, qui est une fonction impaire. Donc $a_n=0$. On choisit un signal centré en $0$. Donc $s_0 = 0$. Il nous reste qu'à calculer les coefficients $b_n$: 
+
+
+$$b_n = \dfrac{2}{T}\int_{0}^Ts(t)\sin(n\omega t)dt = \dfrac{4}{T}\int_{0}^{T/2}s(t)\sin{n\omega t}dt = \dfrac{-4}{n\pi}(cos(n\pi)-\cos(0))$$
+Deux cas : 
+\begin{itemize}
+  \item si $n$ est pair $b_n=0$
+  \item si $n$ est impair $b_n = \dfrac{4}{n\pi}$
+\end{itemize}
+On peut alors réecrire le signal $s$ tel que:
+
+\begin{equation}
+  s(t) = \dfrac{4}{\pi}\sum \dfrac{1}{2n+1}\sin{(2n+1)\omega t}
+\end{equation}
+
+On peut montrer numériquement l'approximation d'un créneau et ou d'un triangle par le développement en série de Fourier, On montre que les hautes fréquences permettent d'approximer les variations rapides de la fonction.  Et montrer que ça ne marche pas pour un bruit blanc.
+
+\subsection*{1.3. Spectre d'un signal périodique}
+
+On s'intéresse à un spectre en amplitude, on trace la valeur de chaque coefficient $a_n$ en fonction de la fréquence $f_n$ de l'harmonique. On peut commencer par présenter le spectre d'un sinus pur, et à côté les spectres du signal triangulaire et créneau.
+
+\subsection*{1.4. Action d'un filtre sur un signal périodique}
+
+On rappelle la définition de la fonction de transfert d'un système linéaire: 
+
+\begin{equation}
+  H(j\omega) = \dfrac{s}{e} = \dfrac{S}{E}{\rm e}^{j(\phi_s-\phi_e)}
+\end{equation}
+
+Ainsi que les définitions du gain et de la phase  associée à la fonction de transfert.  On peut montrer un diagramme de Bode d'un filtre passe bas comme dans le dunod de ptsi et en déduire l'effet du filtre sur un sinus. Puis sur un  signal périodique comme le signal carré.\medskip
+
+\textbf{Manipulation:} On peut caractériser un filtre par exemple passe bas d'ordre 1. On réalise un filtre passif avec un RC qui donne un gain de 1 avant la coupure. On fait la manipulation avec la boîte à décades pour la résistance. Faire l'analyse en préparation. On prend un point ou deux en direct pour aller vite (sur regressi).\medskip
+
+On superpose le filtre et la décomposition de Fourier du signal et on fait varier la fréquence de coupure du passe bande dans le programme python. On montre sur le filtre d'avant qu'en envoyant un signal carré, il est modifié et que selon la valeur de la résistance du filtre, le signal est modifié.  On compare à ce que l'on a vu en première partie.
+
+\textbf{transition : } Maintenant qu’on a décrit un signal et qu’on sait en retirer des informations, on va voir comment en envoyer un et comment le réceptionner.
+
+
+\section*{2. Électronique numérique}
+
+\subsection*{2.1. Signal réel, signal numérique}
+On décrit le processus d'acquisition d'un signal numérique. Acquisition, valeurs continues contre valeurs discrètes. Une acquisition se déroule en deux phases. On prélève des échantillons du signal qu’on convertit ensuite en données numériques. Le principe de base de l’échantillonnage consiste à utiliser un interrupteur commandé par un signal d’horloge. La quantification conduit par nature à des écarts entre le signal réel et le signal équivalent aux valeurs numériques obtenues à l’issue du processus.
+
+
+\subsection*{2.2. Quantification du signal}
+Entre le signal numérisé est la superposition du signal réel et d'un signal d'erreur lié au processus de quantification. Ce bruit d'erreur parasite le signal réel et empêche de voir les détails les plus fins du signal réel. (voir poly de Philippe sur le traitement du signal)
+On peut utiliser le programme python Quantification_filtrage.py. 
+
+\subsection*{2.3. Analyse spectrale}
+
+Transformée de Fourier, critère de Shannon. Démonstration rapide basée sur le Dunod MP/MP*. Montrer le critère de Shannon sur l'oscilloscope. Durée d'acquisition sur la résolution etc. Voir poly de Philippe.
+
+\subsection*{2.4. Mise en pratique}
+
+Lire le complément "pratique de l'analyse spectrale" dans le dunod. À compléter avec le PSI/PSI* qui présente un autre aspect, notamment sur une partie à l'oscilloscope.\textbf{Manipulation:} Diapason avec microphone, FFT à l'oscilloscope, mesure via une carte d'acquisition et latispro. On envoie sur le programme python pour analyse. Attention sur le programme python il peut y avoir un probleme. Il faut cliquer deux fois pour s'assure de la prise en compte de la fréquence d'échantillonage.
+
+\subsection*{2.5. Filtrage numérique}
+
+On écrit la discrétisation du filtre d'après la FT : de H on passe à la relation entre s et e, on remplace $j\omega$ par la dérivation. On en arrive après calcul à une relation de récurrence entre l'entrée et la sortie (Dunod MP). On montre pour la dérivation, on évoque l'intégration à l'oral en montrant que sur le programme python ça marche mieux. On revient sur le programme python quantification_fitrage.textbf
+
+\section*{3. Traitement non-linéaire d'un signal: modulation-démodulation}
+
+On bascule sur le programme de PSI. 
+Fil conducteur : radio analogique. Cf cours de Jérémy.
+Deux problèmes : 
+\begin{itemize}
+    \item \textcolor{green}{l'encombrement :} par exemple deux personnes qui parlent en même temps,
+    \item dimension des antennes : longueur de l'antenne doit être de l'ordre de la longeur d'onde soit 1500km pour $f=20Hz$ et 1.5km pour $f=20000Hz$ ...
+\end{itemize}
+
+
+\subsection*{3.1. Modulation}
+
+On explique le principe, on montre la modulation d'un point de vue mathématique (p151) en détaillant l'impact sur la fréquence. Montrer le spectre en illustration. \textbf{Réaliser la modulation en amplitude avec un multiplieur poly de philippe telecommunications } 
+
+
+On souhaite passer à des tailles d'antennes raisonnable de l'ordre du mètre : soit $f=\frac{c}{\lambda}=30$MHz : c'est le principe de la modulation.
+
+\textcolor{green}{Modulation :} Accrocher un signal à transmettre à une porteuse : modulation de la porteuse. Ex : pigeon voyageur (porteuse) pour faire passer une lettre (signal modulant) d'un point A à un point B\\
+
+Pour un signal EM : 
+\begin{itemize}
+    \item $V_m(t)=A+B\cos(\omega_mt)$ pour la modulation (GBF Agilent à $\frac{\omega_m}{2\pi}=500$~Hz : le message à faire passer)
+    \item $V_p(t) = V_0\cos(\omega_pt)$ (BGX Métrix à $\frac{\omega_p}{2\pi}=50$~kHz : le pigeon voyageur)
+\end{itemize}
+
+Faire le calcul à la sortie d'un multiplieur. Deux cas particuliers : montrer modulation DBPC ($A\neq0$) et DBPS ($A=0$).
+
+\subsection*{3.2. Démodulation}
+
+Principe de la détection synchrone, il faudrait réaliser une détection synchrone.
+
+Intérêt de la 
+\textcolor{red}{Attention :} pour que ça puisse fonctionner, il faut que la porteuse puisse être regénérée (on peut le faire avec une boucle à vérouillage de phase cf cours Jérémy, le mentionner peut-être en conclusion de la partie).\\
+
+\textcolor{blue}{Manip qualitative : démodulation par détection synchrone}. Le TP est bien fait, montrer le signal qu'on module, le signal après multiplication par la porteuse et le signal après le filtre passe-bas.
+
+\subsection*{3.3. Autres types de modulation}
+
+Modulation en fréquence, et démodulaton de phase. 
+
+\section*{Conclusion}
+
+On peut ouvrir sur d'autres formes de filtrage
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

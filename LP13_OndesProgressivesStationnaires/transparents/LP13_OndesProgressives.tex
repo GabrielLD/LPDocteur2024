@@ -1,0 +1,56 @@
+% IMPORTANT: PLEASE USE XeLaTeX FOR TYPESETTING
+\documentclass[10pt]{beamer}
+\input{pckg_beamer.tex}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage[scientific-notation=true]{siunitx}
+\usetikzlibrary{matrix}
+\newcommand{\diff}{\mathrm{d}}
+
+\title{Leçon :Ondes progressives et stationnaires}
+
+% document body
+\begin{document}
+\begin{frame}{}
+    \titlepage
+
+    \begin{tabularx}{\textwidth}{l@{:\,\,}X}
+        \textbf{Niveau} 	  & CPGE PSI\\
+        \textbf{Prérequis} & Mécanique de première année \\
+        & Résolution d'équations différentielles \\
+        & Phénomènes ondulatoires, vocabulaire longueur d'onde...
+    \end{tabularx}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+
+\section{Propagation des ondes}
+\subsection{Definition}
+\subsection{Corde vibrante}
+\subsection{Mise en équations}
+\subsection{Généralisation}
+\begin{frame}{\insertsubsection}
+    Équation de Maxwell dans le vide: 
+    \begin{equation}
+        \begin{array}{cc}
+            \vec{\nabla}\cdot \vec{E} = \dfrac{\rho}{\epsilon_0} & \vec{\nabla}\wedge \vec{E} = -\dfrac{\partial \vec{B}}{\partial t}\\
+            \vec{\nabla}\cdot \vec{B} =0 &   \vec{\nabla}\wedge \vec{E} = \epsilon_0\mu_0\dfrac{\partial \vec{E}}{\partial t}
+        \end{array}
+    \end{equation}
+
+    $$\vec{\nabla} \wedge \vec{\nabla} \vec{X} = \vec{\nabla}\left(\vec{\nabla}\cdot \vec{X}\right) - \Delta X$$
+\end{frame}
+\section{Solution générale de l'équation de d'Alembert: ondes progressives}
+\subsection{Ondes progressives}
+\subsection{Ondes progressives harmoniques}
+\subsection{Relation de dispersion}
+\section{Une autre famille d'ondes: ondes stationnaires}
+\subsection{Solution de l'équation de d'Alembert}
+\subsection{Corde de Melde}
+\subsection{Onde stationnaire ou onde propagative}
+\begin{frame}
+    Merci pour votre attention
+\end{frame}
+\end{document}

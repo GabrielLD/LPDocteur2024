@@ -1,0 +1,356 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 16: microscopie optique}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}} 
+\begin{itemize}
+    \item Première année CPGE
+\end{itemize}
+
+\textbf{Pré-requis:}
+\begin{itemize}
+    \item Optique géométrique
+\end{itemize}
+
+\textbf{Références:}\medskip
+
+\begin{itemize}
+	\item Optique, une approche expérimentale et pratique,
+	S.Houard.
+	\item La microscopie optique moderne, G.Wastiaux,
+	Tec $\&$ Doc, Lavoisier, 1994
+	\item J.Ph. Pérez. Optique : fondements et applications. Dunod, 2011.
+	\item Sextant. Optique expérimentale. Hermann, 1997.
+	\item L. Aigouy. Les nouvelles microscopies : à la découverte du nanomonde.
+	Belin, 2006.
+	\item À la découverte de l'univers  Comins, De Boeck(photo)
+	\item Les instruments d'optique, étude théorique, expérimentale et pratique Luc Dettwiller
+\end{itemize}
+
+\hrulefill
+
+
+
+\section*{Introduction}
+
+Comment peut-on voir le monde microscopique (micro petit en grec) ? 
+C'est une question importante pour de nombreux secteur de la recherche, en particulier en biologie, mais pas que ! 
+Informatique, géologie, métallurgie etc... 
+
+\begin{enumerate}
+\item image grossie d'un petit objet, exemple cheveux ? 
+\item détails de l'image 
+\end{enumerate}
+
+Introduction historique : 
+\begin{enumerate}
+	\item 1665, Hooke, microscope composé mais de mauvaise qualité 
+	\item 1830, Bancks, microscope simple mais grand pouvoir de résolution.
+	\item etc ...
+\end{enumerate}
+
+L’objet de cette leçon n’est pas de présenter une liste exhaustive des techniques de microscopies optiques mais
+plutôt de s’attarder sur le dispositif classique du microscope à deux lentilles pour en comprendre les enjeux et les limites, et d’étudier les réponses modernes aux différents problèmes posés, notamment les questions de résolution et
+de contraste.
+
+\section*{1. Lois de l'optique géométrique}
+\subsection*{1.1. Lois de Snell-Descartes}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width = .25\textwidth]{Snell_Descartes.png}
+% \end{figure}
+
+	\begin{definition}{Définition - lois de Snell-Descartes}
+\begin{enumerate}
+			\item Les rayons, incidents, réfléchis et réfractés sont coplanaires;
+			\item $i_1 = -i_1'$;
+			\item $n_1\sin{i_1} = n_2\sin{i_2}$.
+		\end{enumerate}
+	\end{definition}
+
+Il est possible d'obtenir une réflexion totale à l'interface si l'angle d'incidence $i_1>i_lim$ lorsque $n_2>n_1$: 
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width = .25\textwidth]{Reflexion_totale.png}
+% \end{figure}
+
+\subsection*{1.2. Lentille mince}
+
+
+	\begin{definition}{Défintion - lentille mince}
+		Une lentille mince est une lentille pour laquelle $d\ll r$.
+	\end{definition}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width = .25\textwidth]{lentille_mince.png}
+% \end{figure}
+
+$\bullet$ Donner d'autres exemples de lentilles convergentes et divergentes.
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width = .4\textwidth]{Construction_image_par_une_lentille.png}
+% \end{figure}
+
+		\textbf{Relations de conjugaison pour une lentille mince:}\medskip
+
+		Dans les \textbf{conditions de Gauss} on a : 
+		\begin{itemize}
+		\item $\frac{1}{\overline{OA'}}-\frac{1}{\overline{OA}} = \frac{1}{f'}$;
+		\item $\overline{F'A'}\cdot \overline{FA} = -{f^\prime}^2 $;
+		\end{itemize}
+
+
+\section*{2. Microscope optique (à deux lentilles)}
+\subsection*{2.1. Description, schéma, montage}
+
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width = .5\textwidth]{Microscope.png}
+% \end{figure}
+
+But : exagérer les angles sous lesquels les différents points de l'objets sont vus pour que l'image de l'objet sur la rétine soit la plus grande.
+
+
+\subsection*{2.2. Grossissement, Grandissement, Puissance et profondeur de champ}
+
+	\begin{definition}{Définition - Grandissement}
+
+		Le Grandissement $\gamma$ de l'objectif est défini par la relation suivante:
+		$$\gamma = \frac{\overline{A_1B_1}}{AB} = \frac{A_1B_1}{O_1I}=-\frac{\Delta}{f_1'}$$.
+	\end{definition}
+
+Manips : Étude d'un objectif et determination de la distance focale.
+
+
+	\begin{definition}{Grossisement commercial}
+
+		Pour l'oculaire l'image est à l'$\infty$. On définit le grossissement comme le rapport de l'angle sous lequel on voit l'objet à travers l'instrument $\alpha'$ et l'angle sous lequel on voit l'objet à l'oeil nu $\alpha$ à une distance de $25~\rm cm$. 
+
+		$$G_{\rm c,oc} = \frac{\alpha'}{\alpha}$$
+		$d_m$ étant la distance limite d'accomodation.
+	\end{definition}
+
+
+	\begin{definition}{Définition - Puissance intrinsèque}
+		La puissance intrinsèque d’un microscope est la valeur absolue du rapport entre l’angle sous lequel on voit l’objet à travers le microscope et la taille de l’objet
+		$$P_i = \frac{\alpha'}{AB}$$
+	\end{definition}
+
+Pour le microscope étudié ici, dans le triangle ($O_2A_1AB_1$) on a: $$\tan\alpha^\prime \approx \alpha^\prime = \frac{A_1B_1}{f_{oc}^\prime}.$$ 
+
+
+Donc $$G_{\rm c,oc} = \frac{\alpha^\prime}{\alpha} = \frac{\frac{A_1B_1}{f_{oc}}}{\frac{A_1B_1}{dm}}. = \frac{dm}{f_{\rm oc}^\prime}$$
+où $dm$ est la distance minimale d'accomodation de l'oeil ($dm=25~\rm cm$). De plus : 
+
+$$P_i = \frac{\alpha^\prime}{AB} = \frac{A_1B_1}{AB}\frac{\alpha^\prime}{A_1B_1}= |gamma|\frac{1}{f_{oc}^\prime}=|\gamma|P_{oc}$$.
+
+Par conséquent la puissance du microscope est mesurée par le produit du grandissement de l'objectif par la puissance de l'oculaire.
+
+Pour le grossissement du microscope dans le cas où l'oeil observe l'objet à l'infini à travers l'oculaire. C'est à dire que $A_1=F_2$. 
+
+$$G_{com,mic} = \frac{\alpha^\prime}{\alpha} = \frac{\frac{A_1B_1}{_f{\rm oc}^\prime}}{\frac{AB}{dm}} = \frac{A_1B_1}{AB}\frac{dm}{f_{\rm oc }^\prime} = \frac{F_1^\prime F_2}{O_1F_1^\prime}\frac{dm}{f_{\rm oc }^\prime} = \frac{\Delta dm}{f_{\rm ob}^\prime f_{\rm oc}^\prime}$$
+
+
+
+
+		\textbf{Grocissement du microscope:}\medskip 
+
+		On la relation suivante pour le grossissement du microscope: 
+		$$G_{\rm com,mic} = |\gamma_{ob}|G_{c, oc}$$, de la même façon on obtient : $$P_i = \frac{\Delta}{f_{ob}^\prime f_{oc}^\prime }$$.
+
+
+Manips : (faire schéma) Mesure du grossissement commercial à l'aide d'une mire micrometrique : $Gc = \frac{D\times 0.25 (m)}{d}$
+
+\subsection*{2.3. Ouverture numérique}
+
+L'objectif est la pièce maîtresse du microscope. L'objectif contribue au grossissement mais surtout détermine le pouvoir de résolution du microscope c’est-à-dire sa capacité à distinguer 2 objets. Le pouvoir de résolution est directement lié à l’ouverture numérique définie par :
+
+	\begin{definition}{Définition - Ouverture numérique}
+
+		$$\text{O.N} = n \sin\theta$$
+		Avec n l’indice optique du milieu et $\theta$ l’angle maximum par rapport à l’axe optique.
+
+	\end{definition}
+
+
+Manip : Détermination expérimentale de l’ouverture numérique.
+
+
+\section*{3. Limites et Aberrations}
+\subsection*{3.1. Limite du pouvoir de résolution, critère de Rayleigh}
+
+la lumière n'est pas géométrique mais ondulatoire. L'image d'un point obtenue à travers un instrument optique n'est pas un point mais une tâche appelée tâche d'Airy.
+
+
+	\begin{definition}{Définition - Critère de Rayleigh}
+
+		Deux points A et B sont résolus si les tâches d'Airy entourant $A^\prime$ et $B^\prime$ ne se recouvrent pas à plus de leur demi largeur. On peut montrer que : 
+
+		$$AB = 1.22\frac{\lambda}{2\text{O.N}} = 1.22\frac{\lambda}{2n \sin\theta}.$$
+	\end{definition}
+
+Deux points A et B peuvent être vu séparés à travers le microscope, à condition que l'angle sous lequel est vue l'image des deux points soit supérieur à $3\cdot 10^{-4}$ rad. C'est le pouvoir de résolution du microscope. Pour un microscope dont le grossissement $G = 400$.
+
+
+$G_c=\frac{\alpha^\prime}{\alpha}$ avec $\alpha=\frac{AB}{0.25}$.\medskip
+
+Dans ce cas $AB = \frac{\alpha^\prime \times 0.25}{400} = 0.2~\rm\mu m$ Le pouvoir de résolution du microscope ne dépend que du grossissement commercial. Cependant, on ne peut pas augmenter le pouvoir de résolution du microscope en augmentant le grossissement commercial. A partir d’un certain grossissement (de l’ordre de 1500), les phénomènes de diffraction ne sont plus négligeables et ils limitent le pouvoir de résolution des microscopes.\medskip
+
+Par conséquent, pour diminuer AB, on peut soit : 
+\begin{enumerate}
+	\item diminuer $\lambda$;
+	\item augmenter O.N. (n ou $\theta$).
+\end{enumerate}
+
+Conclusion : Même dans les meilleures conditions, la résolution optique reste limitée à la demi longueur d'onde. On ne peut donc pas avoir des microscopes optiques infiniment grossissant avec des lentilles classiques.
+
+\subsection*{3.2. Aberration sphériques, chromatiques et  profondeur de champ}
+
+\textbf{Aberration sphérique :} Si l’on envoie de la lumière monochromatique sur une lentille convexe de forme sphérique, tous les rayons provenant d’un point ne se concentrent pas en un point. Ils convergent en un point différent suivant que le rayon passe plus ou moins proche du centre de la lentille. Il faut bien noter que ces aberrations ne sont pas intrinsèques au système : elles sont liées au fait qu’on ne travaille pas vraiment dans les conditions de Gauss ! 
+
+\textbf{Aberrations chromatiques:} (longitudinale/connaître la transversale): On utilise sur les microscopes
+modernes de la lumière blanche (polychromatique). Or chaque longueur d’onde est plus ou moins réfractée lors de son passage au travers de la lentille (la plus réfractée est la bleue, d’après la loi de Cauchy).
+slide. Elles sont corrigées en faisant des doublets achromates comme le doublet de Fraunhofer. Cela corrige à l’ordre un, les microscopes dits \textbf{apochromats} réalisent la superposition des plans focaux pour trois longueurs d’onde distinctes.
+
+
+En pratique, il est difficile d’obtenir des valeurs d’ouverture numérique supérieures à 0,95 avec des objectifs secs
+(cf. MicroscopyU). Des ouvertures numériques plus élevées peuvent être obtenues en augmentant l’indice n de réfraction
+du support de formation d’image entre l’échantillon et la lentille frontale de l’objectif. Il existe désormais des
+objectifs de microscope permettant d’imager sur d’autres supports, tels que l’eau (indice de réfraction $n =1.33$), la
+glycérine (indice de réfraction ,$n= 1.47$) et l’huile d’immersion (indice de réfraction $n=1,51$). slide
+Noter d’ailleurs la remarque le fait que c’est bien sûr l’objectif qui limite la résolution du microscope : si il n’est pas bon l’oculaire ne rattrapera pas les défauts! On peut aussi insister sur la subjectivité du critère de Rayleigh : on fait aujourd’hui des détecteurs qui ont une bien meilleure résolution que cela !
+
+Limite de résolution verticale
+Lien entre profondeur de champ et ouverture
+numérique.
+
+\textbf{Transition:}\medskip 
+
+Transition : Il y a une question qu’on ne s’est pas posée du tout dans le miscroscope précédent, c’est celle du
+contraste. Pourtant, la plupart des objets que l’on veut observer sont transparents et a priori sans effet sur l’intensité
+lumineuse. Il faut alors travailler avec le seul élément optique modifié à la traversée de l’échantillon par l’onde
+lumineuse : la phase!
+
+\section*{4. Microscopie à contraste de phase}
+
+Voir TD Diffraction (2) Clément Sayrin.
+Cette technique s’intéresse en particulier à des échantillons transparents dont les
+épaisseurs sont faibles Slide photos avec ou sans contraste de phase + photos
+microscopies Nikon. Elle a valu le prix Nobel à Frederik Zernike en 1953.
+
+
+\subsection*{Principe}
+Voir Hecht p635. On envoie de la lumière sur un objet dit de phase qui va modifier localement la phase de la lumière incidente :
+\begin{equation}
+    E_i = E_0e^{i\phi} = E_0 + E_0\times(e^{i\phi}-1) \sim 
+\end{equation}
+On fait passer la lumière à travers une lentille qui va donner la figure de diffraction dans fait l'image de cette 
+
+\section*{5. Microscope en champ proche}
+
+La microscopie classique a donc une résolution limitée, elle ne détecte que des ondes homogènes diffractées en champ lointain, c'est-à-dire à de grandes distances de l'objet, sans être capable de capter des informations
+relatives aux structures inférieures à $\lambda/2$. Une technique est apparue, permettant de collecter les ondes évanescentes confinées à la surface de lobjet,
+c'est la microscopie optique en champ proche. Le microscope optique en champ proche est apparu dans les années 8
+
+%\url{http://ressources.agreg.phys.ens.fr/media/ressources/RessourceFichiers/14-Forum2011-Bijeon.pdf}
+
+\subsection*{5.1. Diffraction d'une onde plane}
+
+La limite de résolution en optique est une conséquence du principe d' incertitude d'Heiseberg (on ne peut pas mesurer avec une bonne précision la
+position et la vitesse d'une particule).
+Exprimons la relation d'incertitude d'Heinsenberg et projetons sur laxe
+$x$ :
+
+\begin{equation}
+	Delta x \Delta k_x > 2\pi
+\end{equation}
+	
+Prenons l'exemple d'un microscope classique. À cause de son ouverture numérique, il ne va capter que les photons entre $[-\theta,\theta]$. Ainsi: 
+\begin{equation}
+	\Delta k_x = k_{x, min} - k_{x, max} = 2k\sin\theta \Rightarrow \Delta x\geq \dfrac{\lambda}{2n\sin\theta}
+\end{equation}
+
+On retrouve à une constante près le critère de Rayleigh. Mais on a maintenant un critère pour $\Delta x$. Pour obtenir une grande résolution, c'est à dire un $\Delta x$ très petit, il faut que l'intervalle $\Delta k _x$ soit le plus grand possible. Pour des ondes planes progressives $k_x$ est compris entre $[-\omega/c, \omega/c]$ i.e :
+\begin{equation}
+	\Delta k_x\geq \dfrac{2\pi}{\Delta k_x}=\dfrac{\lambda}{2}
+\end{equation}
+
+Des objets très petits $\Delta x \ll \lambda/2$ diffractant la lumière, vont permettre d'accéder à des grandes valeurs de $\Delta k$. Un type d'onde est caractérsié par $k_x>2\pi n /\lambda$.
+
+\subsection*{5.2. Ondes évanescente}
+
+On considère deux milieux diélectriques d'indices $n_1$ et $n_2$ avec $n_2<n_1$. Le vecteur d'onde incident s'exprime par:
+\begin{equation}
+	\vec{k_i}=k_i\left(\sin\theta_1\vec{e}_x+\cos\theta_1\vec{e}_z\right)
+\end{equation}
+
+avec $k_1=k_0n_1$. Grâce aux lois de réfraction, le vecteur d'onde dans la partie transmise s'exprime : 
+
+\begin{equation}
+	\vec{k_t}=k_0n_1\sin\theta_1\vec{e}_x+k_0\sqrt{n_2^2-n_1^2\sin^2\theta_1vec{e}_z}
+\end{equation}
+
+Le terme $k_z$ est réel tnat que l'angle d'incidence de l'onde plane est inférieure à l'angle critique $\theta_c$ défini par : 
+
+\begin{eqnarray}
+	\theta_l=\dfrac{n_2}{n_1}
+\end{eqnarray}
+
+Pour $theta>\theta_c$, il y a réflexion totale de la lumière sur le dioptre. $k_{tz}$ devient imaginiaire pur. L'onde transmise dans le second milieu est évanescente et on a : 
+
+\begin{equation}
+	k_{t,z} = ik_0\left(n_1^2sin^2\theta_1-n_2^2\right)^{1/2}=ik_z^{\prime\prime}
+\end{equation}
+
+Comme $k_{t,z}$ est imaginaire pure, l'amplitude de l'onde evanescente décroit exponentiellement en fonction de $z$. Le champ électrique peut s'écrire: 
+
+\begin{equation}
+	\vec{E}_t=\vec{E}_{t,0}\exp{(-k_z^{\prime\prime})}\exp{i(k_{t,x}x-\omega t)}.
+\end{equation}
+
+L'onde evanescente se propage suivant $Ox$ et voit son amplitude décroitre exponentiellement selon $Oz$. On définit la profondeur d'atténuation dans le milieu 2 par : 
+
+\begin{equation}
+	\delta = \frac{1}{k_z^{\prime\prime}}=\dfrac{\lambda_0}{2\pi\sqrt{n_1^2sin^2\theta_1-n_2^2}}
+\end{equation}
+
+\subsection*{5.3. Réalisation pratique}
+
+Pour capter l'onde évanescente, on va se servir du principe de Fermat. Si un objet sub-longueur d'onde  peut transforemr par diffraction une onde progressive en onde évanescente, il peut réciproauement transformer des ondes évanescente en ondes planes. Il faut alors plonger dans le champ proche optique un objet de dimension inférieures à la longueur d'onde. Les ondes évanescentes présentent à la surface peuvent être transformées en onde progressive et se proapger dans un guide d'onde jusqu'à un détecteur. On réalise le microscope en plaçant une sonde éfilée de diamètre inférieur à une dizaine de nanomètres.\medskip
+
+En balayant la pointe sur la surface on peut obtenir une cartographie des détails de celle-ci, avec une résolution spatiale bien inférieur à la longueur d'onde. La résolution peut être d'autant plus grandeque le détecteur peut s'approcher de la surface de l'objet. Le microscope à champ proche permet d'atteindre une résolution de $\lambda /43$. Le critère de Rayleigh est ainsi surmonté.
+\section*{Conclusion}
+
+Recap $+$limites $+$nouvelles techniques: microscopies non optiques (Force atomique, électronique)
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
