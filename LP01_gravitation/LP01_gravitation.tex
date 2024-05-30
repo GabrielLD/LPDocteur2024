@@ -1,0 +1,173 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon numéro 1 : Gravitation}
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+  \item Cinématique et dynamique d'un point matériel
+  \item référentiels galiléens et non
+  \item Force d'intertie
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item BFR Mécanique du point Chap 7$\&$8;
+  \item H prepa MPSI PCSI PTSI Hachette 2010
+  \item Physique expérimentale Fruchart, Le Diffon
+\end{itemize}
+
+
+\subsection*{Introduction}
+
+C’est au XVII eme, en se basant sur les lois expérimentales du mouvement des planètes que
+Newton découvrit la loi de force qui explique ces mouvements. Nous étudierons ici le problème
+inverse qui consiste à à décrire le mouvement lorsque la loi de force est admise. Le caractère
+universel de la loi de Newton fait qu’il est possible de connaître le champ d’accélération en
+tout point de l’espace, ce qui permet notamment d’étudier le champ de pesanteur dû à un astre
+sphérique tel que la Terre. (repris du BFR)
+
+\subsection*{1. Intéraction gravitationnelle}
+\subsubsection*{1.1. Force de gravitation}
+
+\textbf{a. Loi de Newton}
+
+Dessiner un schéma (avec des axes  $\overrightarrow{e}_r$, distance r entre les corps) avec deux corps numérotés
+1 et 2, de masses m1 et m2, la force qu’exerce 2 sur 1 a pour expression :
+
+$$F_{1/2} = G\dfrac{m_1m_2}{d^2}\overrightarrow{e}_r$$
+
+\textbf{b. Champ de gravitation}
+
+Schéma en prenant un coprs de masse m et une distribution de masse $M_i$.
+
+$$F = \sum_{i}^{N}G\dfrac{M_i m}{r_i^2}\overrightarrow{e}_{ri}$$
+
+\subsubsection*{1.2. Analogie avec la loi de Coulomb}
+
+La loi de Newton n’est pas sans rappeler a loi de Coulomb exprimant la force qui s’exerce
+entre deux particules portant des charges $q_1$ et $q_2$. Rappeler la loi de Coulomb en fonction des
+charges puis en fonction du champ électrostatique crée par l’une des charge.\medskip
+
+Comme en électrostatique, le champ est censé exister au point M, même en
+l’absence de l’observateur ou de la masse qui subit la force. Présenter en powerpoint un tableau
+qui fait l’analogie complète entre Coulomb et gravitationnelle. Noter les différences ! Ordres de
+grandeurs (BFR)\medskip
+
+
+$$\dfrac{g}{E} = \dfrac{Gm_e}{\frac{1}{4\pi \epsilon_0}q} \approx 6\cdot 10^{-8}$$
+En déduire que la gravitation peut être négligée dans le domaine atomique, elle ne donne
+des effets notables qu’au voisinage de masses importantes comme les astres. De plus les corps
+célestes sont électriquement neutres : les forces qu’ils exercent entre eux, et qui déterminent
+leurs mouvement sont essentiellement gravitationnelles.
+
+
+
+\subsubsection*{1.3. Propriétés du champ de gravitation}
+
+\textbf{a. Potentiel gravitationnel}
+
+Potentiel électrostatique crée par $n$ charges ponctuelles. Par analogie donner le potentiel gravitationnel pour $n$ masses ponctuelles
+Chacune des forces $F_i$ dérive d'un potentiel. Par conséquent $\vec{g}$ dérive d'un potentiel $V$. Pour une masse unique:
+\begin{equation}
+  \vec{\Phi} = -G\sum_{i}{\dfrac{M_i}{r_i}}.
+\end{equation}
+Du potentiel $\Phi$ on en déduit le champ $\vec{g}$ par la relation : 
+\begin{equation}
+  \vec{g} = -\vec{\nabla}(\Phi).
+\end{equation}
+
+\textbf{b. Théorême de Gauss}
+
+Définir une surface contenant une distribution de charges. Le flux sortant du champ $E$ à travers S est donné par le théorême de Gauss. (Faire un schéma). Par analogie on arrive à écrire que : 
+
+\begin{equation}
+  \Phi = \iint_{(S)}{\vec{g}\cdot d\vec{S}} = -4\pi G\sum_i{M_i}.
+\end{equation}
+
+\subsubsection*{1.4. Champ de pesanteur terrestre}
+\textbf{a. Champ à l'extérieur de la distribution de masse}
+
+Assimilons la Terre à une sphère homogène de rayon $R=6370~\rm km$, et supposons galiléen tout référentiel lié à la Terre (on néglige les effets liés à la rotation terrestre et les influences des autres astres). On se propose de calculer le champ d'accélération $\overrightarrow{g}$ crée par la Terrre en tout point de l'espace. Avec les approximations consenties, il s'exerce sur un corps de masse $m$ la force $\overrightarrow{P}=m\overrightarrow{g}$ qui est le poids de ce corps. Le module $\overrightarrow{g}$ du vecteur $\overrightarrow{g}$ est l'intensité de la pesanteur.\medskip
+
+Faire un schéma du problème. On applique le théorême de Gauss, en symétrie sphérique, écrire les symétries et invariances du problème. $\vec{g}$ ne dépend que de la distance $r$ entre l'objet et le centre de la Terre. On calcule le flux (\textbf{Ici il faut faire preuve de rigueur et de clareté}): 
+
+\begin{equation}
+  \Phi = -4\pi r^2 g = -4\pi Gm_T
+\end{equation}
+
+Donc $g = \dfrac{Gm_T}{r^2} = g_0\left(\dfrac{R}{r}\right)^2$. On peut également exprimer $g$ en fonction de l'altitude du point (BFR).  Tracer l'allure de g en fonction de $r$.
+
+\textbf{b. Champ à l'intérieur de la distribution de masse}
+
+Soit M un point à l'intérieur de la Terre. Le champ y est toujours radial par raison de symétrie et le théorême de gauss appliqué à la sphère (S) de rayon $r$ passant en M donne : 
+
+\begin{equation}
+	g=G\dfrac{m_i}{r^2}
+\end{equation}
+
+
+$m_i$ représente la masse intérieur à S : la partie extérieur (mT)ne donne pas de flux à travers S: on suppose la masse volumique constante : $\dfrac{m_i}{m_T} = \left(\dfrac{r}{R}\right)^3$. D'où en tenant compte que $Gm_T = g_0R^2$ il vient : $$g=g_0\dfrac{r}{R}$$
+\textbf{c. Mesure de $g$ par la formule de bordas}
+
+Polycopié - mécanique de philippe - dépendance de la période à l'amplitude et Fruchart Le Diffon - Physique Expérimentale sur la formule de Bordas.\medskip
+ 
+
+Bien présenter le pendule simple avec l'équation différentielle. Distinguer petits angles et grands angles. Expliquer l'équation différentielle aux petits angles puis aux grands angles dire qu'il faut réaliset un développement limité sur sin aux ordres supérieurs pour prédire la période d'oscillation du pendule le montrer expériementalement.
+
+
+\section*{2. Dynamique dans un référentiel non galiléen (BFR)}
+
+La Terre tourne sur elle-même par rapport aux étoiles fixes à raison de 1 tour en 1 jour sidéral dont la durée est de 86164 secondes, soit à une vitesse de $\omega =\dfrac{2\pi}{86164}=7.29212E-5~\rm rad/s$. Pour expliquer les marées, on doit tenir compte en outre de l'attraction qu'exercent sur la Terre les autres astres (essentiellement Lune et Soleil).
+
+\subsection*{2.1. Terme de Marées (BFR)}
+On considère le système Terre-Lune. Reprendre le schéma du BFR. On décrit les différentes forces à considérer appliquées en un point M à la surface de la Terre. On souhaite déterminer l'accélération du point M. Dans le référentiel de la Terre (non galiléen). 
+\begin{equation}
+  \gamma_{relative}(M) = \gamma_{absolue}(M) - \gamma_{entrainement}-\gamma_{coriolis}
+\end{equation}
+
+\begin{equation}
+  \vec{\gamma}_r = \dfrac{\vec{F}}{m} + \underbrace{\vec{g}_0+\omega^2\vec{HM}}_{pesanteur ordinaire}+\underbrace{\gamma_L(M)-\gamma_L(O)}_{accélération de marée}
+\end{equation}
+
+On peut calculer l'accélération du terme de marée en prenant le point M à l'équateur là où il est maximal. (Si le temps le permet)
+
+Commenter sur les effets de marées sur la surface d'équilibre des océans avec un dessin. 
+
+\subsection*{2.2. Discussion - limite de Roche H prepa exercices 2010 p95 (si le temps le permet)}
+
+La limite de Roche est la distance théorique en dessous de laquelle un satellite commencerait à se disloquer sous l'action des forces de marée causées par le corps céleste autour duquel il orbite, ces forces dépassant la cohésion interne du satellite.
+
+\section*{Conclusion}
+
+Conclusion sur la généralité de la loi de Newton, analogie électrostatique et gravitation. élargissement sur la rotation des planètes, référentiels non galiléens (BFR).
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

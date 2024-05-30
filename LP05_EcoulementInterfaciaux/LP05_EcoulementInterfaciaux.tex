@@ -1,0 +1,521 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 5: Phénomènes interfaciaux dans les fluides}
+
+
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}
+  \item Description des fluides en mouvement
+  
+  \item Actions de contact
+  
+  \item Interactions mol{\'e}culaires
+  
+  \item M{\'e}canique
+  
+  \item Thermodynamique
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Hydrodynamique Physique
+  
+  \item Gouttes, bulles, perles et ondes
+  
+  \item Cours de Marc Rabaud
+\end{itemize}
+
+
+
+\section*{Introduction}
+
+Un liquide coule et pourtant il peut adopter des formes g{\'e}om{\'e}triques
+remarquables tr{\`e}s stables naturellement. Goutte d'eau de la ros{\'e}e du
+matin, lentille d'huile sur la surface de l'eau, les formes ondul{\'e}es des
+vagues, les formes g{\'e}om{\'e}triques des bulles de savons.\medskip
+
+La surface d'un liquide semble se comporter comme une membrane tendue, dont
+la tension est caract{\'e}ris{\'e}e par une force qui s'oppose {\`a} ses
+d{\'e}formations : c'est la tension superficielle. Dans cette le{\c c}on nous
+nous int{\'e}resserons {\`a} son origine et {\`a} ses cons{\'e}quences.
+
+Schéma d'une membrane tendue : vidéo   \url{https://youtu.be/DZOB5GVAxJg.}
+
+
+\section*{1. Tension superficielle}
+
+\textbf{Manipulation: }
+  
+On fabrique un film de savon dans un cadre m{\'e}tallique sur lequel on pose une tige m{\'e}tallique au milieu. Le film savonneux doit mouiller la tige m{\'e}tallique. On perce le film de savon d'un c{\^o}t{\'e}, la tige se met {\`a} rouler dans la direction o{\`u} le film de savon existe encore. Le film de savon exerce une force de tension sur la tige m{\'e}tallique. 
+
+
+\subsection*{1.1. Approche microscopique }
+
+Un liquide est compos{\'e} de mol{\'e}cules qui sont proches les unes des autres : c'est ce que nous appelons un {\'e}tat condens{\'e}. Ces mol{\'e}cules tendent {\`a} s'attirer entre elles, gr{\^a}ce aux interactions {\'e}lectrostatiques de Van der Waals et gr{\^a}ce aux liaisons hydrog{\`e}nes. Une mol{\'e}cule est attir{\'e}e par ses voisines avec la m{\^e}me intensit{\'e} dans toutes les directions de l'espace, mais si cette mol{\'e}cule est {\`a} la surface du liquide, elle perd la moiti{\'e} de ses interactions comme l'illustre le sch{\'e}ma I.2. Dans ce cas, les mol{\'e}cules sont dans un {\'e}tat {\'e}nerg{\'e}tique d{\'e}favorable.
+
+
+
+\subsection*{1.2. Approche macroscopique}
+
+\textbf{a.  Thermodynamique}
+
+L'interface entre deux fluides (air et eau par exemple) est un milieu continu à travers lequel on passe d'une phase condensée, l'eau à une phase gazeuse, l'air. Pour simplifier, on suppose que l'on peut réduire cette zone à une ligne infiniment fine s{\'e}parant les deux phases $\alpha$ et $\beta$.
+
+Schéma : définition du système thermidynamique avec deux compartiments. 
+
+
+Cette ligne d{\'e}finit l'interface $\sigma$ entre les deux milieux tel que
+\begin{equation} 
+    V = V^{\alpha} + V^{\beta}~ \text{avec}~ V_{\sigma} = 0. 
+\end{equation}
+Dans ce contexte, on peut exprimer l'{\'e}nergie du syst{\`e}me, {\`a} partir de l'{\'e}nergie libre $F$. En g{\'e}n{\'e}ral l'{\'e}nergie libre s'{\'e}crit :
+\begin{equation}
+  d F = - S d T - P d V + \sum_i \mu_i dn_i + d W
+\end{equation}
+$S d T$ tient compte de la variation de la temp{\'e}rature du syst{\`e}me, $Pd V$de l'expansion du syst{\`e}me, les $\mu_i d n_i$ de la composition chimique et $d W$ est le travail sans l'expansion du volume, il correspond {\`a} la variation du travail {\`a} fournir lorsque la surface change de $dA$.
+
+\begin{equation}
+  d W = \gamma d A
+\end{equation}
+Si on {\'e}crit l'{\'e}nergie totale du syst{\`e}me :
+\begin{equation}
+   d F_{\rm tot} = d F^\alpha + d F^\beta + d F^\sigma
+\end{equation}
+
+il vient :
+\begin{equation}
+   d F_{\rm tot} = - S d T - P^{\alpha} d V - (P^{\beta} - P^{\alpha}) dV^{\beta} + \sum_i \left(\mu_{_i }^{\alpha} d n_i^{\alpha} + \mu_{_i }^{\beta} dn_i^{\beta} + \mu_{_i }^{\sigma} d n_i^{\sigma}\right) + \gamma d A
+\end{equation}
+
+\begin{definition}{Défintion thermodynamique de la tension de surface}
+À volume constant, temp{\'e}rature constante et nombre de constituants constants, on obtient :
+\begin{equation}
+    \left. \dfrac{\partial F_{\rm tot}}{\partial A} \right|_{V, V^{\beta},
+    T, n_i} = \gamma.
+\end{equation}
+\end{definition}
+L'existence de la surface coûte de l'énergie au système. Cette énergie est proportionnelle à la surface séparent les deux fluides. Le facteur de proportionnalité est noté $\gamma$, c'est la tension de surface. Il s'agit d'une énergie par unité de surface. Les
+fluides cherchent à minimiser l'énergie que coûte la présence
+de cette interface. Hors pour un volume donnée la forme qui minimise la
+surface c'est la sphère. C'est pourquoi les gouttes à petite
+échelle préfèrent adopter une forme parfaitement sphèrique.
+
+\textbf{b. Force de tension surperficielle}
+
+On peut aussi voir la tension surperficielle comme une force par unit{\'e} de longueur. Dans la premi{\`e}re manipulation, pour accro{\^i}tre la surface du film de savon d'une quantit{\'e} $d S = L d l$ il faut fournir une {\'e}nergie:
+\begin{equation} 
+  d W = F d l = 2 \gamma L d l = 2 \gamma d S
+\end{equation}
+$\gamma$ est une force par unit{\'e} de longueur dirig{\'e}e suivant la
+normale {\`a} l'interface et dirig{\'e}e vers le liquide.\medskip
+
+\textbf{Manipulation:}
+
+Boucle de fil attach{\'e}e en deux endroits {\`a} un cadre. On forme un film de savon dans le cadre, le film prend une forme quelconque. Lorsqu'on perce le film de savon au centre du fil, le fil se tend tirer par la force de tension exerc{\'e}e par la film de savon sur la corde.
+
+
+
+\section*{2. Lois d'{\'e}quilibre des interfaces}
+
+\subsection*{2.1. Loi de Laplace}
+
+Lorsque l'on observe une mousse ou une {\'e}mulsion, on peut voir que les plus
+petites bulles disparaissent au profit des plus grosses. C'est la tension de
+surface qui est responsable de la surpression dans les petties bulles par
+rapport aux grandes gouttes.\medskip
+
+
+Si une surface est courb{\'e}e, les contraintes de traction existant sur la surface ont une composante non nulle dans la direction normale {\`a} la surface et orient{\'e}e vers le centre de courbure, c est {\`a} dire du c{\^o}t{\'e} concave de la surface. {\`A} l'{\'e}quilibre, cette force normale est compens{\'e}e par une pression plus forte du c{\^o}t{\'e} int{\'e}rieur
+que du c{\^o}t{\'e} ext{\'e}rieur. Prenons l'exemple d'une goutte sph{\'e}rique que nous allons couper en deux par la pens{\'e}e. La force dirig{\'e}e vers le haut due a la surpression {\`a} l'int{\'e}rieur de la
+goutte, $\Delta P \pi R^2$, doit {\^e}tre {\'e}gale {\`a} la somme des forces de tension de surface sur l'{\'e}quateur $\gamma 2 \pi R$.
+
+Schéma au tableau
+
+Donc pour une goutte sph{\'e}rique:
+\begin{equation}
+  \Delta P = P_{\rm int} - P_{\rm ext} = \dfrac{2 \gamma}{R} .
+\end{equation}
+
+\begin{definition}{Définition - Loi de Laplace}
+Dans le cas g{\'e}n{\'e}ral, on montre que la loi de Laplace, formul{\'e}e pour la premi{\`e}re for en 1806 par Pierre-Simon de Laplace, s'{\'e}crit en chaque point d'une surface courb{\'e}e:
+  \begin{equation}
+    P_{\rm int} - P_{\rm ext} = \gamma \mathbb{\mathcal{C}} .
+    \label{eq:laplace}
+  \end{equation}
+  Avec  C  la courbure de la surface courb{\'e}e.
+\end{definition}
+
+O{\`u} $R_1$ et $R_2$ sont les deux rayons de courbure de la surface en ce point, compt{\'e}s positivement lorsque leur centre de courbure se trouve du c{\^o}t{\'e}. En effet, pour tout point d'une surface on peut d{\'e}finir la normale et donc les plans contenant cette normale. Chacun de ces plans coupe la surface selon une courbe dont on peut d{\'e}terminer le centre de courbure et le rayon de courbure.
+
+
+\begin{definition}{Conséquences}
+  En cons{\'e}quence de la loi de Laplace, plus une goutte est petite plus le
+  fluide {\`a} l'int{\'e}rieur est {\`a} une pression {\'e}lev{\'e}e. Les
+  petites bulles sont donc bien sph{\'e}riques et peu d{\'e}formables. Cette
+  surpression dans les petites bulles a de nombreuses cons{\'e}quences, par
+  exemple pour le vieillissement d'une mousse liquide, l'initiation de la
+  cavitation ou de l'{\'e}bullition ou pour la formation de brouillards.
+\end{definition}
+
+\noindent\textbf{D{\'e}monstration : (d{\'e}monstration au choix suivant le temps on
+peut pas tout faire)}
+
+La force de tension superficielle en M vaut par {\'e}l{\'e}ment de longueur $d z$ dans la direction transverse :
+\begin{equation}
+  \vec{F} (s) = \gamma d z \vec{t}
+\end{equation}  
+{\`A} l'{\'e}quilibre cette force {\`a} le m{\^e}me volume en $s + d s$ mais pas la m{\^e}me direction:
+\begin{equation}
+  \vec{F} (s + d s) = \vec{F} (s) + \gamma d z \overrightarrow{d t}
+\end{equation} 
+ Or $\overrightarrow{\frac{d t}{d \theta}} = - \vec{n}$ et $d s = R^\prime d\theta$, o{\`u} $R^\prime = O M$ est le rayon de courbure en M. Donc
+$\overrightarrow{d F} = - \gamma d z \frac{d s}{R^\prime} \vec{n}$. S'il existe
+aussi un rayon de courbure $R\prime'$dans le plan perpendiculaire {\`a}
+$Oxy$ et contenant $\vec{n}$, il existe une deuxi{\`e}me contribution
+{\`a} la foce normale $\overrightarrow{d F} = - \gamma d z \frac{ds}{R^\prime} \vec{n}$. {\`A} l'{\'e}quilibre cette force est compens{\'e}e par une force de surpression $\Delta P (d z d s) \vec{n}$ ce qui donne finalement l'{\'e}quation \ref{eq:laplace}.\medskip
+
+Pour une courbe $y = f (x)$, la courbure $C$ qui caract{\'e}rise la rotation du vecteur tangent lorsqu'on se d{\'e}place sur la courbe est donn{\'e}e par la relation :
+\begin{equation} 
+  C^\prime = \dfrac{1}{R} = \dfrac{y^\prime}{(1 + y^{\prime\prime})^{3 /  2}} 
+\end{equation}
+
+
+\subsection*{2.2. Mouillage, loi d'Young Dupr{\'e}}
+
+Dans de nombreuses situations trois phases (solide, liquide et vapeur) sont
+pr{\'e}sentes et leur fronti{\`e}re est une ligne nomm{\'e}e \textbf{ligne
+triple}. C'est le cas par exemple lorsque l'on d{\'e}pose une goutte sur une
+surface solide ind{\'e}formable. Comprendre le mouillage c'est expliquer
+pourquoi l'eau s'{\'e}tale sur du verre propre mais pas sur du plastique.
+Controller le mouillage c'est modifier la surface. Il est essentiel de
+comprendre les m{\'e}canismes du mouillage pour un tr{\`e}s grand nombre
+d'application tr{\`e}s techniques comme le traitement des verres (de lunettes
+par exemple ou pour des optiques d'appareil de photos), fabrication de miroirs
+pour les t{\'e}lescopes, gonflements des poumons {\`a} la naissance,
+adh{\'e}sion de parasites, mont{\'e}e de la s{\`e}ve, langue des colibris.\medskip
+
+On peut distinguer deux r{\'e}gimes de mouillages diff{\'e}renci{\'e}s par le
+param{\`e}tre d'{\'e}talement:
+\begin{eqnarray}
+  S &=& E_{\rm sec}^{\rm substrat} - E_{\rm mouille}^{\rm substrat} \nonumber\\
+  &=& \gamma_{\rm sv} - (\gamma_{\rm sl} - \gamma_{\rm lv}) 
+\end{eqnarray}
+\begin{definition}{Loi d'Young Dupr{\'e} (1805):}
+
+  Pour une surface solide ind{\'e}formable, on projetteles forces capillaires
+  suivant la direction horizontale, {\`a} l'{\'e}quilibre il vient:
+  \begin{equation} 
+    \gamma_{\rm lv} \cos \theta_E = \gamma_{\rm sv} -   \gamma_{\rm sl} 
+  \end{equation}
+  Verticalement les forces capillaires sont compens{\'e}es par la r{\'e}action
+  du substrat, ind{\'e}formable.
+\end{definition}
+
+
+\textbf{Remarques:~}En pratique les mesures de $\gamma_{\rm~{sl}}$ et
+$\gamma_{\rm sv}$ sont difficiles. On mesure plutôt $\gamma_{\rm lv}$
+et $\theta_E$
+\begin{itemize}
+\item $S > 0$, $\theta_{\rm E}=0$, c'est l'{\'e}tat final o{\'u} le film
+est d'{\'e}paisseur macroscopique, ce qui r{\'e}sulte d'une comp{\'e}til faut farm les tenebrions ition
+entre forces mol{\'e}culaires et capillaires.
+
+\item $S < 0$, on parle de mouillage partiel, c'est {\`a} dire que la
+goutte ne s'{\'e}tale pas et forme une calotte sph{\'e}rique qui s'appuie sur
+le substrat avec un angle $\theta_{\rm E}$ non nul. Si
+$\theta_{\rm E}{\geq} \frac{\pi}{2}$ le substrat est non mouillant, si
+$\theta_{\rm E} \leq \frac{\pi}{2}$ il est plutôt mouillant.
+\end{itemize}
+
+et $\theta_{\rm E}$ puis on en d{\'e}duit les valeurs des autres
+param{\`e}tres. Les mesures peuvent {\^e}tre r{\'e}alis{\'e}es par mesures
+d'interf{\'e}rences ou {\`a} l'aide d'une nappe Laser.\medskip
+
+\textbf{Mat{\'e}riaux hydrophiles / hydrophobes:}
+
+
+On s'attend {\`a} ce que la goutte glisse d{\`e}s que
+$\theta=\theta_{E}$ mais en pratique elle reste coinc{\'e}e
+d{\^u} aux effets de viscosit{\'e} sur le support. Le glissement d'une goutte
+sur une paroi a un comportement hyst{\'e}r{\'e}tique. On a un angle
+d'avanc{\'e}e et de r{\'e}cession. Il faudrait rajouter un sch{\'e}ma mais pas
+le temps et je ne pense pas en parler pendant la le{\c c}on mais {\`a} garder
+en t{\^e}te en cas de questions.
+
+\subsection*{2.3. Longueur capillaire et nombre de Bond}
+
+On peut caract{\'e}riser l'importance relative des effets de gravit{\'e} et
+ceux de capillarit{\'e} par le rapport des diff{\'e}rences de pression
+correspondantes, soit :
+\begin{equation}
+  B o = \dfrac{\rho g h}{\gamma / R} = \dfrac{\rho g h R}{\gamma}
+\end{equation}
+Ce rapport est appel{\'e} \textbf{nombre de Bond.} Une grande valeur de $B
+o$ correspond {\`a} des effets de gravit{\'e} dominants ceux de tension
+superficielle. Lorsque $B o = 1$ on peut d{\'e}finir une longueur
+caract{\'e}ristique, la longueur capillaire :
+\begin{equation}
+  l_c = \sqrt{\dfrac{\gamma}{\rho g}}
+\end{equation}
+Dans le cas de l'eau pure avec une tension de surface de $70~ \rm mN/m$, $l_c = 2.7\rm~{mm}$. Pour d{\'e}terminer l'importance relative de la tension superficielle pour un {\'e}coulement donn{\'e}, on compare $l_c$ aux dimensions caract{\'e}ristiques de l'{\'e}coulement.
+
+\subsection*{2.4. Mesure de la tension de surface par la loi de Jurin}
+
+\textbf{Ascension du m{\'e}nisque dans un coin entre deux plaques:}\medskip
+
+Quelle est la hauteur d'ascension du liquide au voisinage d'une paroi ?
+
+
+\underline{Hypothèses de travail:}\medskip
+
+On n{\'e}gligle le film d'{\'e}paisseur de quelques Angstrom qui peut pr{\'e}c{\'e}der la mont{\'e}e capillaire du liquide. On a une paroi sur laquelle le liquide monte suivant la verticale $y = f (x)
+.$ {\`A} l'ext{\'e}rieur du liquide la pression est celle de l'atmosph{\`e}re $P = P_0 = 1 \rm~{bar}$. On note $\theta$ l'angle entre la verticale et la surface du liquide grimpant. D'apres la loi de Laplace que nous avons {\'e}nonc{\'e} pr{\'e}c{\'e}demment:
+
+\begin{equation}
+  P_{\rm~{int}} (x) - P_{\rm~{ext}} = - \gamma \frac{1}{R (x)}
+  \label{eq:laplaceascension}
+\end{equation}
+
+
+ $P_{\rm~{int}}$ est la pression sous la surface du liquide, $P_{\rm~{ext}}$ est la pression juste au-dessus de la surface du liquide, $\gamma$ est la tension de surface du liquide ($\gamma=70~\rm mN\cdot m^{-1}$ pour de l'eaut très pure), $R$ est le rayon de courbure de la surface:
+\begin{equation} 
+  \dfrac{1}{R(x)} = \dfrac{2 \cos(\theta)}{d (x)} = \dfrac{2 \cos(\theta)}{\alpha x}\approx \dfrac{2}{\alpha x} 
+\end{equation}
+D'après la pression hydrostatique, il vient que :
+\begin{equation}
+  P_{\rm~{int}} = P_0 - \rho_{\rm~{liq}}gy(x) .
+\end{equation}
+% En rempla{\c c}ant dans l'{\'e}quation \ref{eq:laplaceascension} l'expression
+% de $P_{\rm~{ext}}$ on trouve l'{\'e}quation suivante:
+% \[ P_0 - P_{\rm~{ext}} - \rho_{\rm~{liq}} g y (x) = - \gamma \frac{2}{\alpha
+%    x} . \]
+Lorsque le syst{\`e}me revient {\`a} l'{\'e}quilibre, on doit avoir
+{\'e}galit{\'e} des pressions ($P_{\rm~{int}} - P_0 = 0$) dans ce cas on a
+l'{\'e}galit{\'e} suivante:
+
+\begin{definition}{Loi de Jurin}  
+  Il vient vient directement, la loi de mont{\'e}e capillaire, la loi de
+  Jurin:
+  \begin{equation}
+    y (x) = \frac{2 \gamma}{\rho g \alpha x} . \label{eq:jurin}
+  \end{equation}
+\end{definition}
+
+
+\noindent\textbf{Manipulation:}\medskip
+   
+  On r{\'e}alise la mont{\'e}e capilaire dans un coin entre deux lames. On en
+  prend une photo, {\`a} l'aide d'ImageJ on rep{\`e}re la position du
+  m{\'e}nisque que l'on peut ainsi retracer {\`a} l'aide de regressi ou de
+  tout autre logiciel. On ajuste la courbe {\`a} partir de l'expression
+  th{\'e}orique de la mont{\'e}e capilaire. Pour un coin :
+\begin{equation}
+  y (x) = \dfrac{2 \gamma}{\rho g \alpha x}  
+\end{equation}
+  Pour l'{\'e}thanol, on trouve une tension de surface de $\gamma = 21.8
+  \rm~{mN} / m $ à 17$^{\circ}$C, la valeur attendue est de 22.6 mN/ m d'apr{\`e}s le Handbook. L'erreur peut s'expliquer par
+  plusieurs raisons, le mouillage du liquide avec les plaques en verre n'est
+  pas parfait. Mesure de l'angle $\alpha=1.53E-2$ rad pourrait peut {\^e}tre
+  {\^e}tre am{\'e}lior{\'e} en prenant un objet pointu comme pour les mesures
+  des diam{\`e}tres des anneaux. L'incertitude peut {\^e}tre estim{\'e}e {\`a}
+  partir de la largeur du m{\'e}nisque observ{\'e} {\`a} partir de la photo.
+
+\section*{3. Ph{\'e}nom{\`e}nes interfaciaux en r{\'e}gime dynamique (faire un
+choix ou en parler dans un {\'e}largissement)}
+
+\subsection*{3.1. M{\'e}nisque Dynamique (Landau Levitch)}
+
+Dans le cas o{\`u} la plaque sur laquelle le m{\'e}nisque est form{\'e}e est
+mise en mouvement la description du syst{\`e}me se complique un peu. On a
+initialement une plaque immobile immerg{\'e}e $v = 0 m \cdot s^{- 1} ${\`a} $t
+< 0$. Si $S > 0$, $\theta = 0$ le liquide mouillant monte jusqu'{\`a} une
+hauteur $h = \sqrt{2} l_c$. Puis {\`a} $t > 0$, on tire la plaque {\`a} une
+vitesse $v$ constante.
+
+
+
+Le haut du m{\'e}nisque statique est emport{\'e} par la plaque
+(m{\'e}nisque dynamique), $L$ est la distance de raccord entre le m{\'e}nisque
+statique et dynamique. Au voisinage de la plaque, le liquide se d{\'e}place
+{\`a} la vitesse du solide (c'est la viscosit{\'e} qui entre en jeu). Tandis
+l'interface liquide/vapeur est d{\'e}form{\'e} par l'entraînement ce {\`a}
+quoi s'oppose la tension superficielle $\gamma$. On peut ajouter l'effet de la
+gravit{\'e} qui s'oppose au mouvement en tirant le liquide vers le bas.\medskip
+
+{\`A} des {\'e}chelles o{\`u} la gravit{\'e} peut {\^e}tre consid{\'e}r{\'e}e
+n{\'e}gligeable, deux forces s'opposent, les forces visqueuses et de tension
+de surface. On peut comparer ces deux grandeurs {\`a} travers le nombre\medskip
+capillaire $C_a$.
+
+\begin{definition}{ombre Capillaire}
+  \textbf{Nombre capillaire:}
+  \begin{equation}
+    C a = \frac{\eta v}{\gamma}
+  \end{equation}
+\end{definition}
+
+
+\subsection*{3.2. Instabilit{\'e} de Rayleigh Taylor (d{\'e}mo trop longue pas le
+temps)}
+
+Un exemple de comp{\'e}tition entre les effets de la tension superficielle et
+ceux de la gravit{\'e} est l'instabilit{\'e} de Rayleigh Taylor. La tension de
+surface tend {\`a} minimiser la surface de l'interface entre deux fluides.
+Dans le cas o{\`u} l'on a deux liquides, l'un sur l'autre, le plus lourd
+{\'e}tant au dessus du plus l{\'e}ger. Une telle situation est tr{\`e}s
+instable. Toute d{\'e}formation de l'interface cr{\'e}e un
+d{\'e}s{\'e}quilibre de pression qui tend {\`a} l'amplifier.\medskip
+
+On d{\'e}signe deux points M et M' infiniment voisins situ{\'e}s de part et
+d'autre de l'interface dans chacun des deux fluides. Si \textit{$R(x)$}
+d{\'e}signe le rayon de courbure de l'interface au niveau de ces deux points,
+on peut {\'e}crire d'apr{\`e}s la loi de Laplace:
+\begin{equation}
+  p_{M\prime} - p_M = \frac{\gamma}{R (x)}.  
+\end{equation}
+
+Le principe fondamental de l'hydrostatique appliqu{\'e} {\`a} l'int{\'e}rieur
+de chacun des deux fludies permet d'{\'e}crire :
+\begin{equation} 
+  p_{M\prime} = p_{M_0} + \rho \prime g \epsilon
+\end{equation}
+et
+\begin{equation} 
+  p_M = p_{M_0} + \rho g \epsilon 
+\end{equation}
+
+Au point \textit{$M_0$} le rayon de courbure de l'interface est nul et la
+pression a la m{\^e}me valeur de part et d'autre de l'interface. De cette
+fa{\c c}on on peut {\'e}liminer les pressions $p_{M\prime}$, $p_M$ et $p_{M_0}$ entre les trois {\'e}quations, il vient donc:
+\begin{equation}
+  \Delta \rho g \epsilon (x) = \gamma \dfrac{1}{R (x)} 
+\end{equation}
+Hors 
+\begin{equation} 
+  \dfrac{1}{R (x)} = \dfrac{\epsilon^{\prime\prime}}{\left(1+\epsilon^{\prime^2}\right)^{2/3}}%{(1 + \epsilon^{\prime}^2)^{3 / 2}} 
+\end{equation}
+
+On a fait l'hypoth{\`e}se que l'interface est peu d{\'e}form{\'e}e de sorte que $\epsilon \approx 0$, par cons{\'e}quent il vient :
+\begin{equation} 
+  \Delta \rho g \epsilon (x) = \gamma \dfrac{d^2 \epsilon}{d x^2}. 
+\end{equation}
+Cette {\'e}quation a pour solution g{\'e}n{\'e}rale : 
+\begin{equation} 
+  \epsilon (x) = \rm~{Acos} (k x) + \rm~{Bsin} (k x) 
+\end{equation}
+avec:
+\begin{equation} 
+  k = \sqrt{\dfrac{\Delta \rho g}{\gamma}} 
+\end{equation}
+On suppose que l'interface est fixe aux parois lat{\'e}rales, c'est {\`a} dire: $\epsilon (x = 0) = \epsilon (x = L) = 0.$ Par cons{\'e}quent :
+\begin{equation}
+  \epsilon (x, t) = B\sin(k x) 
+\end{equation}
+avec $k = \frac{2 n \pi}{L}$ o{\`u} $n$ est un entier. Le seuil est obtenu pour
+la plus petite valeur de $k$ satisfaisant cette conidtion ($n=1$) avec
+$\dfrac{2\pi}{L}={\sqrt{{\frac{{\Delta}{\rho}g}{{\gamma}}}}}$ ou encore:
+\begin{equation}
+  \dfrac{\Delta \rho g}{\gamma} L^2 = 4 \pi^2. 
+\end{equation}
+Un calcul d'ordre de grandeur avec une interface eau-air donne une valeur
+seuil :
+\begin{equation} 
+  L_c = \sqrt{\dfrac{4 \pi^2 \gamma}{\Delta \rho g}} \approx 1.7 \cdot 10^{-2} m. 
+\end{equation}
+En g{\'e}n{\'e}ral on se retrouve dans un cas o{\`u} l'interface est instable
+($L \gg L_c$). Dans le cas de l'huile o{\`u} $\gamma = 32 \rm~{mN} \cdot m^{- 1}$ :
+$\lambda\approx 1.2$ cm.
+
+
+\subsection*{3.3. Effet Marangoni}
+
+Les gradients de tension superficielle dus {\`a} des variations de
+temp{\'e}rature ou de concentration de solut{\'e}s peuvent cr{\'e}er des
+contraintes en surface. Les {\'e}coulements induits par de telles contraintes
+constituent \textbf{l'effet Marangoni} : on parle aussi d'effets
+thermocapillaires lorsqu'ils sont caus{\'e}s par des gradients de
+temp{\'e}rature.
+
+% \
+
+\begin{definition}{Nombre de Marangoni}
+  \textbf{Nombre de Marangoni solutocapillaire:}\medskip
+
+  \begin{equation} 
+    Ma = \dfrac{\partial \gamma}{\partial c} \dfrac{Q}{2\pi\nu\eta D} 
+  \end{equation}
+
+  $c$ la concentration, $Q$ est le d{\'e}bit molaire de tensioactifs, $\nu$ la
+  viscosit{\'e} cin{\'e}matique, $\eta$ la viscosit{\'e} dynamique, $D$ le
+  coefficient de diffusion des tensioactifs.\medskip
+
+  \textbf{Nombre de Marangoni thermocapillaire}:
+  \begin{equation} 
+    Ma = \dfrac{\partial \gamma}{\partial T} \dfrac{Q}{2 \pi \nu \eta\kappa} 
+    \end{equation}
+  $T$ la temp{\'e}rature, Q est le d{\'e}bit de chaleur, $\nu$ la
+  viscosit{\'e} cin{\'e}matique, $\eta$ la viscosit{\'e} dynamique, $\kappa$
+  le coefficient de diffusion de la chaleur.
+\end{definition}
+
+Si une couche d'eau est pos{\'e}e sur une surface et qu'un point de la
+surface est touch{\'e} par un morceau de savon, on voit cette partie de la
+surface s'ass{\'e}cher : la tension de surface est r{\'e}duite localement et
+les forces de tension superficielles sont d{\'e}s{\'e}quilibr{\'e}es. On a
+donc un {\'e}coulement vers les parties voisines o{\`u} la tension de surface
+reste inchang{\'e}e.
+
+
+\begin{definition}
+  \textbf{Manipulation: Effet marangoni solutocapillaire}\medskip
+  
+  D{\'e}poser une goutte de liquide vaisselle {\`a} la surface de l'eau sur
+  laquelle on a d{\'e}poser des particules inertes (non tensioactives comme le
+  poivre m{\^e}me si le poivre est un peu tensioactif). On verra le povre
+  s'{\'e}loigner rapidement de la zone d'injection.
+\end{definition}
+
+\section*{Conclusion}
+
+Conclure sur la d{\'e}finition de la tension de surface comme le rapport d'une
+{\'e}nergie par unit{\'e} de surface. Loi qui se retrouve dans le comportement
+des fluides aux {\'e}chelles o{\`u} la gravit{\'e} devient n{\'e}gligeable par
+rapport {\`a} la tension de surface. Ouvrir sur des applications des
+ph{\'e}nom{\`e}nes mettant en jeu les forces de tension de surface
+:m{\'e}dicaments (poumons chez les nouveaux n{\'e}s, administration de
+m{\'e}dicaments par effet Marangoni) / d{\'e}placement des insectes sur l'eau,
+probl{\`e}me de pollution dans les rivi{\`e}res /dans un cadre plus industriel
+stabilit{\'e} de film liquide / traitements de surface d{\'e}perlante ,
+mouillante etc
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

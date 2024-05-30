@@ -1,0 +1,128 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+
+\section*{Leçon numéro 2 : Les lois de conservation en dynamique}
+
+
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+  \item Cinématique et dynamique d'un point matériel
+  \item Force d'intertie
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item BFR Mécanique/Mécanique du point;
+  \item Dunod MPSI
+  \item Composition agreg externe 2018
+\end{itemize}
+\hrulefill
+
+
+\section*{Introduction}
+
+Les équations de la dynamique donnent lieu dans certains cas à des lois de conservation c'est à dire lorsqu'une grandeur a une une valeur constante dans le temps. 
+
+\section*{1. Les grandeurs conservées}
+
+\subsection*{1.1. La quantité de mouvement}
+
+Dans un référentiel galiléen : deuxième loi de Newton. Si le système est isolé : pas de force extérieur. Ou pseudo-isolé : les forces se compensent. Exemple deux corps en intéraction (électrostatique ou gravitationnelle). Conservation de $\vec{p}$ la quantité de mouvement.
+
+\subsection*{1.2. Théorême de l'énergie cinétique (BFR)}
+
+Définition du travail d'une force, théorême de l'énergie cinétique appliqué à un point mobile soumis à une force $f$. Le travail de la force qui s'exerce sur un point matériel entre deux instant est égal à la variation de l'énergie cinétique du point entre ces mêmes instants. Ce théorême permet de calculer l'énergie cinétique, i.e. le carré de la vitesse, si la donnée du champ de force suffisait à déterminer le travail. Il faut pour cela un champ de force qui dérive d'un potentiel.\medskip
+
+\subsection*{1.3. L'énergie mécanique}
+On démontre la conservation de l'énergie mécanique 
+Intégrale première de l'énergie cinétique. Théorême sous la forme différentielle. 
+\begin{equation}
+    E_c+E_p=E_m
+\end{equation}
+Lorsqu'un point matériel se déplace dans un champ de force dérivant d'un potentiel son énergie mécanique reste constante au cours du mouvment. Loi de conservation de l'énergie mécanique. Discussion.
+
+\subsection*{1.4. Point mobile sans frottement sur une sphère}
+
+exemple dans le BFR chap 5 et 6.
+
+\section*{2. Application aux chocs reprendre BFR mécanique du point chapitre  10}
+Lorsque deux corps en mouvement se rencontrent, il y a choc. Le choc est un processus au cours duquel les vitesses changent brusquement de direction et éventuellement d'amplitude. L'étude expérimentale des chocs entre coprs solide montre que la durée du contact entre les deux cors est toujours très brève, de sorte que la position des corps reste pratiquement invariable au cours du choc. Le changement brusque de la vitesse de chaque corps apparaît comme une discontinuité de la vitesse en un point de sa trajectoire. On montre dans un cas simple où une particule de masse $m$ est animée d'une vitesse $\vec{v}$ perpendiculaire à une paroi fixe, dirigée vers celle-ci. (Expérimentalement c'est la direction verticale). La symétrie du problème montre qu'après le choc la vitesse $v^\prime$ est aussi normale à la paroi.
+
+\subsection*{2.1. Conservation de la quantité de mouvement}
+Conservation de la quantité de mouvement au cours du choc.
+Bilan d´énergie dépend du type de collision.
+\subsubsection*{2.2. Choc élastique}
+hypothèse du choc élastique : conservation de l'énergie cinétique au cours du choc. On ne prend donc pas en compte la dissipation qui pourrait y avoir au cours du choc.
+Si le choc est élastique  nous écrirons : 
+\begin{equation}
+    \dfrac{1}{2}mv^2=\dfrac{1}{2}m (v^\prime)^2
+\end{equation}
+On considère que la variation de l'énergie cinétique de la paroi est nulle. 
+
+\subsubsection*{2.3. Choc mou ou inélastique}
+Cas de la pâte à modeler qui ne rebondit pas. On écrit la conservation de la quantité de mouvement totale. On exprime $v^\prime$ et on obtient la variation de l'énergie cinétique. Le choc mou s'accompagne d'une perte d'énergie cinétique transformée en énergie interne de déformation et conduisant à des processus de dissipation. 
+
+\subsubsection*{2.4. Coefficient de restitution}
+
+On définit le coefficient de restitution $C_R$ en fonction des variations de vitesse. $0<C_R<1$ si $C_R=1$ on retrouve le cas du choc élastique. Si $C_R=0$ pâte à modeler qui ne rebondit pas.
+\subsection*{2.5. Conservation de l'énergie mécanique : mise en évidence expérimentale}
+
+Manipulation de la balle de ping pong (Poly de Phillipe). Utiliser une balle de golf pour ne pas avoir à prendre en compte la poussée d'Archimède. On montre la conservation de l'énergie mécanique entre deux chocs, la perte d'énergie mécanique lors des chocs, on en déduit le coefficient de restitution.
+
+\section*{3. Mouvement à force centrale}
+
+\subsection*{3.1. TMC dans un référentiel galiléen- Loi des aires}
+
+\begin{equation}
+    \left.\dfrac{d\vec{\mathcal{L}}}{dt}\right|_{\mathcal{R}} = \vec{\mathcal{M}}(\vec{F})
+\end{equation}
+
+Dans un solide
+\begin{equation}
+    \vec{\mathcal{L}} = \int_{v}\vec{r}\wedge \rho \vec{v} d\tau 
+\end{equation}
+
+\begin{equation}
+    \vec{\mathcal{M}}(\vec{F})=\vec{r}\wedge\vec{F}
+\end{equation}
+Si le système est isolé ou pseudo-isolé $\vec{\mathcal{L}}=$ constante.
+
+On calcule le moment cinétique et on en déduit la loi des aires. BFR Chap 12
+\subsection*{3.2. Conséquences de la conservation de l'énergie - satellite}
+
+
+Satellite, intéraction gravitationnelle. Donner l'énergie potentielle effective ainsi qu'une représentation graphique et discuter des trajectoires du satellite en fonction de la valeur de l'énergie potentielle effective.  Reprendre la composition 2018 de physique
+
+\section*{Conclusion}
+Conclure sur la généralité des lois de conservation et leurs applications 
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

@@ -1,0 +1,123 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 3: Notion de viscosite d'un fluide. Écoulement visqueux}
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+  \item Hydrostatique
+  \item cinématique des fluides
+  \item mécanique
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}  
+    \item Hydrodynamique Physique
+    \item Dudod PC
+    \item J'intègre PC
+  \end{itemize}
+
+
+
+
+\section*{Introduction}
+
+Temps de vidange d'une paille suivant le fluide avec différentes viscosités $\eta$. Ou alors expérience avec deux billes identiques dans dans du glycerol et de l'eau.
+On se restreint à des liquides Newtonien, incompressibles pour cette leçon.
+
+\section*{1.Notion de viscosité}
+\subsection*{1.1. Contrainte visqueuse}
+
+On commence par montrer la vidéo \url{https://www.youtube.com/watch?v=pqWwHxn6LNo&t=220s&ab_channel=BarryBelmont}. On remarque que le fluide se met petit à petit en mouvement sur l’ensemble de la largeur. À la fin, on a
+atteint le régime permanent.
+Tracer au tableau le profil des vitesses dans le système montré dans la vidéo.\medskip
+
+On se limite à un raisonnement scalaire. Schéma d'une particule fluide dans un espace orthonormé. On définit les axes, la particule fluide considérée. On définit un contour et l'extérieur de la particule, vecteur normal $\vec{n}$. 
+
+\begin{equation}
+    d^2\vec{F} = \vec{T}(\vec{n})d^2S
+\end{equation}
+On a un écoulement $\vec{v}=v_x(z)\vec{e}_x$. On décrit les actions de contact de part et d'autre de la particule fluide (tangentielle et normale). On écrit la différence de vitesse entre les deux couches séparées par $dy$.
+
+\begin{equation}
+    \left\{
+    \begin{array}{ll}
+    \vec{T}(\vec{e}_x) &= -P(M)\vec{e}_x\\    
+    \vec{T}(\vec{e}_y)  &=-P(M)\vec{e}_y\\
+    \vec{T}(\vec{e}_z) &= -P(M)\vec{e}_z + \eta\dfrac{\partial v_x}{\partial z}\vec{e}_x
+
+    \end{array}
+        \right.
+\end{equation}
+On mène le calcul jusqu'à arriver à l'expression de la foce de viscosité.\medskip 
+
+La relation fondamentale de la dynamique appliquée à la particule fluide de volume $d\tau$ s'écrit :
+\begin{equation}
+    \left\{
+        \begin{array}{cc}
+            \rho\left[\dfrac{\partial v_x}{\partial t}+\left(\vec{v}\cdot \vec{\nabla}\right)v_x\right]&=-\dfrac{\partial P}{\partial x}+\eta\Delta v_x+\rho g_x\\
+            \vec{\nabla}\cdot\vec{v} &=0.
+        \end{array}
+    \right.
+\end{equation}
+
+\subsection*{1.2. Origine microscopique (pas sur au niveau du temps)}
+
+\subsection*{1.3. Ordres de grandeur}
+
+Viscosité de l'eau $\eta_{\rm eau} \in \left[1.7E-3, 0.3E-3\right]~\rm Pa\cdot s$ entre 0 et 100 degrés celcius.
+Viscosité du miel. 
+
+\section*{2. Exemple de l'écoulement de Poiseuille}
+\subsection*{2.1. Champ de vitesse}
+\textbf{C'est l'occasion de faire preuve de rigueur et bien expliqué par étape la résolution du problème}
+Faire un schéma très simple d'une conduite droite de section circulaire pour un tuyau. Décrire les invariance du champ de vitesse et les symétries. Donner les conditions aux limites. Puis résoudre Navier-Stokes. On le fait pour une configuration rectangulaire ou cylindrique. Donner un ordre de grandeur attendu pour le débit et ou la vitesse de l'écoulement en prenant les conditions opératoire de l'expérience à suivre.
+
+\subsection*{2.2. Mesure de la viscosité}
+
+On reprend le poly de Phillipe d'hydrodynamique sur l'écroulement dans un tube fin. (On discutera du nombre de Reynolds dans la section suivante.)
+
+\subsection*{2.3. dissipation de l´énergie}
+
+On peut discuter de la dissipation d'énergie. La puissance donnée au système pour une variation de pression donnée. À partir du débit donner l'expression de la puissance fournie. La puissance est dissipée sous forme de chaleur imperceptible car la capacité calorigique de l'eau est très grande
+
+\section*{3. les différents régimes d'écoulements}
+
+Donner un cadre plus général. On introduit le nombre de Reynolds. On discute des différents régimes d'écoulement possible à partir du nombre de Reynolds. On peut alors donner la valeur du Reynolds dans lequel notre expérience se place. En déduire que c'est un écoulement de stokes visqueux.\medskip
+
+On peut donner des illustration de différents écoulement à différents nombre de Reynolds (Poisseuille par exemple ou jet d'air en sortie d'une buse).
+
+L'étude que l'on a réalisé est valable en régime stationnaire. Si le nombre de Reynolds devient très grand : écoulement instable. Parler de l'expérience et du Reynolds critique.
+
+\section*{Conclusion}
+
+On peut faire une ouverture sur les écoulement parfait: superfluides où la viscosité est nulle. 
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

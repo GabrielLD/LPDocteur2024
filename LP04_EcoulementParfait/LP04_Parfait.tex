@@ -1,0 +1,111 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+\section*{Leçon 4: Modèle d'un écoulement parfait}
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+  \item hydrostatique
+  \item Mécanique
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Hydrodynamique 
+  \item Dunod PC
+\end{itemize}
+
+
+\section*{Introduction}
+
+On cherche dans cette leçon à relier le mouvement d'un fluide à ses causes. Dans un fluide en mouvement les actions de contact ne se réduisent pas qu'aux forces de pression comme en statique des fluides. On va s'intéresser ici à décrire un modèle d'écoulement décrivant un fluide qui s'écoule sans viscosité, sans frottement.
+
+\section*{1. Modèle de l'écoulement Parfait}
+
+\subsection*{1.1. Qu'est-ce qu'un écoulement parfait}
+
+Il s'agit d'un fluide de viscosité nulle. C'est le cas de l'Hélium 4 lorsqu'il est refroidit à $T=2.17~\rm K$. C'est surtout une approximation dans le cas où les perturbatinos de vitesse dues à la viscosité n'ont pas le temps de diffuser par viscosité dans le temps de passage du fluide (temps courts) = processus adiabatique.  
+
+\subsection*{1.2. Équation d'Euler}
+
+On considère une particule fluide dans un référentiel R supposé galiléen. Cette particule fluide est soumise aux forces de pression, ainsi qu'à d'autres forces d'interaction. On supposera la viscosité négligeable. On écrit le bilan de quantité de mouvement : 
+
+\begin{equation}
+  \delta m \vec{a} = -\nabla p d\tau +d\vec{F}
+\end{equation}
+
+On développe le terme de variation de la vitesse et on parvient à l'équation d'Euler. On peut détailler le cas où la particule est soumise uniquement au champ de pesanteur. Remarque: On a pas eu besoin d'écrire l'hypothèse d'incompressibilité de l'écoulement. On a une équation à 4 inconnues $v_x, v_y, v_z$ et $p$.  Il faut ajouter les conditions aux limites ainsi que l'équation de conservation de la masse pour pouvoir résoudre le problème.
+
+\subsection*{1.3. Conditions aux limites}
+
+Dans tout écoulemetn le fluide ne penetre pas les parois impermeables.
+\begin{equation}
+  \vec{v}\cdot\vec{dS}=0, \vec{v}\cdot\vec{dS}=\vec{v_e}\cdot\vec{dS}
+\end{equation}
+
+Comme l'écoulement est parfait pas de frottement entre le fluide et la paroi. Si on a un écoulement visqueux $\vec{v}_\parallel = \vec{v}_p$.
+
+Transition : Ce modele peut il decrire de vrais écoulements ?
+
+\subsection*{1.4. Conséquences}
+
+On peut montrer des illustrations présentes dans l'hydrodynamique Physique.
+
+On peut montrer la vidéo \url{https://www.youtube.com/watch?v=2Z6UJbwxBZI&ab_channel=ryanhaart} et commenter.
+
+
+\section*{2. Le théorême de Bernouilli}
+
+\subsection*{1. Énoncé}
+On se place dans le cas d'une particule fluide soumise à la pesanteur. Écoulemetn stationnaire, irrotationnel, incompressible et homogène. On parvient à l'équation de Bernoulli.
+\subsection*{2.1. Application}
+
+\subsubsection*{2.2. Effet Venturi}
+
+Notamment utilisé pour la voile par les skippers. On peut montrer une expérience qualititative pour introduire le tube de Pitot ensuite.
+
+\subsubsection*{2.3. Mise en pratique avec le tube de Pitot.}
+ On décrit le système et les équations. On décrit bien les lignes de courant appliquées. Conservation du débit.
+
+On réalise l'étalonnage d'un appareil de mesure utiliser sur les aviions : le tube de pitot. Décrire l'appareil et le principe. Bien savoir expliquer la mesure de la vitesse par l'anémomètre à fil chaud. Expliquer le principe.  Faire quelques mesures devant le jury en montrant la variation du niveau de liquide dans le tuyau et le relier à la vitesse sur regressi. Concernant les incertitudes. On prendra les incertitudes constructeur pour les valeurs de vitesses données par l'anémomètre et pour le relevé de la pression sur la lecture de la différence de niveau à la règle et sur l'inclinaison du niveau.
+
+\section*{3. Limite du modèle : écoulement réel}
+Notion de couche limite. En pratique il existe une couche limite dans laquelle la viscosité a un effet: 
+\begin{equation}
+  \delta = \dfrac{L}{Re}
+\end{equation}
+ Lorsque Re est grand delta devient petit mais non nul. On peut p[arler des ailes d'avion, on prefere eviter le decollement des couches limites, turbulences ...  
+
+\section*{3.1. Conclusion}
+
+Conclure sur le modèle présenté et les applications qui en découlent puis énoncé les limites. Modele efficace pour traiter des écoulement loins des parois ou d'obstacles. En revanche l'analyse des fluides au voisinage d'un obstacle doit etre traité avec Navier Stokes ou du moins en s'interessant aux comportements aux voisinage des parois.
+
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
