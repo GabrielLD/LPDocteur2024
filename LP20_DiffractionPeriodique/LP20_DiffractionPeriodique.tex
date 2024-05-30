@@ -1,0 +1,216 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 20: Diffraction par des structures périodiques}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}} 
+\begin{itemize}
+    \item Licence 3
+\end{itemize}
+
+\textbf{Pré-requis:}
+\begin{itemize}
+    \item Optique géométrique
+    \item Diffraction de Fraunhoffer
+    \item Physique du solide
+\end{itemize}
+
+\textbf{Références:}\medskip
+
+\begin{itemize}
+\item Perez optique chapitre 21
+\item BFR Optique
+\item TD de CS
+\item Physique du Solide Ashcroft
+\end{itemize}
+
+\hrulefill
+
+
+\section*{Introduction}
+
+On combine deux phénomènes de l'optique ondulatoire: la diffraction (de Fraunhoffer) interférences à $N$ ondes. On s'interessera à l'application des phénomènes de diffraction à d'autres domaines de la physique.
+
+\section*{1. Diffraction par un objet périodique}
+
+
+\subsection*{1.1. Cas général}
+
+On applique le principe d'Huyghens Fresnel dans l'approximation de Fraunhofer. 
+\begin{equation}
+    s(M) = As_0\iint_\sigma t(P)\dfrac{{\rm e}^{-i(\vec{k}-\vec{k_0})\cdot \vec{OP}}}{PM}dxdy
+\end{equation}
+À chaque élément diffractant $j$ on lui associe une transmittance  $t_j(P)$ et une position $O_j$. On a alors:
+\begin{equation}
+    t(P)=\sum_jt_j(P)
+\end{equation}
+
+$\vec{OP}=\vec{OO_j}+{\vec{O_jP}}=\vec{R_j}+\vec{O_jP}$
+
+En notant $\Delta \vec{k} = \vec{k}-\vec{k_0}$, on obtient : 
+
+\begin{equation}
+    s(M) = \dfrac{As_0}{D}\sum_j{\rm e}^{-i\Delta\vec{k}\cdot \vec{R}_j}\underbrace{\iint_\sigma t_j(P){\rm e}^{-i\Delta \vec{k}\cdot \vec{O_jP}}}_{\text{indépendant de j}}d\sigma
+\end{equation}
+
+\begin{equation}
+    s(M) = s_0^\prime\underbrace{\left(\sum_j{\rm e}^{-i\Delta\vec{k}\cdot\vec{R}_j}\right)}_{\rm Facteur~de~structure}\underbrace{\iint t(\delta\vec{r}){\rm e}^{-i\Delta \vec{k}\cdot\delta\vec{r}}}_{\rm Facteur~de~forme}
+\end{equation}
+
+La figure de diffraction est le produit d'un facteur de structure qui ne dépend que de la répartition des structures sur l'écran diffractant et d'un facteur de forme qui ne dépend que de la forme d'une structure unique.
+
+Dans le cas d'une structure répartie de fácon aléatoire (spores de lycopodes): 
+$$I = N\times \text{facteur de forme}$$ Si on a N motifs répartis aléatoirement, on obtient la figure de diffraction d'un seul motif N fois plus intense.
+
+\subsection*{1.2. Caractéristique d'un réseau plan}
+
+Structure périodique qui transmet (réseau par
+transmission) ou réfléchit (réseau par réflexion) la lumière.
+Un réseau d'amplitude est caractérisé par l'indice d'extinction qui varie
+périodiquement ; on joue sur la transparence du milieu. C'est le réseau que
+l'on va étudier. Dans un réseau de phase, c'est l'indice de réfraction qui
+varie périodiquement.
+Définition du pas du réseau : distance entre deux fentes voisines. On le
+note a. Un réseau est une structure périodique qui diffracte une lumière incidente. Un réseau est caractérisé par :
+\begin{itemize}
+
+\item Sa période a, que l'on caractérise souvent en nombre de traits par mm
+\item La largeur des motifs élémentaires $\epsilon$
+\item La longueur totale L éclairée, c'est à dire le nombre de traits éclairés(L = aN ).
+\end{itemize}
+
+Un réseau simple est constitué par un ensemble de fentes parallèles. La
+transmittance est égale à 1 au niveau des fentes et 0 ailleurs.
+Eclairement parallèle. Diffraction par chacune des fentes du réseaux puis
+interférences entre les rayons issus de toutes les fentes
+On va s'intéresser à un réseau en transmission.
+
+\subsection*{1.3. Application aux réseaux}
+
+Si les motifs sont répartis de manière ordonnée, une relation de phase déterminée est établie entre chacun d'eux. On prend le cas du réseau plan $1D$. Les positions $\vec{R}_j$ sont données par $\vec{R}_j=j\vec{a}$ où a est le vecteur caractéristique du réseau. Faire un schéma au tableau du réseau avec des rayons incidents et diffractés.
+
+Le facteur de structure s'exprime :
+
+\begin{equation}
+    S = |\sum {\rm e}^{ij\vec{a}\cdot \Delta\vec{k}}|^2 = |\sum {\rm e}^{ija(\sin\theta_0-\sin\theta)}|^2
+\end{equation}
+
+On donne l'expression exacte du facteur de structure en fonction de $\phi = \dfrac{2\pi a}{\lambda}(\sin\theta_0-\sin\theta)$ déphasage entre deux rayons issus de deux gentes successives du réseau i.e. la différence de marche. 
+Si les fentes sont extrèmement fines. On rappelle le facteur de forme pour une fente dans les prérequis de la diffraction de Fraunhofer. Écrire la démonstration en préparation au cas où pour les questions.
+
+On donne la fonction de l'intensité 
+
+\begin{equation}
+    I = |ss*|^2 = N^2I_0 sinc(\phi \dfrac{e}{2a})^2\left(\dfrac{\sin(\phi N/2)}{N\sin(\phi/2)}\right)^2 
+\end{equation}
+
+On réalise une étude de la fonction sur Python. On donne les points d'annulation du facteur de forme. Les longueurs caractéristiques doivent apparaître sur la figure.
+
+\section*{2. Mesure de structures périodiques, manipulation}
+
+\subsection*{2.1. Experience qualitative}
+
+Réseau éclairée en lumière parallèle, figure diffractée avec un laser, on regarde la figure de diffraction à l'infini pour être dans les conditions de Fraunhoffer.
+On montre la structure pour différents réseaux. On montre les différents pics et on montre les différents motifs du réseau.
+
+\subsection*{2.2. Mesure de la taille des lycopodes}
+
+On montre la figure de diffraction par un trou : tâche d'Airy. Puis on met les pores de Lycopodes à la place on décrit ce que l'on voit. Mesure de la taille des lycopodes au microscope au préalable. Puis par la tâche de diffraction.
+
+% \subsection{Pouvoir de résolution}
+% Poly de Philippe sur la diffraction: $R=\dfrac{\lambda}{\Delta\lambda}=Nl$
+% On peut faire la mesure du pas du réseau à partir de la figure de diffraction. 
+% On peut comparer au Fabry-Pérot. Doublet du sodium.
+
+
+\section*{3. Étude des cristaux par diffraction des rayons X}
+
+\url{http://culturesciencesphysique.ens-lyon.fr/ressource/Diffraction-rayons-X-techniques-determination-structure.xml} ou Ashcroft
+
+\subsection*{3.1. Position du problème}
+
+Un cristal peut être vu comme la répétition périodique tridimensionnelle d'éléments appelés noeuds (Montre une figure). L'angle $\theta$ détermine l'incidence d'un faisceau parallèle de rayons X sur ces plans réticulaires. La différence entre les deux rayons lumineux particuliers représentés vaut $AC+CB = 2d\sin\theta$. Ils interfèrent de manière constructive lorsque la différence de marche est égale à un nombre entier $p$ de longueur d'onde. C'est la loi de Bragg : 
+
+\begin{equation}
+    2d\sin\theta = p\lambda
+\end{equation}
+
+\subsection*{3.2. Réseau cristallin et réseau réciproque}
+
+Une maille élémentaire d'un cristal est déterminée par un trièdre formé par trois vecteurs de base $\vec{a},\vec{b},\vec{c}$ faisant entre eux les angles $\alpha,\beta~ et~ \gamma$. (montrer un transparent). Le pavage des noeuds dans l'espace est représenté par les vecteurs rangées définis par : 
+
+\begin{equation}
+    \vec{n} = u\vec{a}+v\vec{b}+w\vec{c}
+\end{equation}
+À ce réseau direct correspond un réseau réciproque:
+
+\begin{equation}
+    \vec{n*} = h\vec{a*}+k\vec{b*}+I\vec{c}
+\end{equation}
+
+Un vecteur rangé du réseau réciproque est normal à un plan réticulaire direct.\medskip
+
+Dans le cas général on détermine un rayon incident arrivant sur un noeud par son vecteur d'onde $\vec{k}$. Le rayon diffusé par ce noeud dans la direction d'observation a un vecteur d'onde $\vec{k^\prime} = ||k||\vec{u}$. Comme l'intéraction entre un photon X et la particule du noeud est élastique, les photons diffusés sont de même énergie que les photons incidents et les vecteurs d'onde $k\prime$ et $k$ ont la même norme. Le vecteur diffusion est défini par $K = k^\prime - k$.
+
+La différence de chemin optique entre deux rayons X émergents après diffusion sur deux nœuds différents localisés en r1 et r2 est égale à $\vec{K}.(\vec{r2}- \vec{r1})$. En remarquant que tous les vecteurs qui ont des nœuds aux deux extrémités r1 et r2 constituent justement l'ensemble des vecteurs n du réseau direct, on traduit la condition d'interférences constructives en écrivant que le produit scalaire $K\cdot n$ est un entier.
+
+Commentaire essentiel : on
+a une condition sur les trois composantes de k , et plus seulement
+sur une seule. Observer des pics dans les cristaux est donc beaucoup
+plus dur.
+
+Autrement dit, il faut que Ksoit un vecteur n* du réseau réciproque : $K= h a* + k b* + l c*$.
+
+C'est ce qu'expriment les conditions de diffraction de Laue :
+\begin{equation}
+    \begin{array}{ccc}
+    \vec{K}\cdot \vec{a} = h, &\vec{K}\cdot \vec{b} = k, & \vec{K}\cdot \vec{c} = l.
+\end{array}
+\end{equation}
+Expérimentalement, la position des pics de diffraction observés nous permet de déterminer les vecteurs du réseau réciproque et donc de décrire la maille cristalline.
+
+
+\textbf{Remarque :} pour qu'il y ait diffraction, on doit avoir $2d\sim 5 Ä\leq\lambda$ ce qui montre qu'on ne peut pas utiliser la lumière pour résoudre la structure cristalline.\\
+
+Dire que le facteur de structure dépend de la densité électronique autour des atomes et donc qu'il sonde la nature des atomes à l'intérieur du cristal et que le facteur de forme va être modifié suivant la maille du cristal.
+
+\subsection*{3.3. Méthodes expérimentales}
+
+Nous allons maintenant montrer en détail la mise en œuvre expérimentale par deux méthodes différentes, selon la nature de l'échantillon à analyser : soit un monocristal (dimension de l'ordre de 0,1 mm), soit une poudre cristalline (ensemble de cristaux microscopiques). L'exposition d'un monocristal à un faisceau de rayons X produit une image constituée de taches de diffraction bien définies (fig. 6). Les nombreuses orientations des petits cristaux d'une poudre produisent un très grand nombre de taches groupées en cercles concentriques autour du point $\theta = 0$, du fait de la symétrie de révolution autour de la direction du faisceau incident. \medskip
+
+L'analyse des taches de diffraction permet de déterminer la nature du systeme cristallin. De l'intensité on en déduit le facteur de structure et de remonter à la structure du motif de diffraction.  On peut dans certains cas (molécules petites) associer aux figures de diffraction, la nature des atomes présents dans la maille.
+
+En résumé, les étapes de résolution complète d'une structure sont les suivantes :
+Sélectionner un cristal de bonne qualité ;
+Centrer le cristal pour pouvoir explorer toutes les directions de l'espace ;
+Déterminer la maille élémentaire en enregistrant environ 10 images ;
+Acquérir les données complètes ;
+Traiter numériquement les mesures ;
+Générer le fichier des informations cristallines (Crystallographic Informations File, appelé fichier CIF).
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
