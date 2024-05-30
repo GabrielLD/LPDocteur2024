@@ -1,0 +1,165 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 8: Phénomènes de transports}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+  \item Gaz parfait;
+  \item travail mécanique; 
+  \item notion de système et d’équilibre thermodynamique;
+  \item  transformations classiques en thermodynamique;
+  \item premier et second principe.
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Thermodynamique de Diu (chap 9);
+  \item BUP \url{https://bupdoc.udppc.asso.fr/consultation/une_fiche.php?ID_fiche=23265}
+  \item thermodynamique BFR.
+  \item Dunod PC
+\end{itemize}
+\hrulefill
+
+\section*{Introduction}
+
+Toute évolution irréversible d'un système s'accompagne de l'échange avec l'extérieur d'une ou plusieurs variables d'état ou bien de la redistribution de ces variables entre certains sous-systèmes. Les grandeurs sont conservées car elles sont transportées d'un endroit à un autre sans être crées ou perdues en chemin. C'est pourquoi on parle de phénomènes de transport.
+
+\section*{1. Systèmes hors équilibres}
+
+\subsection*{1.1. Évolution des grandeurs conservées (BUP)}
+
+On considère un domaine de l'espace de volume $V$, délimité par une surface fermée $S$. Soit une grandeur extensive $A$: pour nous $A$ pourra désigner $n$ le nombre de particules, l'énergie $E$ (ou l'enthalpie $H$), la charge $q$, ou la quantité de mouvement.\medskip
+
+$A(t)$ est la quantité $A$ contenue dans le volume $V$ à l'instant $t$. Soit $\Phi_A(t)$ le flux sortant de $A$ à travers la surface $S$. On supposera qu'il n'y a pas de sources internes de $A$ au sein du volume considéré. L'équation qui traduit la conservation de $A$ s'écrit : 
+\begin{equation}
+  \dfrac{dA}{dt}+\Phi_A=0  
+\end{equation}
+
+Cette équation peut bien sûr être reformulée sous forme locale: 
+
+\begin{equation}
+  \dfrac{\partial}{\partial t}\left(a(r,t)\right)+\vec{\nabla}\cdot\left(\vec{j_A}(r,t)\right)=0
+\end{equation}
+
+où $a$ est la densité volumique de $A$, définie par $A(t)=\iiint_{V}{adV}$ et $\vec{j_A}(r,t)$ est le vecteur densité de courant de $A$, défini par $\Phi=\oiint_{S}{\vec{j_A}(r,t)\cdot\vec{n}dS}$.\medskip
+
+Pour $A(t)=n(t)$, la conservation du nombre de particules s'écrit avec les notations usuelles:
+
+\begin{equation}
+  \left\{\begin{array}{ll}
+    \dfrac{dN}{dt}+\Phi_N(t) &=0\\
+    \dfrac{dn}{dt}+\vec{\nabla}\cdot\vec{j_N}&=0
+  \end{array}
+  \right.
+\end{equation}
+
+On peut faire la démonstration en écrivant le bilan de particules à une dimension et généraliser (Dunod)
+\subsection*{1.2. Nécessité de l'équilibre local}
+
+La première idée fondamentale est qu'une grandeur extensive $A$ conservée doit pouvoir être transportée d'un point à un autre: nous avons mis en évidence l'existance d'un vecteur densité de courant tradusant cette idée de transport, et indispensable à la formulation de l'équation de conservation de $A$.\medskip
+
+Deux questions se posent naturellement: Quelle est la cause du transport ? Comment exprimer le vecteur densité de courant ? On a besoin d'émettre des hypothèses.
+
+\begin{enumerate}
+  \item \textbf{hypothèse d'équilibre local:} en tout point du système macroscopique, un sous-système de taille mésoscopique est supposé constamment et instantanément à l'équilibree thermodynamique, alors le système macroscopique n'est pas en équilibre. Cela suppose que le temps typique $\tau_{ev}$ d'evolution du  système macroscopique et le temps typique $\tau_{eq}$ de mise à l'équilibre d'un sous-système mésoscopique vérifient la condition :
+ \begin{equation}
+  \tau_{ev}\gg\tau_{eq}
+ \end{equation} 
+
+ Cette hypothèse nous assure notamment que toutes les grandeurs intensives sont bien définies en tout point et à tout instant $t$ (notamment la température, le potentiel chimique, la densité particulaire,...).
+  \item Le système est suffisamment proche de l'équilibre pour que les lois de transport donnant les différents vecteurs densité de courant soient linéaires par rapport à leur cause.
+\end{enumerate}
+On considère des milieux supposés homogènes et isotropes à l'equilibre. Comme on est proche de l'équilibre, les courants seront faibles et ne briseront pas l'invariance par translation et par rotation de ces milieux: on les considérera toujours comme homogènes et isotropes.
+
+
+\section*{2. Diffusion de particules}
+
+\subsection*{2.1. Loi de Fick}
+
+De manière générale, le transport d'une grandeur intensive $A$ d'un point à un autre est due à la non-uniformité d'une grandeur intensive $\psi_A(r,t)$ associé à A.  Dans le cadre du transport linéaire de la grandeur $A$, le vecteur densité de courant $\vec{j}$ est proportionnel au gradient de $\psi$ qui mesure son inhomogénéité. On formule cette idée sous la forme d'une loi phénoménologique: 
+
+\begin{equation}
+  \vec{j}=-\alpha\vec{\nabla}(\psi)
+\end{equation}
+
+Si on connsidèr eun milieu présentant deux espèces chimiques différentes, ne réagissant pas entre elles (soluté, solvant, une impureté dans un cristal). le milieu est supposé exempt de convection, et il est maintenu à température et pression constantes. La loi linéaire régissant le transport du soluté dans el solvant ou de l'impureté dans le cristal n'est autre que la loi de Fick:
+
+\begin{equation}
+  \vec{j_N}=-D\vec{\nabla}n
+\end{equation}
+
+Le coefficient de transport est ici la diffusivité $D$ du soluté dans le solvant ou de l'impureté du cristal.
+
+\subsection*{2.2. Équation de diffusion}
+En association la nouvelle loi de transport linéaire et l'équation locale de conservation de $A$, on obtient immédiatement l'équation de diffusion de $A$, en supposant $D_A$ uniforme:
+
+\begin{equation}
+  \dfrac{\partial a}{\partial t}=D\Delta a.
+\end{equation}
+
+Le coefficient de transport $D_A$ est en réalité le coefficient de diffusion de $A$.  Il apparaît comme souvent en physique que des phénomènes différents sont régis par la même équation.  Il est donc possible de transposer la solution d'un problème de diffusion thermique à un problème de diffusion de matière. Montrer le tableau de BUP en slide.
+
+\subsection*{2.3. Mise en évidence expérimentale: Diffusion du glycerol dans l'eau}
+
+cf poly de Philippe.
+
+\textbf{Transition:} On se propose de prolonger ce raisonnemant à l'étude d'une grandeur plus proche du cours de thermodynamique: l'énergie.
+
+\section*{3. Tranport de l'énergie sous forme de transfert thermique (Diu p 487)}
+
+\subsection*{3.1. Modes de transports possibles}
+
+Rayonnement, convection, conduction. Gradient de température est généralement la cause de la convection naturelle. On peut montrer des images des courants océaniques ou d'une casserolle d'eau chauffée.
+
+\subsection*{3.2. Loi de Fourier}
+
+Même principe que pour la loi de Fick, on peut ressortir le tableau en slide.
+
+% \subsection*{3.3. Instabilité de Rayleigh Benard}
+
+% Instabilité thermo-convective susceptible de se développer dans un milieu fluide soumis à un gradient de température destabilisant. Elle se traduit par la formation de structures convectives appelées cellules de Benard. 
+
+% programme python ? 
+
+\subsection*{3.4. Rayonnement Diu 487}
+C'est le chapitre suivant en prepa. On peut parler de transport d'énergie et de flux avec la loi de Stefan Boltzmann. parler de la loi de Wien, flux surfacique. 
+
+
+On peut sortir une camera thermique et expliquer son fonctionnement
+
+
+\section*{Conclusion}
+
+Phénomènes de transport = irreversible. Applications: isolation des batiments. 
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

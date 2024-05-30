@@ -1,0 +1,209 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+\section*{Leçon 7: Transition de phase}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}
+  \item notion de système et d’équilibre thermodynamique;
+  \item  transformations classiques en thermodynamique;
+  \item premier et second principe.
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Thermodynamique de Diu;
+  \item Thermodynamique de Pérez;
+  \item thermodynamique BFR.
+  \item Tout en un ancien programme N. Choimet. Thermodynamique. PC-PSI. Bréal, 2001
+  \item J.-M. Donnini and L. Quaranta. Dictionnaire de physique expérimen-
+  tale. Tome 2 : thermodynamique et applications. Pierron, 1997
+  \item Jerôme Beugnon : \url{https://www.lkb.upmc.fr/boseeinsteincondensates/wp-content/uploads/sites/10/2017/10/CoursThermo2017.pdf}
+\end{itemize}
+\hrulefill
+
+\section*{Introduction}
+La notion de phase paraît assez naturelle si on prend l’exemple de l’eau. La glace, la vapeur et l’eau liquide sont toutes trois des phases dans lequel l’arrangement des molécules d’eau n’est pas du tout la même d’une phase à une autre. Un corp peut suivant les conditions qui lui sont imposées se présenter sous différentes phases (états) tel que solide, liquide ou vapeur. Dans les chapitres précédents, nous avons abordé les corps purs dans une phase unique. Dans cette leçon, je vous propose d'analyser le passage d'une phase à une autre appelée changement d'état et d'examiner les conditions de coexistence entre plusieurs phases.
+
+\section*{1. Une transition du premier ordre solide/liquide}
+
+\subsection*{1.1. Manipulation : Mono-variance de l'équilibre liquide solide de l'étain}
+
+On réalise la manipulation dans le poly de philippe, on mesure la température de fusion de l'étain.
+On osberve le palier de température caractéristique d'une transition de phase du premier ordre. 
+
+\subsection*{1.2. Diagramme des variables d'états}
+
+\subsubsection*{1.2.1 Calcul de la variance (Diu p373)}
+
+Les variables intensives jouent un rôle essentiel elles caractérisent les propriétés intrinsèques du mélange indépendamment de la masse dans les différentes phases. En thermodynamique on définit la variance ou le nombre de degrés de liberté tel que : 
+\begin{equation}
+  v = \text{nb de facteurs d'équilibre} - \text{nb de relations}
+\end{equation}
+
+Les facteurs d'équilibres sont : la température, la pression ainsi que le nombre $n$ d'espèces chimiques dans les $\phi$ phases. On a donc $$\text{nb de facteurs d'équilibre} = 2+n\phi$$
+
+Le nombre de relations est donnée par: 
+\begin{itemize}
+  \item pour chaque phase $\sum_i x_i^\phi =1$, ona donc $\phi relations$
+  \item à l'équilibre $\mu_i^{\alpha}=\mu_i^\beta=...=\mu_i^\phi$ ce qui donne $\phi-1$ relations, soit pour $n$ espèces $n(\phi-1)$
+  \item Si relation chimique : $\sum_i\pm\nu_i\mu_i=0$
+\end{itemize}
+
+\begin{equation}
+  v = 2+n\phi-(\phi+n(\phi-1)+r)= 2+n-\phi-r
+\end{equation}
+
+Pour un corp pur, dans le cas de la transition liquide solide. Au cours de la transition où les phases liquide et solide coexistent. On suppose l'équilibre entre les deux phases établies. Dans ce cas $r=0$, $\phi= 2$ $n=1$. On a donc $v=1$. À P fixé, la température ne peut pas varier.
+
+\subsubsection*{1.2.2. Interprétation sur un diagramme (P,T)}
+
+On montre le diagramme (P,T) dans le Diu p297 , on lit sur le diagramme la transition liquide solide. On a l'impression que lorsque T augmente que l'on passe d'un coup de solide à liquide (On peut illustrer avec l'expérience du Bouillant de Franklin). Mais ce ce n'est pas le cas la transition est continue. On a une évolution du volume qui permet le passage continue d'une phase à l'autre. Montrer le diagramme de Clapeyron (P,V) et les isothermes\medskip
+
+Transformation à température constante. On a une enceinte avec un piston mobile. On considère une transformation quasi-statique et isotherme. On voit apparaître à une certaine pression PS du liquide qu’on définit comme la pression de vapeur saturante. Si on continue à appuyer, la pression reste constante jusqu’à ce que tout le gaz se soit transformer en liquide. Si on répète la même expérience à une température différente, la pression PS va changer.
+
+
+\textcolor{red}{Transition : } Comment décrire thermodynamiquement ce qui se passe au niveau de ce changement d'état ? Comme on travaille à P ou T variable, on va utiliser l'enthalpie libre $G = U+PV-TS$.
+  
+
+\subsection*{1.3. Description thermodynamique de l'équilibre}
+
+\subsubsection*{1.3.1. Transition ponctuelle dans le diagramme}
+
+Afin de décrire la transformation, le potentiel thermodynamique le plus adapté est l'enthalpie libre car :
+
+\begin{equation}
+  dG=VdP-SdT+\mu dN
+\end{equation}
+
+Sur slide on donne le calcul pour arriver à l'expression de l'enthalpie libre que l'on cherche à minimiser. On décrit le cas où $G1=G2$. Dans ce cas le potentiel thermo est constant quelque soit la composition du système thermodynamique. Les deux phases coexistent en proprotion arbitraires. Un faible apport d'énergie permet de basculer de l'un à l'autre.  Il s'agit d'une transformation du premier ordre. Continuité de G, dérivées premières discontinue. 
+
+\subsubsection*{1.3.2.Relation de Clapeyron}
+
+Pendant le changement d'état il ya variation de S et V. La chaleur latente de transition est liée à la discontinuité de l'entropie et du volume. C'est la quantité de chaleur que le système doit recevoir pour passer de la basse entropie à la haute entropie en suivant le palier de transition. 
+
+\begin{equation}
+  S_B-S_A=\dfrac{\partial p_{AB}}{\partial T_{AB}}(V_B-V_A).
+\end{equation}
+
+La courbe $p=p(T)$ est l'équation de la  courbe du diagramme (P,T). Cette équation donne le coût énergétique  de la transition de phase. 
+
+\subsection*{1.3.3. Retard à la transition de phase: métastabilité}
+
+Manipulation avec la surfusion de l'acide acétique dans le poly de philippe. C'est la tension de surface qui coûte de l'énergie au système et qui est responsable du retard à la transition.
+
+% \section{Transitions solide-liquide-vapeur}
+
+% \subsection{Diagrammes des variables d'état Diu p300/314}
+
+
+
+% On présente les courbes (T,p), (V,p) et (p,V,T) sur slides. D'ecrire les courbes et le point triple ( en ce point le corps pur est en équilibre sous ses trois phases)
+
+
+% \textbf{(Diu p373)} On écrit le calcul de la variance pour un coups pur diphasique à l'équilibre.  On donne les relations entre les paramètres et les potentiels chimiques.  On trouve que la variance est égale à 1. On peut alors interpréter sur la courbe vaporistion (p,T).
+
+% On constate l'éxistence des 3 phases sur le diagramme, les frontières représentent tous les états de coexistence des 2 phases à $T$ et $P$.  Présence du point triple et le justifier avec la variance (Diu p374). 
+
+% \textbf{Expérience de Bouillant de Franklin:}\url{https://www.youtube.com/watch?v=nxAdQ_8tC1U} Permet d'expliquer comment on se déplace sur le diagramme P,T.\medskip
+
+% En regardant ce qu'il se passe lorsqu'on augmente la température on aurait envie de dire que l'eau passe subitement du liquide à la vapeur... ce qui n'arrive pas en réalité: Les proportions de chaque phase varie continuement ! On a besoin du diagramme de \textbf{Clapeyron} (P,V). Présenter en slide les diagrammes (P,V) puis 3D. On peut finalement montrer le diagramme $L,V$ qui mermet de constater les différentes phases, le point critique et les isothermes.
+
+% \textbf{Transition:} on peut connaître la composition d'un système à partir de la connassance de P,V,T et de diagrammes P,T et P,V. mais comment décrire thermodynamiquement les transformations.
+% \subsection{Etude thermodynamique d'une transition de phase du premier ordre (Diu p316)}
+
+% Un corps pur en équilibre sous deux phases est un système monovariant. Dans un diagramme (p,T), un tel équilibre correspond à une courbe $p=f(T)$. Ces courbes d'équilibre délimitent les domaines d'existence du corps pur sous l'une de ses phases liquide, solide ou gaz.\medskip
+
+
+% On considère un corp pur dans des conditions où deux phases distinctes $1\rm~et 2$peuvent se juxtaposer, par exemple un liquide et sa vapeur. Ils peuvent échanger librement de l'énergie, du volume, de la matière. On suppose qu'ils sont à l'équilibre.\medskip
+
+% Les échanges d'énergie égalisent les températures, les volumes égalisent les pressions et la matière les potentiels chimiques. On choisit les variables d'état T,p, $x^v$ et $x^l$.\medskip
+
+% Pour des changements d'états effectués de manière isobare, l'enthalpie $H$ est la fonction d'état adaptée pour décrire les échanges énergétiques. Qu'en est-il des transformations monobares et monothermes ?\medskip
+
+% Le système est en contact avec l'extérieur dont la température est fixée et la pression est également fixée. On suppose que la pression est uniforme dans tout le système. Dans ce cas on peut montrer que le potentiel thermodynamique adapté est l'enthalpie libre $G$: 
+% \begin{equation}
+%     G = H-TS
+% \end{equation}
+% l'équilibre du système est conditionné par le minimum de son enthalpie libre $G$. 
+
+% Lors d'une évolution spontanée monobare et monotherme d'un système fermé entre deux états d'équilibre thermdynamique, il y a diminution de l'enthalpie libre G du système:
+% \begin{equation}
+%     \Delta G = -T_{\rm ext}S_c\leq 0
+% \end{equation}
+
+% \begin{equation}
+%     dG = -SdT+VdP
+% \end{equation}
+
+% \begin{equation}
+%     G(T,p,n_1,n_2)=G_1(T,p,n_1)+G_2(T,p,n-n_1).
+% \end{equation}
+
+%  On cherche à minimiser ce potentiel pour trouver les conditions d'équilibre du système.
+
+%  On suit le Diu p316 pour arriver à la conclusion que la condition d'équilibre est telle que :
+
+%  \begin{equation}
+%     G_1=G_2
+%  \end{equation}
+
+%  Donc pression et température ne sont pas indépendantes. La pression est une fonction de la température. Une évolution isotherme est isobare également. Ce qui justifie l'existence du diagramme d'état en coordonnées P,T. On constate l'existence d'un équilibre hétérogène caractéristique d'une transition appelée premier ordre (Diu p296) Il faut définir ce qu'est une transition du premier ordre : continuité de $g$ et discontinuité de la dérivée première.
+
+
+% \subsection{Mesure de la chaleur latente de vaporisation du diazote}
+% Étude de l'aspect énergétique du changement d'état. On définit la chaleur latente molaire. Démonstration pour arriver `la relation de Clapeyron. (BFR p238). Chaleur latente de tranistion (Diu p 324 et Perez p 261)
+
+% \textbf{Manipulation: Chaleur latente de vaporisation du diazote, poly de Philippe}
+
+
+\section*{2. Transition ferro para, transition du second ordre (Diu}
+\subsection*{2.1.Description expérimentale }
+
+Voir poly de philippe
+
+\subsection*{2.2. Potentiel thermodynamique}
+
+On donne l'expression du potentiel thermodynamique en fonction de l'aimantation. On trace G en fonction de M pour les différentes températures. Donner l'expression de M en fonction de la température. 
+
+
+Montrer que $S(T)$ est continue mais que $C_V(T)$ et/ou $\chi(T)$ sont discontinues au voisinage de la transition. C'est une caractéristique des transitions de phase du second ordre : les dérivées secondes de l'énergie du système sont discontinues au voisinages de la transtion.
+\subsection*{2.2. Transition du second ordre}
+
+G continue, dérivées premières continue. Dérivées secondes discontinues. Donner l'expression de la capacité calorifique et de son évolution. On peut également donné l'évolution de $\chi$
+
+\section*{Conclusion}
+
+On a vu deux types de transitions entre phases une du premier ordre dans le cas de la transition solide liquide de l'etain. Retard de la transition dans le cas de l'acide acétique. Et enfin un autre type de transition ferro-para. Il existe d'autres types de transition tel que la transition vers superfluide de l'helium par exemple qui confère des propriétés très particulière à l'hélium.
+
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

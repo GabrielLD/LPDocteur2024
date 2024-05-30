@@ -1,0 +1,232 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 6: Premier principe de la thermodynamique}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item CPGE 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+  \item Gaz parfait;
+  \item travail mécanique; 
+  \item notion de système et d’équilibre thermodynamique;
+  \item  transformations classiques en thermodynamique.
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Dunod PCSI;
+%   \item Perez mécanique Chapitre gravitation.
+\end{itemize}
+\hrulefill
+
+\section*{Introduction}
+
+La thermodynamique est l'étude des propriétés macroscopique d'un système ($P,V,T,...$) sans se préoccuper des processus microscopiques sous-jacents. Elle s'applque donc aux systèmes contenant suffisamment de particules pour que les fluctuations microscopiques puissent être négligées.  C'est une théorie axiomatique basée sur principalement sur deux principes. Animation : \url{https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes\_en.html}. 
+  
+  Pour un système isolé (ni échange d'énergie, ni échange de matière avec l'extérieur), l'énergie ne se créé pas et ne disparaît pas, mais elle se transforme d'une forme à une autre : Ex animation : conversion énergie mécanique-électrique, électrique-thermique. \\
+  Si le système est isolé, il y a conservation de l'énergie.
+
+\section*{1. Les transformations dans un système thermodynamique (Dunod)}
+
+\subsection*{1.1. Système thermodynamique}
+
+On appelle système thermodynamique tout système constituté d'un très grand nombre de particules microscopiques. Choisir un système c'est partagé le monde en deux: d'une part le système choisi qui occupe un certain volume $V$ constitué de $N$ particules et d'autre part le reste de l'univers que l'on dénomme \textbf{extérieur}. Le système peut être fermé (pas d'échange de matière), isolé (pas d'échange de matière et d'énergie), ou ouvert.
+
+L'état du système est définit par des variables d'état. Ce sont des grandeurs macroscopiques tels que la température, la pression et le volume,... On distingue deux types de variables. Les variables \textbf{extensives} (dont la valeur est la somme de chaque sous-système comme la masse, elle dépend de la taille du système) et \textbf{intensives} (si elle est la même dans chaque sous-système alors c'est la même pour le système total comme la température, ne dépend pas de la taille du système).
+
+\subsection*{1.2. Énergie interne}
+
+On peut distingueur deu types d'énergie lors de la description d'un système:
+\begin{enumerate}
+    \item l'énergie interne (microscopique):
+C'est la somme des énergies de toutes les particules qui composent le système dans le référnetiel du centre de masse du système. \textbf{énergie cinétique} (translation, rotation, vibrations); \textbf{énergie potentielle d'intéractions entre particules} (liaison covalents, VdW, liaisons ioniques, liaisons métalliques...); \textbf{énergie de masse} ($mc^2$); \textbf{énergie potentielle des particules soumises à une force extérieure}.
+    \item énergie macroscopique:
+
+C'est l'énergie cinétique de l'ensemble du système lorsque son centre de masse n'est pas immobile.
+\end{enumerate}
+
+En général, en thermodynamique, on se place  dans le référentiel du centre de masse, de sorte que l'on peut éliminer des équations l'énergie cinétique macroscopique. Par contre, si le système est soumis à des forces extérieures, on ne peut pas a priori les éliminer, et elles se manifestent via l'énergie potentielle des particules individuelles.  Cependant si le système est suffisamment petit par rapport à la distance sur laquelle la force considérée varie, alors toutes les particules subissent approximativement la même force et le même potentiel: 
+
+\begin{equation}
+    E_{\rm tot} = E_{\rm cin}^M+E_{\rm pot}^M + U
+\end{equation}
+
+\subsection*{1.3. Le travail}
+
+C'est une quantité d'énergie échangée entre le milieu considéré et le milieu extérieur. On note le travail $W$. Si $W>0$, le système reçoit de l'énergie. Si $W<0$ il cède de l'énergie. Le travail mécanique s'écrit : $\delta W=\vec{F}\cdot \vec{dr}$.
+
+\textbf{exemple:} les travail des forces de pression.
+Faire un schéma, d'un volume de gaz séparé du milieu extérieur par un piston.
+\begin{equation}
+    \delta W = -P_{\rm ext}\vec{dS}\cdot\vec{dr}=-PdV.
+\end{equation} 
+
+On peut commenter différents cas, pression constante, volume constant...
+\subsection*{La chaleur}
+
+Un système thermo peut recevoir de l'énergie sans l'intervention d'une action mécanique mesurable à l'échelle macroscopique. Ce transfert d'énergie complémentaire du travail mécanique s'appelle transfert thermique. La chaleur se transfère spontanément du corps chaud au corps froid. La conversion de chaleur en travail mécanique a permis la rev industrielle par la machine à vapeur.
+
+
+\section*{2. Principe de conservation de l'énergie}
+
+\subsection*{2.1 . Premier principe de la thermodynamique}
+
+La variation de l'énergie interne $U$ d'un système est égale à l'énergie qu'il a reçu sous la forme de travail et de chaleur.
+
+\begin{equation}
+    dU + dE_{\rm cin}+dE_{\rm pot}=\delta W+\delta Q
+\end{equation}
+
+Dans le référentiel du centre de masse:
+
+ \begin{equation}
+     dU = \delta W + \delta Q \leftrightarrow \Delta U = W +Q.
+ \end{equation}
+
+\subsection*{2.2. L'enthalpie}
+
+On peut définir une autre fonction d'état du système thermodynamique: l'enthalpie.
+\begin{equation}
+    H=U+PV
+\end{equation}
+
+\subsection*{2.3. Capacité thermique}
+ 
+On appelle capcité thermique à volume constant d'un système fermé $\sigma$ la grandeur $C_v$ telle que la variation $U$ de l'énergie interne du système lorsque la température varie de $dT$, le volume restant constant, est : 
+
+\begin{equation}
+    dU = C_vdT.
+\end{equation}
+
+$C_v$ se  esure en $J\cdot K^{-1}$. Il s'agit d'une grandeur extensive et additive. Pour un échantillon de coprs pur, dont la taille est donnée par la quantité de matière $n$ se calcule par:
+
+\begin{equation}
+    C_v=nC_{vm}
+\end{equation}
+
+où $C_{vm}$ est la capacité thermique molaire à volume constant.\medskip
+
+\textbf{cas du gaz parfait:} $U = \frac{3}{2}nRT$, donc $C_v=\frac{3}{2}nR$.\medskip
+
+Dans le cas d'un système fermé à pression constante:
+
+\begin{equation}
+    dH = C_p dT
+\end{equation}
+
+Dans le cas d'un gaz parfait: 
+
+\begin{equation}
+    Cp-Cv=nR,~Cv = \dfrac{nR}{\gamma -1},~Cp = \dfrac{R\gamma}{\gamma-1}
+\end{equation}
+
+\section*{3. Applications expérimentales}
+
+\subsection*{3.1. Détermination d'une capacité thermique massique (Dunod PCSI p756  Chap 26 2021)}
+
+\doc{1}{Liste du matériel}{
+\begin{itemize}
+\item thermomètre;
+\item calorimètre;
+\item Eau;
+\item éprouvette;
+\item balance;
+\item bain thermostaté;
+\item masselotte attachée à un fil;
+\item plaque chauffante ou bouilloire.
+\item morceau de fer, laiton $m\sim 100 g$
+\item agitateur pour homogénéiser le mélange
+\end{itemize}
+}
+
+\noindent\underline{\textbf{Mesure de l'équivalent en eau du calorimètre}}
+
+On pose le calorimètre sur la balance, on ajoute un volume de 80g d'eau à température ambiante. Il faut laisser le calorimètre avec l'eau se thermalisé quelques minutes. On mesure la température $T_{froid}$ et la masse de l'eau dans le calorimètre $m_{ini}$. On fait bouillir de l'eau on mesure sa température $T_{chaud}$  et on ajoute $80g$ d'eau chaude dans le calorimètre.  On mesure la température à l'équilibre $T_{eq}$.
+
+Bilan du mélange : $\Delta H = 0 $ 
+$$0 = m_{f}c_{eau}(T_{eq}-T_{if})+m_{\rm c}c_{eau}(T_{eq}-T_{ic})+m_{\rm cal}c_{eau}(T_{eq}-T_{if}).$$ 
+$$m_{cal} = -\dfrac{m_{f}(T_{eq}-T_{if})+m_{\rm c}c_{eau}(T_{eq}-T_{ic})}{T_{eq}-T_{if}).}$$
+
+
+\noindent\underline{\textbf{Mesure de la capacité calorifique d'un échantillon de métal}}
+
+On verse dans le calorimètre ($m_c$), une masse $m_{ef}$ d'eau très froide et on mesure la température qui se stabilise après quelques instants. On trouve une température $\theta_0$. On introduit dans le calorimètre l'échantillon de fer, que l'on a pesé ($m_{\rm fer}$) et qui est initialement à la température d'une étuve thermostatée à une température $\theta_{fer}$. On attend que la température se stabilise et on mesure la température finale $\theta_f$.
+
+\begin{equation}
+    \Delta H = 0 = \Delta H_{eau}+\Delta H_{cal} + \Delta H_{fer}
+\end{equation}
+
+\begin{equation}
+    m_{\rm eau}c_{\rm eau}(\theta_f - \theta_0)+m_{\rm cal}c_{\rm eau}(\theta_f - \theta_0) + m_{\rm fer}c_{\rm fer}(\theta_f-\theta_{fer})=0
+\end{equation}
+
+
+
+On en déduit : $c_{\rm fer}=\dfrac{c_{\rm eau}(m_{\rm eau}+m_{\rm cal})(T_{f}-\theta_0)}{m_{\rm fer}(\theta_f-\theta_{\rm fer})}\rm =\dots ~J.kg^{-1}.K^{-1}$ à comparer à $c_{\rm fer}=449$~J.kg$^{-1}$.K$^{-1}$.
+\subsection*{3.2. Détente de Joule Gay Lussac}
+
+
+Deux enceintes séparées par un robinet. Une enceinte est remplie par un gaz, l'autre par un fluide. Ces enceintes sont calorifugées et avec des parois rigides. On ouvre le robinet. \\
+  Système = {gaz+vide+enceintes}. On a $\Delta U=0$. Si $U(T)$ (première loi de Joule) : $\Delta U = C_{V}\Delta T = 0$ donc transformation isotherme. \\
+  Cette expérience permet de vérifier si un gaz vérifie la première loi de Joule en mesurant la variation de température.
+  
+
+\section*{Conclusion}
+
+Dans cette leçon, on a parlé du premier principe qui est un principe de conservation de conservation. Ce principe est complété par le second principe, qui lui, est plutôt un principe d'évolution et qui porte sur le caractère réversible ou irréversible d'une transformation. Pour finir, ces principes et la thermodynamique classique en général a été formalisée plus tard par la mécanique statistique qui permet d'expliquer les résultats de la thermodynamiques en faisant le lien entre l'échelle microscopique et macroscopique.
+
+
+\questions{
+
+\textbf{C : Sur la vidéo, comment on fait conversion énergie mécanique et électrique ?}  \textcolor{purple}{Avec un alternateur : un aimant est entrainé par l'énergie mécanique qui créé un courant variable dans une bobine par induction. Exemple : une dynamo de bicyclette. Si pas de champs magnétiques préexistant, induction électromagnétique.} \newline
+  
+  \textbf{C : Dans l'énoncé du premier principe, quelles sont les particularités de A et B ?}  \textcolor{purple}{Ils sont à l'équilibre thermodynamique pour qu'on puisse leur défiir une énergie .} \newline
+  
+  \textbf{C : W est le travail des forces non conservatives ? Si je prends un piston qui est bloqué par un poids, il y a le poids dans W ? Si j'ajoute une force, ça agit sur E$_p$ par sur U (par exemple la force de Lorentz qui agit sur chaque particule ?}  \textcolor{purple}{Il est bien présent dans la partie gauche de l'équation. Si on le met à doite ça agit sur $E_p$ et on met un signe \og - \fg. C'est un peu indifférent de le mettre à droite où à gauche mais il ne faut pas le compter deux fois et mettre le bon signe. } \newline
+  
+  \textbf{C : De façon non ambigüe, peut-on mesurer une quantité de chaleur ou savor ce que c'est ?}  \textcolor{purple}{La chaleur ça sera toute la variation d'énergie sauf le travail des forces macroscopiques. On peut mesurer la variation d'énergie interne dans certaines conditions.} \newline
+  
+  \textbf{C :Si transfo quasi-statique, on peut faire $-P_edV$. Peut-on juste dire que la transformation est réversible ?}  \textcolor{purple}{Oui ça fonctionne mais dans la vie il n'existe pas de transformation réversible.} \newline
+  
+  \textbf{C : Définition de réversible ?}  \textcolor{purple}{On peut changer le sens et changeant infiniment peu les contraintes extérieures. On peut prendre l'exemple d'un piston où il y a des frottements pour la différence entre réversible et quasi-statique.} \newline
+  
+  \textbf{C : Dans la détente Joule Gay Lussac, est-ce que c'est important que l'enceinte soit vide ou remplie d'un gaz à pression plus faible par exemple ?}  \textcolor{purple}{Il faut juste faire attention à la définition du système. } \newline
+  
+  \textbf{C :Si on veut une variation de chaleur $\delta Q$ pour un fluide, quels sont les coefficients importants ?}  \textcolor{purple}{Il y a 6 variables calorimétriques importantes. Suivant le système, il faut prendre la dépendance en volume etc... On peut montrer qu'il n'y en a que deux d'indépendantes.} \newline
+  
+  \textbf{C :Différentes façon d'exprimer $\delta Q$ : $\delta Q = c_vdT + ldV = c_pdT + hdP = \lambda dP + \mu dV$. On peut montrer la relation entre pente adiabatique et pente isotherme. Quelle est la pente la plus importante entre une adiabatique ou une isotherme dans le diagramme (P,V) ? Calculer la pente pour une adiabatique et une isotherme ? }  \textcolor{purple}{Isotherme : $dT=0$ donc $\delta Q= ldV = hdP$. Adiabatique : $dV = -\frac{c_v}{l}dT$ et $dP = -\frac{c_p}{h}dT= \frac{c_pl}{hc_v}dV$.} \newline
+  
+  \textbf{C :Comment exprimer de manière générale $dP$ en fonction de $dT$ et $dV$ à partir d'une équation d'état ?}  \textcolor{purple}{$dT = (\frac{\partial{T}}{\partial{P}})_VdP + (\frac{\partial{d}T}{\partial{d}V})_VdV$. On en déduit } \newline
+  
+  \textbf{C :Dans le diagramme (P,V), on considère des transformations infinitésimales entre A et D (entre A et B : isochore, B et C : isobare, C et D : isotherme et entre D et A : isobare). Calculer la variation infinitésimale $\delta Q$ sur le cycle en commençant d'abord par les chemins A-B-C et A-D-C.}  \textcolor{purple}{Sur A-B-C : $\delta Q = \lambda dP + \mu dV$. Sur A-D-C, $\delta Q = c_pdT + hdP$. Donc sur le cycle : $\delta Q = -\delta W = \lambda dP + \mu dV - c_pdT - hdP$. } \newline
+}
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
