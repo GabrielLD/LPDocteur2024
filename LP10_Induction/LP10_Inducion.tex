@@ -1,0 +1,195 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 10: Induction électromagnétique}
+
+\hrulefill\\
+
+\noindent\underline{\textbf{Niveau:}}
+\begin{itemize}
+  \item Licence 3 
+\end{itemize}
+\underline{\textbf{Pr{\'e}-requis: }}
+
+\begin{itemize}  
+\item Electromag 
+\item equations de maxwell
+\item ARQS
+\item mecanique
+\end{itemize}
+\underline{\textbf{Bibliographie:}}
+
+\begin{itemize}
+  \item Dunod PC
+  \item Garing
+  \item Perez
+  \item Ellipse PC 2009 chap induction electromagnetique de Lorentz
+\end{itemize}
+\hrulefill
+
+\section* {Introduction}
+
+Nous allons voir dans cette leçon que les phénomènes d'induction sont contenus dans les équations de Maxwell et dans la force de Lorentz qu'on a déjà vu. Ils nécessitent qu'on s'y attarde du point de vue des conséquences pratiques qu'ils mettent en exergue. Dans toute la leçon, nous travaillerons dans le cadre de l'ARQS magnétique (i.e. qu'on néglige le courant de déplacement $\mathbf{j_D}=\epsilon_0\dfrac{\partial \mathbf{E}}{\partial t}$ dans les équations de Maxwell).\\
+  
+  Historiquement : Oersted (1820): courants éléctriques induisent $\mathbf B$. Faraday (1831): Variations de $\mathbf B$ qui induisent des courants électriques. 
+
+  \section*{1. Phénoménologie de l'induction}
+
+  \subsection*{1.1. Mise en évidence expérimentale}
+
+
+
+ On prend une bobine en circuit ouvert. On mesure le courant qui passe au travers de la bobine lorsqu'on approche un aimant de la bobine.  L'expérience est décrite dans le dunod de pcsi.
+
+  \textcolor{blue}{Expérience qualitative 1:} Approche un aimant et éloigne un aimant droit d'une bobine fixe branchée à un oscilloscope : apparition d'une tension. Même observation avec déplacement de la bobine dans aimant fixe. Amplitude de l'intensité proportionnelle à la vitesse de variation de $\mathbf B$. De plus, on voit que dans un sens on a une fem positive et dans l'autre une fem négative. Permet de connaitre le pole Nord ou le pole Sud d'un aimant par exemple.
+
+
+  \begin{definition}{Définition phénoménologique - Induction}
+    apparition d'une f.e.m et, s'ils peuvent s'écouler, de courants, dans un conducteur mobile placé d'un champ magnétique variable
+  \end{definition}
+
+  \textbf{Deux cas particuliers:} \begin{itemize}
+    \item Dans le cas où on a un circuit fixe et un champ variable, on parlera d'induction de Neumann,
+    \item Dans le cas où on a un circuit déformable ou mobile dans un champ magnétique stationnaire, on parlera d'induction de Lorentz
+\end{itemize}
+
+Ces expériences mettent en évidence le phénomène d'inducion électromagnétique qui se manifeste par l'apparition d'un courant dans un circuit fermé sans qu'il y ait de générateur à l'intérieur dans le circuit. 
+
+\subsection*{1.2. Lois de l'induction (Faraday et Lenz)}
+
+L'équation régissant le phénomène d'induction est la loi de Faraday. On considère une spire plane de forme quelconque placée dans un champ magnétique uniforme $\vec{B}$. On suppose un sens positif conventionnel pour le courant circulant dnas la spire. Définition du flux magnétique traversant la spire: 
+
+\begin{equation}
+    \phi =\iint \vec{B}\cdot d\vec{S}.
+\end{equation}
+
+\textbf{Validité :circuits filiformes sinon on ne peut pas définir de flux magnétique}
+
+$\phi$ quantifie la quantité de champ magnétique qui traverse la spire dans le sens du vecteur surface. 
+Dans les expériences décrites juste avant, on a fait varier le flux magnétique en déplaçant l'aimant par rapport à la bobine. C'est la variation du flux qui provoque l'appartion du courant dans le circuit de la bobine. En 1831, Faraday en déduit la loi suivante:
+
+\begin{equation}
+    e = - \dfrac{d\phi}{dt}
+\end{equation}
+$e$ est la force électromotrice induite. Unités de $e$ (v) et $\phi$ (Wb ou T.m$^2$)Convention générateur de la f.e.m. : la force électromotrice est dans le même sens que l'intensité.\medskip
+
+\textcolor{blue}{expérience qualitative 2 :} chute d'un aimant dans un conducteur.\\
+\textbf{Loi de Lenz :} discussion du signe $-$ dans la loi de Faraday.\\
+
+\textcolor{red}{Transition :}On va voir qu'on peut formaliser l'induction à l'aide d'une approche microscopique. 
+
+\subsection*{1.3. Loi de Lenz}
+
+\textbf{Loi de Lenz:} Les phénomènes d'induction s'opposent par leurs effets aux causes qui leur ont donné naissance. Discuter du signe dans la loi de Faraday. \medskip
+
+\textbf{Transition:} maintenant que l'on a vu les lois pour comprendre les phénomènes de l'induction, on va étudier  les deux causes possibles d'apparition de l'induction.
+
+\section*{2. Théorie de l'induction}
+
+\subsection*{2.1. Définition formelle de la fem}
+
+Voir Tec\&Doc PC p617. La tension électromotrice s'exprime de la manière suivante :
+\begin{equation}
+    e = \frac{1}{q} \oint_{C} \mathbf{F}(\mathbf{r}, t) \cdot d\mathbf{l}
+\end{equation}
+où C est un contour orienté et fermé et F une force proportionnelle à la charge. La fem représente donc le quotient de la circulation de cette force le long de ce contour pour la charge.\\ 
+En utilisant la force de Lorentz dans un référentiel R du laboratoire supposé galiléen : $\mathbf F = -e(\mathbf{E}+\mathbf{v}_R\wedge \mathbf{B})$, où $\mathbf{v}_R$ est la vitesse des électrons dans ce référentiel, on obtient : 
+\begin{equation}
+    e = \oint_{C} \mathbf{E} \cdot d \mathbf{l} + \oint_C (\mathbf{B} \land \mathbf{v}_R) \cdot d \mathbf{l}
+\end{equation}
+On voit que si le circuit de contour $C$ est fixe, $\mathbf{v}_R//\mathbf{dl}$ donc le second terme est nul : c'est l'induction de Neumann.
+
+\subsection*{2.2. Induction de Neumann}
+
+Le champ électrique $\mathbf{E}$ s'écrit de manière générale à partir des potentiels scalaire et vecteur :
+\begin{equation}
+    \mathbf{E} = - \nabla V - \frac{\partial \mathbf{A}}{\partial t}
+\end{equation}
+Ce qui implique que ($\mathbf{grad}V$ est à circulation nulle sur un contour fermé):
+\begin{equation}
+    e = \oint_C \mathbf{E_m}\cdot \mathbf{dl}
+\end{equation}
+ou $E_m = -\dfrac{\partial \mathbf{A}}{\partial t}$ est appelé \textcolor{green}{le champ électromoteur de Neumann}. On retrouve la loi de Faraday en disant que $\oint_C \mathbf{A}\cdot\mathbf{dl}=\int\int_\Sigma \mathbf{B(t)}\cdot d\mathbf{S}=\phi(t)$.
+ 
+
+
+\subsection*{2.3. Induction de Lorentz}
+
+Schéma p626 Tec\&Doc PC/PC*. A voir s'il y a le temps ou alors donner les grandes lignes sur slide.\\
+ On se place dans un cadre non relativiste et on prend un circuit filiforme ou le circuit est animé d'une vitesse $\mathbf{v_e}$ et la vitesse des électrons dans le référentiel galiléen du labo est $\mathbf{v}_R= \mathbf{v_r} + \mathbf{v_e}$, avec $\mathbf{v_r} // d\mathbf{l}$. \\
+ 
+ Comme on est en régime stationnaire :    $\mathbf E = - \nabla V$. On en déduit la tension électromotrice :
+ \begin{equation}
+     e = \oint (\mathbf v_e \land \mathbf B) \cdot d\mathbf{l}
+ \end{equation}
+ Le terme $\mathbf v_e \land \mathbf B$ se subtitue au champ électromoteur de Neumann.\\
+ 
+ Le produit mixe permet d'écrire : 
+ \begin{equation}
+     e = \oint (d\mathbf {l} \land \mathbf{v_e}) \cdot d\mathbf{B} 
+ \end{equation}
+Voir Hprépa p179. Le produit vectoriel $d\mathbf {l} \land \mathbf{v_e}$ a pour norme l'aire balayée $d\mathbf{S_b}$ par l'élément de circuit $\mathbf{dl}$ qui va à la vitesse $\mathbf{v_e}$ pendant dt et donc l'intégral représente le flux de B à travers cette surface. Le champ $\mathbf{B}$ étant à flux conservatif, son flux à travers la surface totale $\Sigma_{tot}$ fermée est nul et donc (attention aux signes ! de Sb en particulier) :
+\begin{align}
+    \oint_{\Sigma_{tot}}\mathbf{B}\cdot d\mathbf{S} &= -\phi(t+dt) + \phi(t) - \oint_{C}\mathbf{B}\cdot d\mathbf{S_b} \\
+    -\frac{d\phi(t)}{dt} &= e(t)
+\end{align}
+On retrouve bien la loi de Faraday.\\
+
+\textbf{Conclusion orale}: Dans le cas général, on a la somme des deux cas (Neumman et Lorentz). On peut passer d'une vision à une autre par changement de référentiel (exemple avec la première expérience qualitative).
+
+\textcolor{red}{Transition :} Maintenant qu'on a bien tous les outils théoriques pour décrire et comprendre l'induction, on va revenir à un aspect pratique.
+
+
+
+\section*{3. Circuit fixe dans un champ magnétique variable}
+
+\subsection*{2.1. Auto-induction}
+
+Coefficient d'auto-induction. On a vu qu'une spire parcourue par un courant $i$ générait un champ magnétique. Ce champ magnétique a un flux à travers la spire que l'on nomme flux propre. Comme le flux est $propto$ B qui est $propto$ i, on peut définir un coefficient appelé inductance propre tel que : $\phi=Li$. Comme dans le Dunod on explique sur une seule spire. Calcul de l'inductance propre d'un solenoïde (Dunod p 906). Bilan d'energie (loi des mailles, calcule de la puissance).
+
+Attention ! Le théorême d'Ampère n'apparait qu'en PC et Biot et Savart est hors programme en prepa.
+
+\subsection*{2.2. Cas de deux bobines en interaction}
+On présente un schéma de deux spires l'une dans l'autre. La première est alimentée et génère un champ magnétique qui traverse la deuxième bobine. On définit le coefficient d'induction mutuelle et onécrit le lien entre chaque flux et l'intensité de l'autre bobine.
+
+\subsection*{2.3. Manipulation: Mesure d'une inductance L}
+
+cf poly de Philippe. un L fixe (pas de bobine Leybold), oscilloscope , GBF, cabes bananes, bnc, résistances, multimètres, LCR-mètre, transformateur d'isolement(évite les prob de résistance du GBF),
+
+Circuit RL, mesure du temps caractéristique sur oscilloscope avec le temps de réponse à 63%.Ne pas oublier les résistances de la bobine et des câbles
+
+\subsection*{2.4. Inductance mutuelle}
+Dessin spire 1 avec ligne de champ et spire 2 dans champ magnétique créé par spire 1. \\
+- Flux créé par spire 1 à travers spire 2: $\phi_{21} = M_{21} i_1$ ; \\
+- Flux créé par spire 2 à travers spire 1: $\phi_{12} = M_{12} i_2$ ; \\
+- $M_{12} = \oint \oint \frac{\mu_0 d \mathbf{l_1} \cdot d \mathbf{l_2}}{4 \pi r_{12}} = M_{21}$. \\
+ Modèle simple de transformateur (schéma sur slide). Secondaire en circuit ouvert $(i_2 = 0)$. Loi des mailles (en complexe) donne: $ M = L_1 \left| \frac{U_2}{e_g} \right|$. 
+ 
+\section*{Conclusion} 
+Applications diverses (on a vu bobines et transformateurs). \\
+Autres applications (slide) : Haut-parleur, Plaques à induction, Feinage par induction.
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
