@@ -1,0 +1,174 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 17: Interférence à deux ondes}
+\hrulefill\\
+	\underline{Niveau:}
+	\begin{itemize}
+		\item CPGE
+	\end{itemize}
+	\underline{Pré-requis:} 
+	\begin{itemize}
+        \item Electromagnetisme
+		\item Optique
+	\end{itemize}
+	\underline{Bibliographie:}
+	\begin{itemize}
+		\item BFR \textit{Optique, Chap 10}
+		\item Pérez \textit{Optique}
+		\item Dunod PC
+		\item \url{https://phyanim.sciences.univ-nantes.fr/Ondes/lumiere/interference_lumiere.php}
+	\end{itemize}
+\hrulefill
+
+
+\section*{Introduction}
+
+\textbf{Manip introductive :} si on superpose deux lasers, il ne se passe rien. Si on les fait passer à travers un dispositif qui élargit le faisceau + une fente source + une bifente : on voit une figure d'interférence.
+
+
+\section*{1. Interférences lumineuses}
+\subsection*{1.1. Superposition de deux ondes lumineuses}
+
+Faire le schéma de deux sources distinctes qui rayonnenet jusqu'en un point M.. Les ondes se propagent depuis chaque source. Expliciter l'équation de l'onde avec la phase, chemin optique. Superposition des deux ondes. On prend l'intensité vibratoire au point M. C'est le produit des cosinus i.e. le terme d'interférence. On garde pour l'instant les termes temporels qui est traité juste après
+\subsection*{1.2. Notion de cohérence, conditions d'interférences}
+
+On applique les formules de trigonométrie. Discuter des temps de réponse des capteurs en fonction du temps de réponse des détecteurs versus fréquence de vibration des ondes. Moyenne sur un grand nombre de périodes.
+
+\textbf{Première condition d'interférence:} Les deux sources doivent avoir la même pulsation sinon par d'interférences et leurs intensités s'additionnent.
+
+\textbf{Deuxieme condition d'interférence:} Les deux sources doivent avoir un déphasage constant ou variant très lentement pour que celui-ci puisse être considéré constant par le détecteur.
+
+\begin{definition}{Définition - Notion de cohérence}
+    Deux ondes sont cohérentes si leur superposition conduit à un terme d'interférence non nul, même pulsation, $\Delta\phi=$ constante. Si ces deux conditions ne sont par remplies alors incohérences et sommes des intensités.
+\end{definition}
+
+\textbf{RQ:} Il y a un troisième condition d'interférence sur la polarisation de l'onde (à garder pour les questions)
+
+\subsection*{1.2. Formule de Fresnel}
+On suppose deux sources lumineuses cohérentes, on définit $\Delta\phi$. On  calcule l'intensité vibratoire et on encadre !  Parler d'interférences constructives et destructives, représentation graphique en python. 
+
+\subsection*{1.3. Observations des interférences: hyperboloïdes de révolution}
+voir animation en biblio
+
+\section*{2. Mise en \oe uvre expérimentale: Fentes d'Young}
+
+\subsection*{2.1. Dispositif expérimental}
+
+On considère une source S de très petite dimension éclaire un écran opaque percé de deux fentes dont les dimensions sont très faibles. D'après les lois de l'optique géométrique on devrait obtenir sur cet écran les traces de M1 et M2 des deux raions SS1 et SS2. Cependant la diffraction intervient du fait des faibles dimensions de S1 et S2 et l'on obtient des faiscequx qui se recouvrent. C'est dans cette zone que l'on peut observer des interférences appelée \textbf{zone interférencielle}. 
+
+S1 et S2 sont des sources \textbf{cohérentes dont les rayons interfèrent} et de même intensité I0. Dans le plan de l'écran, on obtient une intensité donnée par : 
+
+    \begin{equation}
+	    I = 2I_0\left(1+\cos\phi\right), \text{ avec } \phi = \frac{2\pi\delta}{\lambda} = \frac{2\pi}{\lambda}\left(S_2M-S_1M\right). 
+    \end{equation}
+
+
+On peut calculer la différence de marche entre les deux sources $\delta$ qui est donnée par : 
+
+\begin{equation}
+	\delta = \frac{ax}{d_2}
+\end{equation}
+
+$x$ étant la position verticale sur l'écran. Les franges obtenues sont donc des franges d'interférences rectilignes parallèles à $Oy$ (perpendiculaire à la direction de $S_1S_2$).
+
+
+\textbf{Manipulation:}\medskip
+Expérience des fentes d'Young avec une lampe spectrale, ou une lumière blanche avec un filtre interférentiel (penser au filtre anti-calorique). On observe des interférences. 
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=1\textwidth]{BifentedYoungAvecFenteSource.png}
+%     \caption{Schéma du montage des bifentes d'Young, poly TP Rennes}
+% \end{figure}
+\subsection*{2.2. Figures d'interférences}
+On cherche à calculer l'éclairement et à le comparer à la figure obtenue.
+\subsection*{2.3. Interfrange}
+Calcule de l'interfrange. On peut aussi utiliser un spectrophotomètre pour mesurer $\lambda$.
+
+
+Dans ce cas où la fente est éclairée par une source de lumière monochromatique $\lambda_0$. Pour $\delta = p\lambda_0$ on obtient des franges prillantes. Leur position est définie pour $\frac{ax}{d_2}=p\lambda$ soit : 
+$$x = p\left(\frac{\lambda_0d_2}{a}\right)$$
+
+Pour $p=0$ et $x=0$ on a une frange brillante centrale qui correspond à un ordre d'interférence nul. Les franges brillantes sont séparées par une intervalle régulière : 
+\begin{definition}{Définition - Interfrange}
+\begin{equation}
+	i = \frac{\lambda_0d_2}{a}
+\end{equation}
+\end{definition}
+
+\textbf{Remarque : }{Mesures }
+	\begin{itemize}
+		\item Interfrange $i = $  $\pm$  mm
+		\item Distance fentes-écran $d_2 = $  $\pm$ mm
+	\end{itemize}
+
+
+On calcule $$\lambda = \frac{ia}{d_2}$$
+
+\textbf{Resultat}
+	\textbf{Mesure de l'écartement des deux fentes ou de la longueur d'onde:}\medskip
+
+	$\lambda_{\rm mes} = $ $\pm$  nm
+
+\noindent \textbf{Écart normalisé:}
+\[E.N. = \frac{\lambda_{\rm mes}- \lambda_{\rm att}}{\sqrt(\Delta \lambda_{\rm mes}^2+\Delta \lambda_{\rm att}^2 )} = \]
+
+
+
+\section*{3. Notion de cohérence}
+\subsection*{3.1. Influence de l'étendue spectrale}
+\begin{enumerate}
+    \item Changer le filtre pour un filtre coloré;
+    \item Modification de la figure d'interférence
+\end{enumerate}
+
+\subsection*{3.2. Étendue spatiale}
+On élargit le diaphragme, figure d'interférence modifiée, commenter.
+\subsection*{3.3. Analyse en terme de cohérence}
+
+Si la source est une lumière étendue spatialement et/ou spectralement. On obtient dans le plan de l'écran une superposition de phénomènes correspondants aux différentes longueur d'ondes. On obtient alors des phénomènes colorés. Au centre une frange brillante achromatique. Quand on s'éloigne du centre, les phénomènes correspondants aux différentes longeurs d'onde se décalent de plus en plus: les bords des franges se colorent puis les phénomènes se brouillent lorsques les franges brillantes d'autres longeurs d'onde occupent la même place. On obtient du \textbf{blanc d'ordre supérieur}.
+
+\section*{Conclusion}
+
+L'interféromètre des fentes d'Young se prète mal aux expériences en lumière blanche mais est facile à réaliser avec l'interféromètre de Michelson.
+
+\questions{
+  \textbf{C : D'autres phénomènes d'interférences autres que lumineuses ?}  \textcolor{purple}{Oui, exemple de la cuve à onde.} Qu'est-ce qui fait la spécificité des interférences des ondes lumineuses ? \textcolor{purple}{On peut faire des mesures super précises.}\\
+  \textbf{C : Conditions de cohérence pour l'eau ?}  \textcolor{purple}{On somme directement les amplitudes, il n'y a pas de notion de cohérence pour une onde mécanique.}\\
+  \textbf{C : Dépendence de la durée d'intégration ? Odg temps de réponse d'un détecteur ?}  \textcolor{purple}{Période de la lumière  : $10^{-15}$s, \oe uil : $10^{-2}$s,  photorésistance $10^{-2}$s, photodiode (standard): $10^{-6}$s, thermopile : $1$s}\\
+  \textbf{C : lien entre intensité $I$ et éclairement $\epsilon$ ?}  \textcolor{purple}{On a $\epsilon = KI = K<s^2(M,t)>$, où $<...>$ représente la valeur moyenne temporelle, K est une constante qui dépend du détecteur et $s(M,t)$ représente une composante du champ électrique de la lumière par rapport à un axe perpendiculaire à sa direction de propagation. L'éclairement est la puissance surfacique moyenne de l'onde lumineuse (autrement dit la valeur moyenne temporelle du vecteur de Poynting).}\\
+  \textbf{C : Pourquoi il faut un vide entre deux trains d'ondes ?}  \textcolor{purple}{Lié à la désexcitation de l'atome, la durée de vie d'un niveau d'énergie.} Un train d'onde c'est un photon du coup ? \textcolor{purple}{C'est l'aspect ondulatoire du photon.}\\
+  \textbf{C : C'est quoi la cause de l'incohérence spatiale ?} \textcolor{purple}{Emission de trains d'onde de phase à l'origine aléatoire suivant l'atome émetteur.}\\
+
+  \textbf{C : Différences/avantages interférométrie à division d'amplitude/ division du front d'onde ?} \textcolor{purple}{Division du front d'onde : on fait interférer de la lumière provenant de deux sources différentes. Les interférences ne sont pas localisées mais il y a un problème de brouillage du fait de la cohérence spatiale des sources. Division d'amplitude : on fait interférer de la lumière provenant d'un même faisceau incident dont on a séparé en deux (au moins) l'amplitude. Il n'y a pas de problème lié à la cohérence spatiale de la source mais le prix à payer est la localisation des interférences (à l'infini pour une lame d'air, à distance finie pour un coin d'air). L'avantage est de pouvoir utiliser des sources de lumière très étendues, on gagne en luminosité.}\\
+
+  \textbf{C : Stratégies à mettre en \oe uvre pour éviter $20\%$ d'erreur sur les mesures ?} \textcolor{purple}{Caméra CCD, mettre une lentille pour agrandir l'image} Ca change quoi avec une lentille ? \textcolor{purple}{On remplace $D$ par $f'$ dans la formule de $I_{tot}$.} C'est mieux du coup ? \textcolor{purple}{On peut mesurer $f'$ de façon assez précise} Quoi d'autre ? \textcolor{purple}{Pied à coulisse, banc optique, ...}\\
+  
+
+}
+
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%

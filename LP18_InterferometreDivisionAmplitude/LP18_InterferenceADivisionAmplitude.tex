@@ -1,0 +1,186 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[french, a4paper, 10pt, twocolumn, landscape]{article}
+
+\input{pckg.tex}
+\usepackage{esint}
+\usepackage{breqn}
+\usepackage{colortbl}
+\newcommand{\objectifs}[1]{
+	\begin{minipage}{.02\textheight}
+	\rotatebox{90}{\textbf{\large Objectifs}}
+	\end{minipage}
+	\begin{minipage}{.9\linewidth}
+			#1 
+	\end{minipage}
+}
+%%
+%%
+%% DEBUT DU DOCUMENT
+%%
+
+\begin{document}
+
+\section*{Leçon 18: Interférometre à division d'amplitude}
+
+\hrulefill\\
+	\underline{Niveau:}
+	\begin{itemize}
+		\item CPGE
+	\end{itemize}
+	\underline{Pré-requis:} 
+	\begin{itemize}
+        \item Electromagnetisme
+		\item Optique géométrique
+		\item Optique ondulatoire
+		\item notion de cohérences
+	\end{itemize}
+	\underline{Bibliographie:}
+	\begin{itemize}
+		\item BFR \textit{Optique, Chap 10}
+		\item Pérez \textit{Optique chap 25}
+		\item Dunod PC
+		\item Optique approche experimentale et pratique, Houard, De Boeck
+		\item Les instruments d'optique, étude théorique, expérimentale et pratique Luc Dettwiller
+    \end{itemize}
+\hrulefill
+
+
+\section*{Introduction}
+
+L'obtention d'interférences en optique est délicate et fait apparaître la notion de coh;erence entre les vibrations qui doivent interférer. Plusieurs dispositifs permettent de mettre en évidence les interférences : division de front d'onde et division d'amplitude. On présente l'expérience des fentes d'Young.
+Inconvénients: Sensible à la perte de cohérence spatiale et contraint l'expérimentateur à utiliser des sources de taille réduite, peu de luminosité. On verra que l'on peut pallier à ce problème avec les dispositifs à division d'amplitude. 
+
+\section*{1. Principe de l'interférométrie}
+
+\subsection*{1.1. Avantages et  inconvénients de la division d'amplitude}
+Un train d'onde donne deux trains d'onde images. C'est à dire que la surface des deux fronts n'est pas modifiée mais l'intensité est divisée par deux, Comme les deux rayons sont issus de la même source, l'élargissement de la source n'altère pas les interférences. Frange localisée à l'intersection des couples de rayons.
+
+\subsection*{1.2. Franges d'égales inclinaison (BFR,Perez)}
+Une source $S_0$ illmine un système de deux lames de verre, parallèle entre elles distantes de $e$, d'épaisseur négligeable devant $e$, d'indice $n$. On néglige ici les réflexions multiples sur les lames de verre. 
+La lame est éclairée par un rayon incident $i$. On cherche à calculer la différence de marche $\delta$ entre les rayons émergeants en $I$ et $K$. Dans la lame le rayon marqué de deux flèches parcours le trajet supplémentaire $IJ+JK$. Dans l'air le rayon marqué d'une flèche parcourt le trajet supplémentaire $IH$ où $H$ est la projection de $K$ sur le rayon marqué d'une flèche. En effet les deux rayons font partie d'un faisceau parallèle d'après le théorême de Malus, la surface d'onde est perpendiculaire à ces rayons. $H$ et $K$ appartiennent à la même surface d'onde et la différence de marche dans l'air est représentée par $IH$. Finalement : \[\delta = \delta_1-\delta_2=n(IJ+JK)-IH\]
+ On mène le calcul et on parvient à l'expression de $\delta$ : 
+
+ \begin{equation}
+	\delta = 2ne\cos(\theta)
+ \end{equation}
+
+On remarque que la différence de marche ne dépend pas de l'angle d'incidence, on parle d'annaeaux d'égale inclinaison. 
+
+\subsection*{1.3. Frange d'égale épaisseur (franges de Fizeau Perez) (Perez)}
+On présente le schéma et on calcule ala différence de marche en prenant un rayon incident provenant d'une source ponctuelle. On arrive à la relation:
+
+\begin{equation}
+	\delta = 2e = 2\alpha x
+\end{equation}
+
+\textbf{Transition :} Ce système de lames permet d'observer des inteférences mais totalement fixe, on ne peut pas jouer ni sur l'angle nis sur leur écartement. On doit donc passer à un dispositif concret de division d'amplitude : L'interféromètre de Michelson.
+
+\section*{2. Interféromètre de Michelson}
+
+Réglage de l'interféromètre sera étudié longuement en TP. Instrument crée par Michelson et amélioré par Morley pour vérifier que la célérité de la lumière se propage à une vitesse soumise aux lois de composition des vitesses. Le résultat fut négatif et amena à repenser la mécanique classique.
+\subsection*{2.1. Présentation du dispositif}
+
+\textbf{La séparatrice} permet la division d'amplitude, necessité d'une compensatrice pour que les rayons parcours le même chemin. \textbf{Deux miroirs} $M_1$ et $M_2$ qui permettent de rediriger les rayons vers la séparatrice. Présenter le chemin parcouru par les rayons grâce aux slides. Dans le cas général on voit une coupe des hyperboloïdes de révolution. 
+
+
+\subsection*{2.2. Configuration en lame d'air}
+Explication du nom, on réduit le système à deux sources secondaires. On montre la ressemblance aux franges d'égalese inclinaison. La différence est la mème sauf qu'ici on a une lame d'air $\delta = 2e$. Dans le cas d'une source ponctuelle: deux sources ponctuelles cohérentes entre elles = système 
+equivalent aux trous d'Young. Si la source est étendue, la source étant incohérente spatialement, on additionne les figures d'interférences générées par chaque point de la source : somme d'anneaux = brouillage. Il existe cependant un point de l'écran où il n'y a pas de brouillage: l'infini. Seule l'inclinaison des rayons iomporte: un déplacement de la source ne changera pas la figure d'interférence. Les interférences sont localisées à l'infini. 
+
+\textbf{Manipulation:} Calcul de la largeur du doubet du sodium, calul de $\Delta \lambda$.\medskip
+
+Dans le cas d'une source \textbf{polychromatique}, les diverses sources spectrales sont incohérentes entre elles. On somme les figures d'interférences et on obtient sur l'écran la superposition des plusieus systèmes d'anneaux, associés à chaque longueur d'onde dont le rayon dépend de $\lambda$. Dans le cas du sodium, la source émet à deux longueurs d'ondes $\lambda_1= 589.00~\rm nm$ et $\lambda_2 = \lambda_1+\Delta \lambda = 589.59~\rm nm$.
+
+\begin{equation}
+	\begin{array}{ll}
+		I(e) & = \dfrac{I_0}{2}\left[1+ \cos\left(\dfrac{2\pi\delta}{\lambda_1}\right)\right]+\dfrac{I_0}{2}\left[1+ \cos\left(\dfrac{2\pi\delta}{\lambda_2}\right)\right]\\
+		& =I_0\left[1+\cos\left(2\pi e\left(\dfrac{1}{\lambda_1}+\dfrac{1}{\lambda_2}\right)\right)\cos\left(2\pi e\left(\dfrac{1}{\lambda_1}-\dfrac{1}{\lambda_2}\right)\right)\right]
+	\end{array}
+\end{equation}
+
+
+\begin{equation}
+	I(e) = 2I_0\left[1+\underbrace{\cos\left(\dfrac{4\pi e}{\overline{\lambda}}\right)}_{\rm interférences}\underbrace{\cos\left(\dfrac{4\pi e}{\lambda_1\lambda_2}\Delta\lambda \right)}_{\rm Contraste}\right]
+\end{equation}
+
+
+
+En faisant varier $e$, on observe la variation d'éclairement dite des battement entre les deux longueurs d'onde. On peut mesurer $\overline{\lambda}$ en mesurant la période rapide et $\Delta \lambda$ en mesurant les battements lents. Le contraste s'annule lorsque : 
+
+\begin{equation}
+	\dfrac{2\pi e}{\lambda_1^2}\Delta \lambda = \dfrac{\pi}{2}+n\pi.
+\end{equation}
+
+Avec  $n\in Z$ Entre deux annulations on a charioté de $\frac{2\pi\Delta e\Delta\lambda}{\lambda_1^2}=\pi$ on en déduit alors $\Delta \lambda$.
+
+\subsection*{2.3. Configuration en coin d'air}
+Représentation schématique+construction des rayons lumineux, calcul de la différence de marche et de l'ordre d'interférence. Commenter la figure et leur localisation
+Comparaison aux franges de Fizeau.
+
+\textbf{Manipulation:} passage en coin d'air.
+
+\section*{3. Fabry pérot}
+
+Il faut considérer tous les faisceaux en sortie de l'interféromètre et non plus seulem,ent 2. On parle alors d'interférences à ondes multiples. Si le temps le permet on peut mener le raisonnemetn (TD de Sayrin jusqu'à l'expression de la finesse et des épaisseurs des interfranges).  Ou alors on donne l'expression de l'intensité et tracé le profil des interférences. Donner la relation de la finesse. Plus la Finesse est grande plus la résolution sera bonne. Éventuellemnent préparer le montage pour observer le doublet du sodium.
+
+\section*{Conclusion}
+
+On a vu le principe des interféromètres à division d'amplitude, on a détaillé un dispositif en core utilisé aujourd'hui expérimentalement, par exemple le Ligo est un interféromètre de pluseurs kilomètre qui permet aujourd'hui de détecter les ondes gravitationnelles.
+
+\questions{
+  \begin{enumerate}
+    \item Types d'interférence pour le casque anti-bruit ? \\ \textcolor{purple}{Il y a un micro qui permet d'enregistrer le bruit ambiant. Le signal est ensuite analysé puis un haut-parleur génère un signal de bruit avec une phase exactement opposée à celui qui vient d'être enregistré pour que les deux signaux interfèrent destructivement. Il s'agit donc d'une division du front d'onde.}
+    
+    \item Utilisation des intérférences à division d'amplitude ? \\
+     \textcolor{purple}{Regarder la structure spatiale d'un l'échantillon, voir des défauts de planéité des miroirs, mesurer la différence d'indice de réfraction d'un gaz, mesurer une variation de température}. 
+     
+  \item Comment mesure-t-on l'indice de réfraction d'un gaz ? \\
+     \textcolor{purple}{En configuration lame d'air, on peut regarder comment changent les franges rectlignes lorsque l'indice de refraction $n$ du milieu varie. Connaissant la taille du miroir, on peut remonter à $n$.}
+     
+    \item Quelle configuration pour la planéité des miroirs ? \\
+     \textcolor{purple}{Configuration coin d'air.}
+     
+    \item En configuration coin d'air, où sont localisées les intérférences ? \\
+     \textcolor{purple}{On verra des franges au niveau des miroirs.}
+     
+   \item Pourquoi au niveau des miroirs ? \\
+     \textcolor{purple}{Il faut considérer deux points sources $S_1$ et $S_2$ proches et tracer les rayons issus de ces points et passant par un point $P$. Si $P$ est proches du coin d'air, la différence de marche $\delta_1$ entre les rayons issus de $S_1$ et celle entre les rayons issus de $S_2$ sont quasiment les mêmes (et égales à $2e(P)$): il n'y a donc pas brouillage. En revanche, si $P$ s'éloigne du coin d'air, $\delta_1$ devient très différent de $\delta_2$ et on a brouillage (cf. corrigé du TD d'optique sur les intéreférences). \\
+     Par ailleurs, une construction géométrique permet de montrer que le lieu d'intersection des rayons réfléchis correspondant \textbf{à un même rayon incident} (condition de localisation vu en $1.1$, à savoir $\mathbf{u_2} = \mathbf{u_1}$) est approximativement le plan faisant l'angle $i$ (où $i$ est l'angle d'incidence) avec (M1'). En pratique, cet angle est si petit (quelques minutes d'arc) que ce plan d'intersection est presque confondu avec (M1') (Dunod Physique tout-en-un 2ème année, PC-PC* 2004).}
+  
+  \item Lorsque la source est ponctuelle, les interférences sont-elles localisées ? \\
+     \textcolor{purple}{Non. Elles le sont lorsque la source est étendue.}
+     
+  \item Si on a des trous d'Young et une source déplacée de $b$ sur l'axe parallèle à l'axe des trous, comment seront les franges ? \\
+     \textcolor{purple}{Il y aura une différence de chemin optique additionnelle avant les trous. Les nouvelles franges obtenues se décalent de $\frac{-bD}{d}$, avec $d$ la distance entre la source et les trous d'Young et $D$ la distance entre les trous et l'écran.}
+  
+  \item Peut-il y avoir brouillage si on considère deux sources ponctuelles incohérentes ?\\
+  \textcolor{purple}{Oui si les deux systèmes de franges créés par les sources sont en anticoïncidence (les franges brillantes d'un système de franges se superposent aux franges sombres de l'autre système de franges).}
+     
+  \item Pour la lame d'air, pourquoi appelle-t-on les anneaux "anneaux d'égale inclinaison" ? \\
+     \textcolor{purple}{Un ordre d'interférence donné correspond à une inclinaison, c'est-à-dire à un même angle d'incidence des rayons lumineux.}
+     
+  \item Pour la lame d'air, est-ce qu'on a le même signe de refléxion des deux côtés ? \\
+     \textcolor{purple}{Non, $r_1 < 0$, $r_2 > 0$. Il y a un déphasage de $\pi$ en plus. Dans le Michelson, on oublie car c'est plus compliqué que ça, il y a des traitements en plus. Ce qui compte c'est que le contact optique est défini non pas par la longueur géométrique mais par la longueur optique.}
+  
+  \item A quoi sert la compensatrice ? On pourrait s'en passer pour le laser en réglant la longueur entre les deux bras de sorte à compenser la différence de marche correspondant à l'épaisseur de la séparatrice. \\
+     \textcolor{purple}{Si la source est polychromatique, on ne peut pas trouver un pas du miroir qui compense la différence de marche pour toutes les longueurs d'onde car l'indice optique de la séparatrice dépend de la longueur d'onde, d'où la nécessité d'utiliser une compensatrice. Si une seule longueur d'onde, ce n'est pas nécessaire (mais ça n'existe pas dans la vraie vie).}
+  
+  \item Pourquoi tu utilises un verre anticalorique ? \\
+  \textcolor{purple}{Pour ne pas diffuser de la chaleur provenant de la source sur l'interféromètre, cela modifierait $n$ qui dépend de la température (le Michelson est sensible à des variations d'indice de réfraction de l'ordre de $10^{-4}$.)}
+     
+  \item Le laser He-Ne : 10 MHz. Lorsqu'on a fait le calcul on a trouvé 400 MHz. Pourquoi cette différence ? \\
+     \textcolor{purple}{En réalité, le spectre comporte plusieurs raies. L'enveloppe est à 400 MHz mais la largeur de chaque raie est beaucoup moins: 10 MHz semble raisonnable.}
+
+     
+  \item Que mesures-tu dans la tomographie ? \\
+     \textcolor{purple}{Les interférences associées à une certaine épaisseur.}
+    
+\end{enumerate}
+}
+
+
+\end{document}
+
+%%
+%% FIN DU DOCUMENT
+%%
