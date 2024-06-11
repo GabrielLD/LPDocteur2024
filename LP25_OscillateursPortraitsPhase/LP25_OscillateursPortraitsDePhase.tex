@@ -40,9 +40,11 @@
 \noindent\underline{\textbf{Références:}}
 
 \begin{itemize}
-    \item Poly de Philippe sur les résonances
+    \item Poly de Philippe sur les mécanique
+    \item Le Diffon Formule de Bordas
     \item BFR Mécanique 1 
     \item Faroux, Renault, Matray Rosso, mécanique 1 Dunod Chap 15
+    \item Elippse PSI Pascal Olive p204
 \end{itemize}
 
 \hrulefill
@@ -54,33 +56,73 @@ On commence par définir ce qu'est un oscillateur. Système physique qui réalis
 
 \section*{1. Oscillateurs non amortis}
 
-On présente le système déjà connu rapidement. On peut prendre l'exemple du pendule simple non amorti. On fait rapidement le bilan des forces, application de la deuxième loi de Newton sur transparents. On peut tracer en python le protrait de phase qui va bien. 
+On présente le système déjà connu rapidement. On peut prendre l'exemple du pendule simple non amorti. On fait rapidement le bilan des forces, application de la deuxième loi de Newton sur transparents. On peut tracer en python le portrait de phase qui va bien. 
 
-\subsection*{1.1. Comportement aux grands angles}
+\subsection*{1.1. Comportement aux petits  angles}
 
-On fait le calcul. On montre le portrait de phase aavec le programme python pour un angle initial plus grand que ceux pour lesquels on respecte les angles petits. Aspect énergétique. Utiliser le programme python et montrer la différence sur le portrait de phase
+Exemple de la physique : pendule simple à petites oscillations. On applique le théorème du moment cinétique appliqué à la masse $m$ dans le référentiel terrestre qu'on suppose galiléen :
+  \begin{equation}
+    ma = P
+  \end{equation}
+  
+  On en déduit l'équation d'un oscillateur de pulsation propre $\omega_0=\sqrt{\frac{g}{L}}$ :
+  \begin{equation}
+      \ddot{\theta} + \omega_0^2\sin(\theta) = 0
+  \end{equation}
+  Pour des petites oscillations ($\theta<<1=60\degree$), on a :
+  \begin{equation}
+      \ddot{\theta} + \omega_0^2\theta = 0
+  \end{equation}
+  
+  On trouve l'équation d'un oscillateur harmonique. Tout oscillateur harmonique est régi par la même équation. \textbf{Analogies :} masse accrochée à un ressort sans frottements, l'évolution temporelle de la charge d'un condensateur d'un circuit LC. 
 
-\section*{2. Aspect fréquentiel des non linéarités}
 
-On reprend le calcul toujour dans le Faroux Renault. On parvient à la formule de Borda.
+  Voir BUP. \textcolor{green}{Définition :} pour un système dont l’évolution au cours du temps t est décrit par la fonction à valeurs réelles x(t), on appelle trajectoire de phase une représentation géométrique cartésienne dans laquelle on reporte les positions au cours du temps t d’un point représentatif M d’abscisse x et d’ordonnée $\frac{dx}{dt}$.\\
+  Portrait de phase pour l'oscillateur harmonique : 
+  \begin{align}
+      \theta(t) &= \theta_0\cos(\omega_0t) \\
+      \dot{\theta}(t) &= -\theta_0\omega_0\sin(\omega_0t) \\
+      \left(\frac{\dot{\theta}(t)}{\omega_0}\right)^2 + \theta(t)^2 &= \theta_0^2
+  \end{align}
+  
+  Toutes les trajectoires dans le portait de phase ($(\frac{\dot{\theta}(t)}{\omega_0},\theta(t))$) du pendule pesant (et en général d'un oscillateur harmonique dont la variable est x(t)) sont des cercles concentriques de rayon $\theta_0$ qui dépendent des donc conditions initiales. A une CI correspond une trajectoire de phase.
+
+
+\subsection*{1.2. Comportements aux grands angles }
+
+On fait le calcul. On montre le portrait de phase avec le programme python pour un angle initial plus grand que ceux pour lesquels on respecte les angles petits. Aspect énergétique. Utiliser le programme python et montrer la différence sur le portrait de phase
+
+On reprend le calcul toujours dans le Faroux Renault. On parvient à la formule de Borda. Voir Pérez p170 pour un calcul simple. Montrer que la période dépend de l'amplitude des oscillations.
 
 \textbf{Manipulation:} Pendule pesant (on l'assimile à un pendule simple en prenant une masse suffisamment grande) On réalise l'acquisition pour de grands angles initiaux. On utilise ensuite le programme python pour obtenir le lien entre la période et l'angle de l'oscillation.
 
-\subsection*{2.1. Oscillateur amorti, oscillateur entretenu}
+\section*{1.3. Aspect énergétique}
 
-\subsection*{2.2. Cas général}
+Montrer qu'il y a conservation de l'énergie mécanique, toutes les trajectoires fermées ou cycliques dans un portait de phase expriment la conservation de l'énergie mécanique du système !\\
 
-On reprend le pendule pesant en lui ajoutant un coefficient de frottement fluie, puis on généralise pour obtenir une équation avec le terme d'amortissement en $A(x)$. Si A est négatif l'oscillateur est amorti. Si A est positif il est entretenu voir amplifié.
+\section*{2. Oscillateur amorti, oscillateur entretenu}
 
-\subsection*{2.3. Cas de l'oscillateur amorti}
+\subsection*{2.1. Cas général}
+
+On reprend le pendule simple en lui ajoutant un coefficient de frottement fluie, puis on généralise pour obtenir une équation avec le terme d'amortissement en $A(x)$. Si A est négatif l'oscillateur est amorti. Si A est positif il est entretenu voir amplifié. 
+
+\subsection*{2.2. Cas de l'oscillateur amorti}
 
 On reprend le code python et on ajoute le terme de l'oscillateur amorti.
+Montrer sur Python la simulation puis sur slide si on trace pleins de portait dephase. En vérifiant sur un document graphique le caractère cyclique d’une trajectoire dephase, on dispose d’un test du caractère périodique de l’évolution beaucoup plusprécis que l’observation de l’allure de la représentation x(t). On peut discuter du facteur de qualité.
 
-\section*{3. Oscillateur entretenu: modèle de Van der Pol (Dans le Faroux Renault toujours)}
+\section*{2.3. . Aspect énergétique}
 
-On donne l'équation générale $\ddot{x}+\epsilon(x^2-1)\dot{x}+x=0$ puis le schéma du circuit sur slide. Intuiter le comportement de l'oscillateur pour x grand ou petit.
+Montrer qu'il y a conservation de l'énergie mécanique, toutes les trajectoires fermées ou cycliques dans un portait de phase expriment la conservation de l'énergie mécanique du système !\\
 
-\textbf{Manipulation} Suivant le temps, surtout que c'est un montage chaud ! . Poly Oscillateur autoentretenus. On peut commencer par voir que si $x$ est petit les oscillations croissent, si x grand elles décroissent. On peut faire apparaître en lissajous un cycle attracteur de rayon $x=1$. Les oscillations semblent quasi-sinusoidales si $\epsilon\ll 1$. Pour le vérifier il faut regarder le portrait de phase qui doit être un cercle. Tracer le portrait de phase  et constater le cycle limite. Bien faire remarquer que le cycle limite ne dépend que de l'oscillateur et pas des conditions initiales.
+\section*{3. Oscillateur entretenu: Pont de Wien Voir poly de Philippe}
+
+  Voir Pascal Olive p204.
+  
+  \section*{Conclusion}
+  Ouvrir sur les oscillateurs paramétriques ? Van der Pol, résistance négative, transition vers le chaos ?
+
+  
 
 \end{document}
 
