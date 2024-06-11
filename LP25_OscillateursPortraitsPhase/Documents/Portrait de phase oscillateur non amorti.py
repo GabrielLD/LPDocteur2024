@@ -76,5 +76,21 @@ ax_p.title.set_text('diagramme de phase')
 #     plt.draw()
     
 # sl_theta0.on_changed(update)
+m=100E-3
+l = 9.81
+g = 9.81
 
+theta_0=theta_init[3]
+sol = odeint(simple_pendulum, (theta_0, 0), t).T
+Ec = 0.5*m*(l*sol[1,:])**2
+Ep = m*g*l*(1-np.cos(sol[0,:]))
+Em = Ec+Ep
+plt.figure()
+plt.plot(t,Em, label='Energie Mecanique')
+plt.plot(t,Ec, label='Energie cinétique')
+plt.plot(t,Ep, label='Energie potentielle')
+plt.xlabel('temps')
+plt.ylabel('E (J)')
+plt.legend()
 plt.show()
+
