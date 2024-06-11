@@ -97,3 +97,10 @@ plt.xlabel('temps')
 plt.ylabel('E (J)')
 plt.legend()
 plt.show()
+
+plt.figure()
+plt.plot(sol[:,0],Em)
+plt.xlabel('\theta')
+plt.ylabel('Em (J)')
+
+plt.show()
