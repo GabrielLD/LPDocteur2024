@@ -9,7 +9,8 @@ Tentative de traiter verifier le modèle pour le temps de vie de la
 radioactivite alpha
 """
 
-
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,7 +27,7 @@ params = {'text.usetex' : True,
           }
 plt.rcParams.update(params)
 #%%
-df = pd.read_csv('Radioactivitealpha_thibault.csv')
+df = pd.read_csv('Radioactivitealpha.csv')
 #df = pd.read_csv('Radioactivitealpha.csv')
 #%%
 energie = df['E (MeV)'].to_numpy()  # MeV

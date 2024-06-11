@@ -40,7 +40,8 @@ import matplotlib.pyplot as plt
 plt.ioff()
 import numpy as np
 from matplotlib.widgets import Slider, Button, RadioButtons
-
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
 # DÃ©termination des vecteur d'onde k et des coefficient q d'attenuation
 # des ondes Ã©vanescentes
 

@@ -20,7 +20,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as anim    
 from matplotlib.widgets import Slider, Button, RadioButtons
-
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
 
 """
 PRELIMINAIRE : On impose les variables de base de notre systÃ¨me.
