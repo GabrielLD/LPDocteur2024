@@ -18,14 +18,8 @@ from scipy.optimize import curve_fit
 from sklearn.linear_model import LinearRegression 
 import scipy.optimize as spo
 import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
 
-plt.rcParams['text.latex.preamble'] = r"\usepackage{bm} \usepackage{amsmath}"
-
-params = {'text.usetex' : True,
-          'font.size' : 11,
-          'font.family' : 'lmodern',
-          }
-plt.rcParams.update(params)
 #%%
 df = pd.read_csv('Radioactivitealpha.csv')
 #df = pd.read_csv('Radioactivitealpha.csv')
